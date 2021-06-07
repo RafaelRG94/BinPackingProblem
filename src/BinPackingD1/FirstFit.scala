@@ -2,7 +2,8 @@ package BinPackingD1
 
 import scala.collection.mutable.ArrayBuffer
 
-class FirstFit(val instance: ProblemInstance) {
+class FirstFit(val instance: ProblemInstance) extends Solver {
+  def name: String = "First Fit Algorithm"
 
   def solve(): Solution = {
     val solution = new ArrayBuffer[Bin]()
@@ -25,6 +26,7 @@ class FirstFit(val instance: ProblemInstance) {
         solution += current
       }
     }
+    if(current.getLeftCapacity != instance.capacity) {solution += current}
     new Solution(solution.toArray)
   }
 

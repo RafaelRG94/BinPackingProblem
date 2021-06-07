@@ -1,7 +1,6 @@
 package BinPackingD1
 
 import scala.collection.mutable.ArrayBuffer
-import scala.util.Sorting.quickSort
 
 object Utils {
 
@@ -33,20 +32,9 @@ object Utils {
     }
   }
 
-  def decreaseSortedArray(sortedArray: Array[Int]): Unit = {
-    quickSort(sortedArray)
-    var aux1 = 0
-    var aux2 = 0
-    var indexFirstPosition = 0
-    var indexLastPosition = sortedArray.length - 1
-    while (indexFirstPosition < indexLastPosition) {
-      aux1 = sortedArray(indexFirstPosition)
-      aux2 = sortedArray(indexLastPosition)
-      sortedArray(indexFirstPosition) = aux2
-      sortedArray(indexLastPosition) = aux1
-      indexFirstPosition += 1
-      indexLastPosition -= 1
-    }
+  def sortDescending(array: Array[Int]): Unit = {
+    val ordering = Ordering.by[Int, Int](x => -x)
+    util.Sorting.quickSort[Int](array)(ordering)
   }
 
 }

@@ -8,7 +8,11 @@ class AVL {
     var maxRemainingCapacity = 0
     var left, right: Option[Node] = None
 
-    def setHeight(height: Int): Unit = {this.height = height}
+    ///////////////////
+    //def getBalance(): Int = {right.height + left.height}
+    ///////////////////
+
+    //def setHeight(): Unit = {height = 1 + max(left.height, right.height)} //arreglar
 
     def setMaxRemainingCapacity(maxRemainingCapacity: Int): Unit = {this.maxRemainingCapacity = maxRemainingCapacity}
 

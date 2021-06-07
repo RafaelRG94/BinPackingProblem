@@ -2,7 +2,8 @@ package BinPackingD1
 
 import scala.collection.mutable.ArrayBuffer
 
-class NextFit(val instance: ProblemInstance) {
+class NextFit(val instance: ProblemInstance) extends Solver {
+  def name: String = "Next Fit Algorithm"
 
   def solve(): Solution = {
     val solution = new ArrayBuffer[Bin]()
@@ -16,7 +17,7 @@ class NextFit(val instance: ProblemInstance) {
         current.add(item)
       }
     }
-    solution += current
+    if(current.getLeftCapacity != instance.capacity) {solution += current}
     new Solution(solution.toArray)
   }
 

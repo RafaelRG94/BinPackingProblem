@@ -4,7 +4,8 @@ import BinPackingD1.Utils.{reorderBufferArrays, smallerThanTarget}
 
 import scala.collection.mutable.ArrayBuffer
 
-class AlmostWorstFit(val instance: ProblemInstance) {
+class AlmostWorstFit(val instance: ProblemInstance) extends Solver {
+  def name: String = "AlmostWorstFit Algorithm"
 
   def solve(): Solution = {
     val solution = new ArrayBuffer[Bin]()

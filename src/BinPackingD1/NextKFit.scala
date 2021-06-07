@@ -2,39 +2,48 @@ package BinPackingD1
 
 import scala.collection.mutable.ArrayBuffer
 
-class NextKFit(val k: Int, val instance: ProblemInstance) {
+class NextKFit(val k: Int, val instance: ProblemInstance) extends Solver {
+  def name: String = "NextKFit Algorithm"
 
   def solve(): Solution = {
     val solution = new ArrayBuffer[Bin]()
-    val current = new Bin(instance.capacity)
-    solution += current
+    var current = new Bin(instance.capacity)
     for (i <- instance.items.indices) {
-      if (solution.length < k) {
+      if (solution.isEmpty){
+        if (current.canAdd(instance.items(i))){
+          current.add(instance.items(i))
+        } else {
+          solution += current
+          current = new Bin(instance.capacity)
+        }
+      }
+      if (solution.nonEmpty && solution.length < k) {
         if (solution(solution.length-1).canAdd(instance.items(i))) {
           solution(solution.length-1).add(instance.items(i))
         } else {
-          val current = new Bin(instance.capacity)
-          current.add(instance.items(i))
           solution += current
+          current = new Bin(instance.capacity)
+          current.add(instance.items(i))
         }
       } else {
         var itemIsAdded: Boolean = false
-        var j = 1
-        while (!itemIsAdded && j <= k) {
-          if (solution(solution.length-(k-j+1)).canAdd(instance.items(i))) {
-            solution(solution.length-(k-j+1)).add(instance.items(i))
+        var j = k
+        while (!itemIsAdded && j < 1) {
+          if (solution(solution.length - j).canAdd(instance.items(i))) {
+            solution(solution.length - j).add(instance.items(i))
             itemIsAdded = true
           } else {
-            j += 1
+            j -= 1
           }
         }
         if (!itemIsAdded) {
-          val current = new Bin(instance.capacity)
-          current.add(instance.items(i))
           solution += current
+          current = new Bin(instance.capacity)
+          current.add(instance.items(i))
         }
       }
     }
+    if(current.getLeftCapacity != instance.capacity) {solution += current}
     new Solution(solution.toArray)
   }
 
