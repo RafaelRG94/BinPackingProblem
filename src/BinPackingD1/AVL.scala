@@ -1,5 +1,5 @@
 package BinPackingD1
-
+/*
 class AVL {
 
   case class Node() {
@@ -39,4 +39,21 @@ class AVL {
     current.get.right = Option(newNode)
   }
 
+}
+*/
+
+object AVL {
+  private var root: Node = null
+}
+
+class Node(var bin: Bin, var height: Int, var maxRemainingCapacity: Int, var left: Node, var right: Node){
+
+  def setHeight(): Int = {right.height - left.height}
+  
+  def rotateLeft(): Node = {
+    val newRoot = right
+    right = newRoot.left
+    newRoot.left = this
+    newRoot
+  }
 }

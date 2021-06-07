@@ -8,20 +8,18 @@ class BestFit(val instance: ProblemInstance) extends Solver {
 
   def solve(): Solution = {
     val solution = new ArrayBuffer[Bin]()
-    var current = new Bin(instance.capacity)
     for (item <- instance.items) {
       val targetBin = 1 + smallerThanTarget(item, solution)
-      if (targetBin < solution.length - 1) {
-        solution(targetBin + 1).add(item)
-        reorderBufferArrays(targetBin + 1, solution)
+      if (targetBin > 0 && targetBin <= solution.length - 1) {
+        solution(targetBin).add(item)
+        reorderBufferArrays(targetBin, solution)
       } else {
+        val current = new Bin(instance.capacity)
         solution += current
-        current = new Bin(instance.capacity)
         current.add(item)
         reorderBufferArrays(solution.length - 1, solution)
       }
     }
-    if(current.getLeftCapacity != instance.capacity) {solution += current}
     new Solution(solution.toArray)
   }
 
