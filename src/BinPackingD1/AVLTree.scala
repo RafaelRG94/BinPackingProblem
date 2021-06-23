@@ -187,6 +187,12 @@ class AVLTree() {
     }
   }
 
+  def addAll(instance: ProblemInstance): Unit = {
+    val tree = new AVLTree
+    for (item <- instance.items)
+      tree.addFirst(instance.capacity, item)
+  }
+
 /*
   override def toString: String = {
     val sb = new StringBuilder()
