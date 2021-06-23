@@ -7,7 +7,7 @@ object AVLTree {
   def apply(): AVLTree =
     new AVLTree()
 
-  private class Node(var index: Int, var h: Int, var maxRemainingCapacity: Int, var bin: Bin, var left: Node, var right: Node) {
+  private class Node(var h: Int, var maxRemainingCapacity: Int, var bin: Bin, var left: Node, var right: Node) {
     // Comprueba si este nodo se inclina a la derecha
     def rightLeaning: Boolean =
       height(right) >= height(left)
@@ -93,9 +93,12 @@ object AVLTree {
     }
   }
 
+  private def maxRemainingCapacity(node: Node): Int =
+    if (node==null) 0 else node.maxRemainingCapacity
+
   // Altura de un nodo en el árbol
   private def height(node: Node): Int =
-    if(node==null) 0 else node.h
+    if (node==null) 0 else node.h
 
   /*
   // método auxiliar para implementar toString
@@ -117,23 +120,14 @@ object AVLTree {
 }
 
 class AVLTree() {
-  import AVLTree.Node
+  import AVLTree.{Node, maxRemainingCapacity}
 
   // referencia al nodo raíz del arbol
   private var root: Node = null
 
-  private var indexes: Int = 0
-
   // true si el árbol está vacío
   def isEmpty: Boolean =
     root == null
-
-  def increaseIndex: Unit =
-    indexes += 1
-
-  def calculateIndex(node: Node): Unit =
-    node.index = indexes
-
 
   //Capacidad restante máxima del árbol
   private def treeMaxRemainingCapacity(): Unit = {
@@ -152,8 +146,7 @@ class AVLTree() {
 
     def addBinToNode(node: Node): Node = {
       if(node == null){
-        increaseIndex
-        new Node(indexes, 0, bin.getLeftCapacity, bin,null,null)
+        new Node(0, bin.getLeftCapacity, bin,null,null)
       } else {
         node.right = addBinToNode(node.right)
         node.setHeight()
@@ -173,16 +166,16 @@ class AVLTree() {
       addNewBin(bin)
     } else {
       def addFirstRec(node: Node): Unit = {
-        if(node.left.maxRemainingCapacity >= weight){
-          if(node.left.bin.canAdd(weight) {
+        if(maxRemainingCapacity(node.left) >= weight){
+          if(node.left.bin.canAdd(weight)) {
             node.left.bin.add(weight)
           } else {
             addFirstRec(node.left.left)
           }
-        } else if(node.maxRemainingCapacity >= weight) {
+        } else if(node.bin.canAdd(weight)) {
           node.bin.add(weight)
         } else {
-          if(node.right.bin.canAdd(weight) {
+          if(node.right.bin.canAdd(weight)) {
             node.right.bin.add(weight)
           } else {
             addFirstRec(node.right.right)
