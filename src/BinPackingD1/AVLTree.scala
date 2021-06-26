@@ -1,5 +1,7 @@
 package BinPackingD1
 
+import BinPackingD1.AVLTree.height
+
 import scala.collection.mutable.ArrayBuffer
 
 object AVLTree {
@@ -28,9 +30,11 @@ object AVLTree {
 
       this.left = lrt
       this.setHeight()
+      this.setMaxRemainingCapacity()
 
       lt.right = this
       lt.setHeight()
+      lt.setMaxRemainingCapacity()
 
       lt
     }
@@ -42,9 +46,11 @@ object AVLTree {
 
       this.right = rlt
       this.setHeight()
+      this.setMaxRemainingCapacity()
 
       rt.left = this
       rt.setHeight()
+      rt.setMaxRemainingCapacity()
 
       rt
     }
@@ -69,28 +75,9 @@ object AVLTree {
     }
 
     def setMaxRemainingCapacity(): Unit = {
-      this.maxRemainingCapacity = calculateMaxRemainingCapacity(this)
+      this.maxRemainingCapacity = Math.max(Math.max(AVLTree.maxRemainingCapacity(left), AVLTree.maxRemainingCapacity(right)), bin.getLeftCapacity)
     }
 
-  }
-
-  //Capacidad restante máxima de un nodo
-  private def calculateMaxRemainingCapacity(node: Node): Int = {
-    if (node==null) 0
-    else {
-      val max = node.bin.getLeftCapacity
-
-      if (node.left != null) {
-        val leftMax = calculateMaxRemainingCapacity(node.left)
-        val max = Math.max(max, leftMax)
-      }
-
-      if (node.right != null) {
-        val rightMax = calculateMaxRemainingCapacity(node.right)
-        val max = Math.max(max, rightMax)
-      }
-      max
-    }
   }
 
   private def maxRemainingCapacity(node: Node): Int =
@@ -129,34 +116,24 @@ class AVLTree() {
   def isEmpty: Boolean =
     root == null
 
-  //Capacidad restante máxima del árbol
-  private def treeMaxRemainingCapacity(): Unit = {
-    def treeMaxRemainingCapacityRec(node: Node): Unit = {
-      if(node != null) {
-        node.setMaxRemainingCapacity()
-        treeMaxRemainingCapacityRec(node.left)
-        treeMaxRemainingCapacityRec(node.right)
-      }
-    }
-    treeMaxRemainingCapacityRec(root)
-  }
-
   //Añade un cubo al final de la espina derecha
   def addNewBin(bin: Bin): Unit = {
 
     def addBinToNode(node: Node): Node = {
       if(node == null){
-        new Node(0, bin.getLeftCapacity, bin,null,null)
+        new Node(1, bin.getLeftCapacity, bin,null,null)
       } else {
         node.right = addBinToNode(node.right)
-        node.setHeight()
-        node.setMaxRemainingCapacity()
-        node.balance()
+        node.right
       }
     }
-
     root = addBinToNode(root)
-    treeMaxRemainingCapacity()
+    if (height(root.right) - height(root.left) > 1)
+      root.rotateRight()
+    else {
+      root.setHeight()
+      maxRemainingCapacity(root)
+    }
   }
 
   def addFirst(initialCapacity: Int, weight: Int): Unit = {
@@ -167,23 +144,14 @@ class AVLTree() {
     } else {
       def addFirstRec(node: Node): Unit = {
         if(maxRemainingCapacity(node.left) >= weight){
-          if(node.left.bin.canAdd(weight)) {
-            node.left.bin.add(weight)
-          } else {
-            addFirstRec(node.left.left)
-          }
+          addFirstRec(node.left)
         } else if(node.bin.canAdd(weight)) {
           node.bin.add(weight)
         } else {
-          if(node.right.bin.canAdd(weight)) {
-            node.right.bin.add(weight)
-          } else {
-            addFirstRec(node.right.right)
-          }
+          addFirstRec(node.right.right)
         }
       }
       addFirstRec(root)
-      treeMaxRemainingCapacity()
     }
   }
 
