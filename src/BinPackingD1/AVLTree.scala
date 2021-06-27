@@ -1,7 +1,6 @@
 package BinPackingD1
 
 import BinPackingD1.AVLTree.height
-
 import scala.collection.mutable.ArrayBuffer
 
 object AVLTree {
@@ -87,27 +86,29 @@ object AVLTree {
   private def height(node: Node): Int =
     if (node==null) 0 else node.h
 
-  /*
+
   // método auxiliar para implementar toString
-  private def buildStringRec[A](sb: StringBuilder, node: Node[A]): Unit = {
+  private def buildStringRec(sb: StringBuilder, node: Node): Unit = {
     if(node==null)
       sb.append("null")
     else {
       sb.append("Node(")
-      sb.append(node.elem)
-      sb.append(", ")
       sb.append(node.h)
+      sb.append(", ")
+      sb.append(node.maxRemainingCapacity)
+      sb.append(", ")
+      sb.append(node.bin.toString)
       sb.append(", ")
       buildStringRec(sb, node.left)
       sb.append(", ")
       buildStringRec(sb, node.right)
       sb.append(")")
     }
-  }*/
+  }
 }
 
 class AVLTree() {
-  import AVLTree.{Node, maxRemainingCapacity}
+  import AVLTree.{Node, buildStringRec, maxRemainingCapacity}
 
   // referencia al nodo raíz del arbol
   private var root: Node = null
@@ -118,21 +119,25 @@ class AVLTree() {
 
   //Añade un cubo al final de la espina derecha
   def addNewBin(bin: Bin): Unit = {
-
-    def addBinToNode(node: Node): Node = {
-      if(node == null){
-        new Node(1, bin.getLeftCapacity, bin,null,null)
+    def addBinToNode(node: Node): Unit = {
+      if(node.right == null){
+        node.right = new Node(1, bin.getLeftCapacity, bin,null,null)
+        node.setHeight()
+        node.setMaxRemainingCapacity()
       } else {
-        node.right = addBinToNode(node.right)
-        node.right
+        addBinToNode(node.right)
       }
     }
-    root = addBinToNode(root)
+    if (root == null)
+      root = new Node(1, bin.getLeftCapacity, bin,null,null)
+    else {
+      addBinToNode(root)
+    }
     if (height(root.right) - height(root.left) > 1)
-      root.rotateRight()
+      root = root.rotateLeft()
     else {
       root.setHeight()
-      maxRemainingCapacity(root)
+      root.setMaxRemainingCapacity()
     }
   }
 
@@ -147,8 +152,9 @@ class AVLTree() {
           addFirstRec(node.left)
         } else if(node.bin.canAdd(weight)) {
           node.bin.add(weight)
+          node.setMaxRemainingCapacity()
         } else {
-          addFirstRec(node.right.right)
+          addFirstRec(node.right)
         }
       }
       addFirstRec(root)
@@ -156,18 +162,16 @@ class AVLTree() {
   }
 
   def addAll(instance: ProblemInstance): Unit = {
-    val tree = new AVLTree
     for (item <- instance.items)
-      tree.addFirst(instance.capacity, item)
+      addFirst(instance.capacity, item)
   }
 
-/*
   override def toString: String = {
     val sb = new StringBuilder()
     buildStringRec(sb, root)
     sb.toString()
   }
-*/
+
   // Realiza un recorrido del árbol en orden, almacenando los elementos en un ArrayBuffer
   def inOrder: ArrayBuffer[Bin] = {
     val ab = new ArrayBuffer[Bin]()
