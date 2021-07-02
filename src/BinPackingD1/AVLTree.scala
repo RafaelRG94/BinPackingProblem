@@ -1,6 +1,7 @@
 package BinPackingD1
 
 import BinPackingD1.AVLTree.height
+
 import scala.collection.mutable.ArrayBuffer
 
 object AVLTree {
@@ -119,25 +120,27 @@ class AVLTree() {
 
   //Añade un cubo al final de la espina derecha
   def addNewBin(bin: Bin): Unit = {
-    def addBinToNode(node: Node): Unit = {
+    def addBinToNode(node: Node): Node = {
       if(node.right == null){
         node.right = new Node(1, bin.getLeftCapacity, bin,null,null)
         node.setHeight()
         node.setMaxRemainingCapacity()
+        node
       } else {
-        addBinToNode(node.right)
+        node.right = addBinToNode(node.right)
+        if (height(node.right) - height(node.left) > 1)
+          node.rotateLeft()
+        else {
+          node.setHeight()
+          node.setMaxRemainingCapacity()
+        }
+        node
       }
     }
     if (root == null)
       root = new Node(1, bin.getLeftCapacity, bin,null,null)
     else {
-      addBinToNode(root)
-    }
-    if (height(root.right) - height(root.left) > 1)
-      root = root.rotateLeft()
-    else {
-      root.setHeight()
-      root.setMaxRemainingCapacity()
+      root = addBinToNode(root)
     }
   }
 
@@ -152,10 +155,10 @@ class AVLTree() {
           addFirstRec(node.left)
         } else if(node.bin.canAdd(weight)) {
           node.bin.add(weight)
-          node.setMaxRemainingCapacity()
         } else {
           addFirstRec(node.right)
         }
+        node.setMaxRemainingCapacity()
       }
       addFirstRec(root)
     }
