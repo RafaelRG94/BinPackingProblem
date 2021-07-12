@@ -1,42 +1,17 @@
 package BinPackingD1
 
-import BinPackingD1.AVLTree.height
-
 import scala.collection.mutable.ArrayBuffer
 
-object AVLTree {
+object FFAVLTree {
 
-  def apply(): AVLTree =
-    new AVLTree()
+  def apply(): FFAVLTree =
+    new FFAVLTree()
 
   private class Node(var h: Int, var maxRemainingCapacity: Int, var bin: Bin, var left: Node, var right: Node) {
-    // Comprueba si este nodo se inclina a la derecha
-    def rightLeaning: Boolean =
-      height(right) >= height(left)
-
-    // Comprueba si este nodo se inclina a la izquierda
-    def leftLeaning: Boolean =
-      height(left) >= height(right)
 
     // Recalcula la altura de este nodo
     def setHeight(): Unit = {
       h = 1 + (height(left) max height(right))
-    }
-
-    // Rota a la derecha este nodo
-    def rotateRight(): Node = {
-      val lt = this.left
-      val lrt = lt.right
-
-      this.left = lrt
-      this.setHeight()
-      this.setMaxRemainingCapacity()
-
-      lt.right = this
-      lt.setHeight()
-      lt.setMaxRemainingCapacity()
-
-      lt
     }
 
     // Rota a la izquierda este nodo
@@ -55,27 +30,8 @@ object AVLTree {
       rt
     }
 
-    // Balancéa este nodo
-    def balance(): Node = {
-      val lh = height(left)
-      val rh = height(right)
-
-      if (lh - rh > 1) {
-        if (!left.leftLeaning)
-          left = left.rotateLeft() // double rotation
-        this.rotateRight()
-      } else if (rh - lh > 1) {
-        if (!right.rightLeaning)
-          right = right.rotateRight() // double rotation
-        this.rotateLeft()
-      } else { // already balanced
-        this.setHeight()
-        this
-      }
-    }
-
     def setMaxRemainingCapacity(): Unit = {
-      this.maxRemainingCapacity = Math.max(Math.max(AVLTree.maxRemainingCapacity(left), AVLTree.maxRemainingCapacity(right)), bin.getLeftCapacity)
+      this.maxRemainingCapacity = Math.max(Math.max(FFAVLTree.maxRemainingCapacity(left), FFAVLTree.maxRemainingCapacity(right)), bin.getLeftCapacity)
     }
 
   }
@@ -89,7 +45,9 @@ object AVLTree {
 
 
   // método auxiliar para implementar toString
-  private def buildStringRec(sb: StringBuilder, node: Node): Unit = {
+  private def buildStringRec(sb: StringBuilder, node: Node, indent: Int, tab: Int = 2): Unit = {
+    val spaces = "".padTo(indent, ' ')
+    sb.append(spaces)
     if(node==null)
       sb.append("null")
     else {
@@ -99,17 +57,38 @@ object AVLTree {
       sb.append(node.maxRemainingCapacity)
       sb.append(", ")
       sb.append(node.bin.toString)
-      sb.append(", ")
-      buildStringRec(sb, node.left)
-      sb.append(", ")
-      buildStringRec(sb, node.right)
+      sb.append(",")
+      if(tab>0)
+        sb.append("\n")
+      buildStringRec(sb, node.left, indent+tab, tab)
+      sb.append(",")
+      if(tab>0)
+        sb.append("\n")
+      buildStringRec(sb, node.right, indent+tab, tab)
+      if(tab>0)
+        sb.append("\n")
+      sb.append(spaces)
       sb.append(")")
     }
   }
+
+  private def checkAVLBalancedRec(node: Node): Boolean =
+    (node==null) ||
+      ((height(node.left) - height(node.right)).abs <= 1 &&
+        checkAVLBalancedRec(node.left) &&
+        checkAVLBalancedRec(node.right))
+
+  private def checkRemainingCapacitiesRec(node: Node): Boolean = {
+    (node==null) ||
+      node.maxRemainingCapacity ==
+        (maxRemainingCapacity(node.left) max
+          maxRemainingCapacity(node.right) max
+          node.bin.getLeftCapacity)
+  }
 }
 
-class AVLTree() {
-  import AVLTree.{Node, buildStringRec, maxRemainingCapacity}
+class FFAVLTree() {
+  import FFAVLTree._
 
   // referencia al nodo raíz del arbol
   private var root: Node = null
@@ -133,8 +112,8 @@ class AVLTree() {
         else {
           node.setHeight()
           node.setMaxRemainingCapacity()
+          node
         }
-        node
       }
     }
     if (root == null)
@@ -165,13 +144,25 @@ class AVLTree() {
   }
 
   def addAll(instance: ProblemInstance): Unit = {
-    for (item <- instance.items)
-      addFirst(instance.capacity, item)
+    for (item <- instance.items) {
+      addFirst(instance.capacity, item)/*
+      // uncomment next two lines to debug
+      println(toIndentedString)
+      println(checkAVLBalanced)
+      println(checkMaxRemainingCapacities)
+      println()*/
+    }
   }
 
   override def toString: String = {
     val sb = new StringBuilder()
-    buildStringRec(sb, root)
+    buildStringRec(sb, root,0, 0)
+    sb.toString()
+  }
+
+  def toIndentedString: String = {
+    val sb = new StringBuilder()
+    buildStringRec(sb, root, 0, 2)
     sb.toString()
   }
 
@@ -189,4 +180,10 @@ class AVLTree() {
     inOrderRec(root)
     ab
   }
+
+  def checkAVLBalanced: Boolean =
+    checkAVLBalancedRec(root)
+
+  def checkMaxRemainingCapacities: Boolean =
+    checkRemainingCapacitiesRec(root)
 }

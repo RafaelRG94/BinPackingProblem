@@ -42,8 +42,30 @@ object Main {
     }
     */
 
-    val tree = new AVLTree
+    val tree = new FFAVLTree
     tree.addAll(instance)
     println(tree)
+    println(tree.inOrder.length)
+
+    val treeB = new BFAVLTree
+    treeB.addAll(instance)
+    println(treeB)
+    println(treeB.inOrder.length)
+
+    val treeBFD = new BFDAVLTree
+    treeBFD.addAll(instance)
+    println(treeBFD)
+    println(treeBFD.inOrder.length)
+
+    val treeWF = new WFAVLTree
+    treeWF.addAll(instance)
+    println(treeWF)
+    println(treeWF.inOrder.length)
+
+    val treeWFD = new WFDAVLTree
+    treeWFD.addAll(instance)
+    println(treeWFD)
+    println(treeWFD.inOrder.length)
+
   }
 }
