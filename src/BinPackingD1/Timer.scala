@@ -14,7 +14,7 @@ case class Timer() {
   // Only valid for single threaded applications
   // see: http://nadeausoftware.com/articles/2008/03/java_tip_how_get_cpu_and_user_time_benchmarking#TimingasinglethreadedtaskusingCPUsystemandusertime
 
-  private def getCpuTime() =
+  private def getCpuTime(): Long =
     bean.getCurrentThreadCpuTime
 
   private var startTime = getCpuTime() // System.currentTimeMillis()
