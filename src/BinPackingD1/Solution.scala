@@ -7,6 +7,8 @@ class Solution(val solution: Array[Bin]){
     str += solution.mkString("\n")
     str
   }
+
+  def length: Int = solution.length
 }
 
 //Usar el toString de Bins para hacer el toString de Solution

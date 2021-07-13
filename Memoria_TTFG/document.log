@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.6.3)  12 JUL 2021 10:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.6.3)  13 JUL 2021 09:57
 entering extended mode
 **./document.tex
 (document.tex
@@ -601,58 +601,58 @@ Underfull \hbox (badness 10000) in paragraph at lines 402--404
 LaTeX Info: Redefining \. on input line 411.
 LaTeX Info: Redefining \% on input line 411.
 [7 <./PNP.png>]
-LaTeX Info: Redefining \. on input line 427.
-LaTeX Info: Redefining \% on input line 427.
+LaTeX Info: Redefining \. on input line 430.
+LaTeX Info: Redefining \% on input line 430.
  [8]
 Cap\'{\i }tulo 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 436--438
+Underfull \hbox (badness 10000) in paragraph at lines 439--441
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 445--447
+Underfull \hbox (badness 10000) in paragraph at lines 448--450
 
  []
 
 [9
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 453--457
+Underfull \hbox (badness 10000) in paragraph at lines 456--460
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 474--476
+Underfull \hbox (badness 10000) in paragraph at lines 477--479
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 484--488
+Underfull \hbox (badness 10000) in paragraph at lines 487--491
 
  []
 
-LaTeX Info: Redefining \. on input line 490.
-LaTeX Info: Redefining \% on input line 490.
+LaTeX Info: Redefining \. on input line 493.
+LaTeX Info: Redefining \% on input line 493.
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 492--494
+Underfull \hbox (badness 10000) in paragraph at lines 495--497
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 508--511
+Underfull \hbox (badness 10000) in paragraph at lines 511--514
 
  []
 
-LaTeX Info: Redefining \. on input line 511.
-LaTeX Info: Redefining \% on input line 511.
+LaTeX Info: Redefining \. on input line 514.
+LaTeX Info: Redefining \% on input line 514.
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 512--537
+Underfull \hbox (badness 10000) in paragraph at lines 515--540
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 512--537
+Underfull \hbox (badness 10000) in paragraph at lines 515--540
 
  []
 
@@ -671,7 +671,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
  ) 
 Here is how much of TeX's memory you used:
  4815 strings out of 479047
- 68833 string characters out of 2849058
+ 68687 string characters out of 2849058
  392891 words of memory out of 3000000
  22456 multiletter control sequences out of 15000+600000
  412869 words of font info for 60 fonts, out of 8000000 for 9000
@@ -695,7 +695,7 @@ AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:
 msy8.pfb><C:/Users/rafae/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/a
 msfonts/cm/cmti12.pfb><C:/Users/rafae/AppData/Local/Programs/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/symbols/msbm10.pfb>
-Output written on document.pdf (20 pages, 288158 bytes).
+Output written on document.pdf (20 pages, 288276 bytes).
 PDF statistics:
  133 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

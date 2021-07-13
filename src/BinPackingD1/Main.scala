@@ -39,8 +39,7 @@ object Main {
       val sol = solver.solve()
       println(s"Solution is: $sol")
       println("\n")
-    }
-    */
+    }*/
 
     val tree = new FFAVLTree
     tree.addAll(instance)
