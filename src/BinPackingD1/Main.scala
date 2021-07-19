@@ -29,7 +29,7 @@ object Main {
     println(bestFitDecreasing.solve())
     */
 
-
+    /*
     val solvers = List(new NextFit(instance), new FirstFit(instance), new BestFit(instance), new WorstFit(instance)
                       , new FirstFitDecreasing(instance), new BestFitDecreasing(instance), new NextKFit(2, instance)
                       , new AlmostWorstFit(instance))
@@ -39,32 +39,32 @@ object Main {
       val sol = solver.solve()
       println(s"Solution is: $sol")
       println("\n")
-    }
-    /*
-    val tree = new FFAVLTree
-    tree.addAll(instance)
+    }*/
+
+    val tree = new FFAVLTree(instance)
+    tree.addAll()
     println(tree)
     println(tree.inOrder.length)
 
-    val treeB = new BFAVLTree
-    treeB.addAll(instance)
+    val treeB = new BFAVLTree(instance)
+    treeB.addAll()
     println(treeB)
     println(treeB.inOrder.length)
 
-    val treeBFD = new BFDAVLTree
-    treeBFD.addAll(instance)
+    val treeBFD = new BFDAVLTree(instance)
+    treeBFD.addAll()
     println(treeBFD)
     println(treeBFD.inOrder.length)
 
-    val treeWF = new WFAVLTree
-    treeWF.addAll(instance)
+    val treeWF = new WFAVLTree(instance)
+    treeWF.addAll()
     println(treeWF)
     println(treeWF.inOrder.length)
 
-    val treeWFD = new WFDAVLTree
-    treeWFD.addAll(instance)
+    val treeWFD = new WFDAVLTree(instance)
+    treeWFD.addAll()
     println(treeWFD)
     println(treeWFD.inOrder.length)
-    */
+
   }
 }

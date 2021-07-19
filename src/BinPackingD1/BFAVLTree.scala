@@ -4,8 +4,8 @@ import scala.collection.mutable.ArrayBuffer
 
 object BFAVLTree {
 
-  def apply(): BFAVLTree =
-    new BFAVLTree()
+  def apply(instance: ProblemInstance): BFAVLTree =
+    new BFAVLTree(instance)
 
   private class Node(var h: Int, var bin: Bin, var left: Node, var right: Node) {
     // Comprueba si este nodo se inclina a la derecha
@@ -119,8 +119,10 @@ object BFAVLTree {
 
 }
 
-class BFAVLTree {
+class BFAVLTree(instance: ProblemInstance) extends Solver  {
   import BFAVLTree._
+
+  def name: String = "Best Fit AVL Tree Algorithm"
 
   // referencia al nodo raíz del arbol
   private var root: Node = null
@@ -206,12 +208,7 @@ class BFAVLTree {
     deleted
   }
 
-  def addBest(initialCapacity: Int, weight: Int): Unit = {/*
-    if(root == null) {
-      val bin = new Bin(initialCapacity)
-      bin.add(weight)
-      insert(bin)
-    } else {*/
+  def addBest(initialCapacity: Int, weight: Int): Unit = {
       val auxBin: Option[Bin] = deleteLargestEq(weight)
       if(auxBin.isEmpty){
         val bin = new Bin(initialCapacity)
@@ -220,12 +217,11 @@ class BFAVLTree {
       } else {
         val bin = auxBin.get
         bin.add(weight)
-        insert(bin)/*
-      }*/
-    }
+        insert(bin)
+      }
   }
 
-  def addAll(instance: ProblemInstance): Unit = {
+  def addAll(): Unit = {
     for (item <- instance.items) {
       addBest(instance.capacity, item)/*
       // uncomment next two lines to debug
@@ -233,6 +229,10 @@ class BFAVLTree {
       println(checkAVLBalanced)
       println()*/
     }
+  }
+
+  def solve(): Solution = {
+    new Solution(inOrder.toArray)
   }
 
   override def toString: String = {

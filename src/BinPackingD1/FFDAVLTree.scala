@@ -2,9 +2,9 @@ package BinPackingD1
 
 import scala.collection.mutable.ArrayBuffer
 
-class BFDAVLTree(instance: ProblemInstance) extends Solver {
-  def name: String = "Best Fit Decreasing AVL Tree Algorithm"
-  val bestFitDecTree = new BFAVLTree(instance.sortDescendingInstance())
+class FFDAVLTree(instance: ProblemInstance) extends Solver {
+  def name: String = "First Fit Decreasing AVL Tree Algorithm"
+  val bestFitDecTree = new FFAVLTree(instance.sortDescendingInstance())
 
   def addAll(): Unit = {
     bestFitDecTree.addAll()

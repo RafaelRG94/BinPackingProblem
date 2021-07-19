@@ -2,12 +2,17 @@ package BinPackingD1
 
 import scala.collection.mutable.ArrayBuffer
 
-class WFDAVLTree {
+class WFDAVLTree(instance: ProblemInstance) extends Solver {
+  def name: String = "Worst Fit Decreasing AVL Tree Algorithm"
+  val worstFitDecTree = new WFAVLTree(instance.sortDescendingInstance())
 
-  val worstFitDecTree = new WFAVLTree
+  def addAll(): Unit = {
+    worstFitDecTree.addAll()
+  }
 
-  def addAll(instance: ProblemInstance): Unit = {
-    worstFitDecTree.addAll(instance.sortDescendingInstance())
+  def solve(): Solution = {
+    addAll()
+    new Solution(inOrder.toArray)
   }
 
   def inOrder: ArrayBuffer[Bin] = {

@@ -4,8 +4,8 @@ import scala.collection.mutable.ArrayBuffer
 
 object FFAVLTree {
 
-  def apply(): FFAVLTree =
-    new FFAVLTree()
+  def apply(instance: ProblemInstance)(): FFAVLTree =
+    new FFAVLTree(instance)
 
   private class Node(var h: Int, var maxRemainingCapacity: Int, var bin: Bin, var left: Node, var right: Node) {
 
@@ -87,8 +87,10 @@ object FFAVLTree {
   }
 }
 
-class FFAVLTree() {
+class FFAVLTree(instance: ProblemInstance) extends Solver {
   import FFAVLTree._
+
+  def name: String = "First Fit AVL Tree Algorithm"
 
   // referencia al nodo raíz del arbol
   private var root: Node = null
@@ -143,7 +145,7 @@ class FFAVLTree() {
     }
   }
 
-  def addAll(instance: ProblemInstance): Unit = {
+  def addAll(): Unit = {
     for (item <- instance.items) {
       addFirst(instance.capacity, item)/*
       // uncomment next two lines to debug
@@ -152,6 +154,11 @@ class FFAVLTree() {
       println(checkMaxRemainingCapacities)
       println()*/
     }
+  }
+
+  def solve(): Solution = {
+    addAll()
+    new Solution(inOrder.toArray)
   }
 
   override def toString: String = {

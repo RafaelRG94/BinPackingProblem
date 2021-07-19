@@ -4,8 +4,8 @@ import scala.collection.mutable.ArrayBuffer
 
 object WFAVLTree {
 
-  def apply(): WFAVLTree =
-    new WFAVLTree()
+  def apply(instance: ProblemInstance)(): WFAVLTree =
+    new WFAVLTree(instance)
 
   private class Node(var h: Int, var bin: Bin, var left: Node, var right: Node) {
     // Comprueba si este nodo se inclina a la derecha
@@ -119,8 +119,10 @@ object WFAVLTree {
 
 }
 
-class WFAVLTree {
+class WFAVLTree(instance: ProblemInstance) extends Solver {
   import WFAVLTree._
+
+  def name: String = "Worst Fit AVL Tree Algorithm"
 
   // referencia al nodo raíz del arbol
   private var root: Node = null
@@ -198,7 +200,7 @@ class WFAVLTree {
     }
   }
 
-  def addAll(instance: ProblemInstance): Unit = {
+  def addAll(): Unit = {
     for (item <- instance.items) {
       addWorst(instance.capacity, item)/*
       // uncomment next two lines to debug
@@ -206,6 +208,11 @@ class WFAVLTree {
       println(checkAVLBalanced)
       println()*/
     }
+  }
+
+  def solve(): Solution = {
+    addAll()
+    new Solution(inOrder.toArray)
   }
 
   override def toString: String = {

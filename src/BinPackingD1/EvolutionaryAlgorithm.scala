@@ -7,7 +7,7 @@ class EvolutionaryAlgorithm(val popSize: Int, instance: ProblemInstance , val pr
   val rnd = new Random(seed)
   val probMut: Double = 1/popSize
 
-  val population = Populations.firstFitPopulation(rnd, popSize, instance)
+  val population = Populations.fFPopulation(rnd, popSize, instance)
   val timer = Timer()
 
 }
