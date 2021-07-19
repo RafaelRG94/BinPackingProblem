@@ -6,10 +6,14 @@
 \contentsline {section}{\numberline {1}Conceptos generales}{1}{}%
 \contentsline {section}{\numberline {2}Complejidad. Problemas P vs NP}{4}{}%
 \contentsline {section}{\numberline {3}Algoritmos heur\'{\i }sticos y metaheur\'{\i }sticos. Algoritmos evolutivos?}{7}{}%
-\contentsline {chapter}{\numberline {2}Problema del Bin Packing}{9}{}%
-\contentsline {section}{\numberline {1}Introducci\'on}{9}{}%
-\contentsline {section}{\numberline {2}ALgoritmos voraces}{11}{}%
-\contentsline {subsection}{\numberline {2.1}Subsecci\'{o}n}{12}{}%
-\contentsline {subsection}{\numberline {2.2}Subsecci\'{o}n}{12}{}%
-\contentsline {subsubsection}{Subsubsecci\'{o}n}{12}{}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{12}{}%
+\contentsline {chapter}{\numberline {2}Problema del Bin Packing}{10}{}%
+\contentsline {section}{\numberline {1}Introducci\'on}{10}{}%
+\contentsline {section}{\numberline {2}Algoritmos voraces}{12}{}%
+\contentsline {subsection}{\numberline {2.1}Primeras aproximaciones}{13}{}%
+\contentsline {subsubsection}{Next Fit}{13}{}%
+\contentsline {subsubsection}{First Fit}{14}{}%
+\contentsline {subsubsection}{Best Fit}{15}{}%
+\contentsline {subsubsection}{Worst Fit}{16}{}%
+\contentsline {subsection}{\numberline {2.2}Subsecci\'{o}n}{17}{}%
+\contentsline {subsubsection}{Subsubsecci\'{o}n}{18}{}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{18}{}%

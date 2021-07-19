@@ -26,7 +26,6 @@ class FirstFit(val instance: ProblemInstance) extends Solver {
         solution += current
       }
     }
-    if(current.getLeftCapacity != instance.capacity) {solution += current}
     new Solution(solution.toArray)
   }
 

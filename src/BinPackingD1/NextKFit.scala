@@ -15,20 +15,22 @@ class NextKFit(val k: Int, val instance: ProblemInstance) extends Solver {
         } else {
           solution += current
           current = new Bin(instance.capacity)
+          current.add(instance.items(i))
+          solution += current
         }
       }
-      if (solution.nonEmpty && solution.length < k) {
+      else if (solution.nonEmpty && solution.length < k) {
         if (solution(solution.length-1).canAdd(instance.items(i))) {
           solution(solution.length-1).add(instance.items(i))
         } else {
-          solution += current
           current = new Bin(instance.capacity)
           current.add(instance.items(i))
+          solution += current
         }
       } else {
         var itemIsAdded: Boolean = false
         var j = k
-        while (!itemIsAdded && j < 1) {
+        while (!itemIsAdded && j >= 1) {
           if (solution(solution.length - j).canAdd(instance.items(i))) {
             solution(solution.length - j).add(instance.items(i))
             itemIsAdded = true
@@ -37,13 +39,12 @@ class NextKFit(val k: Int, val instance: ProblemInstance) extends Solver {
           }
         }
         if (!itemIsAdded) {
-          solution += current
           current = new Bin(instance.capacity)
           current.add(instance.items(i))
+          solution += current
         }
       }
     }
-    if(current.getLeftCapacity != instance.capacity) {solution += current}
     new Solution(solution.toArray)
   }
 

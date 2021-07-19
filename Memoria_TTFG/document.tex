@@ -414,15 +414,26 @@
 	
 	Cuando se resuelve un problema por m\'etodos heur\'isticos, como la optimalidad no est\'a garantizada, se debe medir la calidad de los resultados. Para ello existen diversos procedimientros, entre los cuales podr\'iamos destacar los siguientes:
 	
+	(\textbf{citar https://core.ac.uk/download/pdf/236383515.pdf})
+	
 	\begin{itemize}
 		\item \textbf{Comparaci\'on con la soluci\'on \'optima.} Aunque normalmente se recurre al algoritmo aproximado por no existir un m\'etodo exacto para obtener el \'otimo, o por ser \'este computacionalmente muy costoso, en ocasiones puede que dispongamos de un m\'etodo que proporcione el \'optimo para un conjunto limitado de ejemplos. Este conjunto de ejemplos puede servir para medir la calidad del m\'etodo heur\'istico. Normalmente se mide, para cada uno de los ejemplos, la desviaci\'on porcentual de la soluci\'on heur\'istica frente a la \'optima, calculando posteriormente el promedio de dichas desviaciones.
 		\item \textbf{Comparaci\'on con una cota.}  En ocasiones el \'optimo del problema no est\'a disponible ni siquiera para un conjunto limitado de ejemplos. Un m\'etodo alternativo de evaluaci\'on consiste en comparar el valor de la soluci\'on que proporciona el heur\'istico con una cota del problema (inferior si el problema es de minimizar y superior si es de maximizar). La bondad de esta medida depender\'a de la bondad de la cota, es decir, de c\'omo de cercana se encuentre del \'optimo del problema, por lo que de alguna manera, tendremos que tener informaci\'on de lo buena que es dicha cota. En caso contrario, la comparaci\'on propuesta no resulta de utilidad.
-		\item \textbf{Comparaci\'on con un m\'etodo exacto truncado.}
-		\item \textbf{Comparaci\'on con otros heur\'isticos.}
-		\item \textbf{An\'alisis del peor caso.}
+		\item \textbf{Comparaci\'on con un m\'etodo exacto truncado.} Para ello elegimos un m\'etodo exacto que resuelva el problema y establecemos un l\'imite de iteraciones o de tiempo m\'aximo conforme a una serie de criterios que nos garanticen que de esta forma obtenemos una buena soluci\'on. Una vez hecho esto, usamos esta soluci\'on para compararla con la que obtenemos seg\'un el heur\'istico. Evidentemente, en este caso suponemos que la resoluci\'on del problema mediante cualquier m\'etodo exacto es inabordable por el coste computacional que requiere.
+		\item \textbf{Comparaci\'on con otros heur\'isticos.} Es un m\'etodo usado usalmente en problemas NP-duros para los que se conocen buenos heur\'isticos.
+		\item \textbf{An\'alisis del peor caso.} Consiste en considerar los ejemplos que sean m\'as desfavorables para el algoritmo y acotar la m\'axima desviaci\'on respecto del \'optimo del problema. De esta forma, conseguimos acotar el resultado del algoritmo para cualquier ejemplo. Lo malo es que los resultados no suelen ser representativos del comportamiento medio del algoritmo.
 	\end{itemize}
 	
 	Si bien todos estos m\'etodos han contribuido a ampliar nuestro conocimiento para la resoluci\'on de problemas reales, los m\'etodos constructivos y los de b\'usqueda local constituyen la base de los procedimientos metaheur\'isticos.
+	\\
+	
+	Los metahur\'isticos son m\'etodos para dise\~{n}ar y/o mejorar los heur\'isticos en los que estos m\'etodos cl\'asicos no son efectivos a la hora de resolver un problema dif\'icil de optimizaci\'on combinatoria. Son algoritmos h\'ibridos que combinan conceptos de distintos campos como la gen\'etica, la biolog\'ia, la f\'isica, las matem\'aticas, la inteligencia artificial o la neurolog\'ia, por ejemplo. Algunos de los m\'as comunes son los siguientes:
+	
+	\begin{itemize}
+		\item \textbf{Metaheur\'isticos inspiradas en la f\'isica:} Como ya se ha mencionado con anterioridad, el recocido simulado  es un ejemplo de este tipo de algoritmos. Es una t\'ecnica de b\'usqueda inspirada en el proceso de calentamiento y posterior enfriamiento de un metal para obtener estados de baja energ\'ia en un s\'olido. 
+		\item \textbf{Metaheur\'isticos inspiradas en la evoluci\'on:} Son m\'etodos que van construyendo una soluci\'on en cada iteraci\'on. Consiste en generar, seleccionar, combinar y reemplazar un conjunto de soluciones en la b\'usqueda de la mejor soluci\'on. Un ejemplo de estos m\'etodos son los algoritmos gen\'eticos. 
+		\item \textbf{Metaheur\'isticos inspiradas en la biolog\'ia:} Un ejemplo relativamente reciente de este tipo de algoritmos es la optimizaci\'on basada en colonias de hormigas (ant colony optimization). Se inspira en el comportamiento estructurado que siguen las colonias de hormigas donde los individuos se comunican entre s\'i por medio de las feromonas; la repetici\'on de recorridos por los individuos establece el camino m\'as adecuado entre su nido y su fuente de alimentos. El m\'etodo consiste en simular la comunicaci\'on indirecta que utilizan las hormigas para establecer el camino m\'as corto, guardando la informaci\'on aprendida en una matriz de feromonas.
+	\end{itemize}
 	
 	
 	
@@ -491,7 +502,7 @@
 	
 	En lo que sige, propondremos una serie de algoritmos con los que aproximar las soluciones de distintas instancias del problema BP, a la par que analizaremos c\'omo de buenos son y a qu\'e coste. Para ello, el primer tipo de m\'etodos que analizaremos ser\'an los algoritmos voraces (\textit{greedy alhorithm}).
 	
-	\section{ALgoritmos voraces}
+	\section{Algoritmos voraces}
 	Por algoritmos voraces se entienden aquellos algoritmos que siguen un esquema de resoluci\'on llamado m\'etodo voraz. Dicho esquema forma parte de una familia de algoritmos m\'as amplia denominada \textit{algoritmos de b\'usqueda local}, de la que tambi\'en forman parte, por ejemplo, el m\'etodo del gradiente, los algoritmos gen\'eticos o los algoritmos de cristalizaci\'on simulada. Los algoritmos que siguen este m\'etodo son, en general, los que menos dificultades plantean a la hora de implementar y comprobar su funcionamiento, y suelen aplicarse en problemas de optimizaci\'on.
 	\\
 	
@@ -518,7 +529,7 @@
 				
 				\State{funci\'on greedy (C: set): set}
 				\State{//C es el conjunto de los candidatos}
-				\State{ //Construimos la soluci\'on en el conjunto S}
+				\State{//Construimos la soluci\'on en el conjunto S}
 				\State{S = $\emptyset$}\
 				\While{(C $\neq \emptyset$ \textbf{y no} solucion(S))}
 				\State{$x \longleftarrow seleccionar(C)$}
@@ -541,8 +552,192 @@
 	A continuaci\'on, pasamos a presentar los algoritmos voraces con los que ofreceremos distintas soluciones del problema del BP. Daremos una breve explicaci\'on del funcionamiento de los algoritmos, sus pseudoc\'odigos y analizaremos sus complejidades. 
 	
 	
-	\subsection{Subsecci\'{o}n}
-	Una secci\'{o}n dentro de una secci\'{o}n se denomina subsecci\'{o}n.
+	\subsection{Primeras aproximaciones}
+	\subsubsection{Next Fit}
+	Este algoritmo es el m\'as sencillo de implementar y con el que obtener una r\'apida soluci\'on del problema, aunque no muy buena. Funciona de la siguiente manera: comenzamos con una soluci\'on en la que no tenemos ning\'un cubo. A continuaci\'on, seleccionamos el primer objeto de la lista de objetos que queremos introducir en los cubos y lo introducimos en un nuevo cubo dado que es el primer elemento seleccionado. Para los siguientes objetos, el algoritmo comprueba si podemos introducir el elemento seleccionado en el \'ultimo cubo creado. Si se puede, lo introducimos. En otro caso, creamos un cubo nuevo y lo introducimos.
+	\\
+	
+	Vemos que, aunque es un algoritmo que nos permite obtener una soluci\'on de manera sencilla y r\'apida (puesto que no hay muchas comprobaciones que realizar), no resulta muy eficiente como veremos. As\'i, el pseudoc\'odigo del algoritmo ser\'ia el siguiente:
+	
+	\noindent\fbox{
+		\begin{minipage}{\textwidth}
+			\begin{algorithmic}
+				
+				\State{nextFit (capacity: Int, items: Array[Int]): Array[Bin]}
+				\State{//capacity es la capacidad de los cubos}
+				\State{//items es un array que almacena los elementos que introduciremos en los cubos}
+				\State{//El array solution almacenar\'a los cubos y current ser\'a el \'ultimo cubo creado}
+				\State{solution = $\emptyset$}\
+				\State{current = new Bin(capacity)}\
+				\For{(item $\leftarrow$ items)}
+				\If{(item cabe en current)}
+				\State{A\~{n}adimos el item a current}
+				\Else
+				\State{A\~{n}adimo current a soltion}
+				\State{current = new Bin(capacity)}
+				\State{A\~{n}adimos el item a current}
+				\EndIf
+				\EndFor
+				\State{A\~{n}adimos el \'ultimo cubo creado a solution}
+				\State{\textbf{return} solution}
+				
+			\end{algorithmic}
+		\end{minipage}
+	}
+	\\\\
+	
+	Observemos que, dada una lista de \textit{n} pesos, el algoritmo hace una \'unica comprobaci\'on por cada iteraci\'on. Por lo tanto, tenemos que la complejidad del algoritmo es \textit{O(n)}, con lo que la velocidad de resoluci\'on del problema se incrementa de forma lineal conforme lo hace el n\'umero de elementos que tenemos que introducir en los cubos. As\'i pues, como primera aproximaci\'on, ser\'ia un algoritmo \'util, r\'apido y f\'acil de resolver para instancias peque\~{n}as del problema en las que no estamos interesados en obtener el \'optimo.
+	\\
+	
+	\textbf{QUEDA POR ANALIZAR SU APPROXIMATION RATIO}
+	
+	\subsubsection{First Fit}
+	Podr\'iamos considerar a este algoritmo como un primer intento de mejorar el m\'etodo anterior ya que, aunque no reconsideremos las decisiones tomadas (es decir, si alguno de los items introducidos en los cubos existentes deber\'ia introducirse en otro cubo), que es la idea b\'asica de los algortimos voraces, s\'i que vamos llenando "mejor" los cubos que se van creando en las iteraciones del algoritmo. Adem\'as, posteriormente este ser\'a uno de los algortimos que usaremos como base para implmententar mejores t\'ecnicas de resoluci\'on del problema del BP.
+	\\
+	
+	El algoritmo es el siguiente: empezamos igual que en el caso anterior; partimos de una soluci\'on que no tiene ningu\'un cubo. Seleccionamos el primer elemento de nuestra lista de objetos a introducir en los cubos y creamos un primer cubo donde a\~{n}adimos el elemento. Para los siguientes elementos, recorremos nuestra soluci\'on de cubos y a\~{n}adimos el elemento en el primer cubo que encontremos donde quepa el objeto. Si no hay ning\'un cubo en el que quepa el elemento seleccionado, creamos un nuevo cubo y lo introducimos.
+	\\
+	
+	De esta forma, el pseudoc\'odigo del algoritmo ser\'ia el siguiente:
+	\\
+	
+	\textbf{NO S\'E C\'OMO HACER QUE EL PSEUDOC\'ODIGO SE INSERTE CORRECTAMENTE EN LAS P\'AGINAS}
+	
+	\noindent\fbox{
+		\begin{minipage}{\textwidth}
+			\begin{algorithmic}
+				
+				\State{firstFit (capacity: Int, items: Array[Int]): Array[Bin]}
+				\State{//capacity es la capacidad de los cubos}
+				\State{//items es un array que almacena los elementos que introduciremos en los cubos}
+				\State{//El array solution almacenar\'a los cubos y current ser\'a el \'ultimo cubo creado}
+				\State{//Inicializamos el algoritmo con el array de soluciones teniendo un cubo vac\'io}
+				\State{current = new Bin(capacity)}\
+				\State{A\~{n}adimos el cubo vac\'io a solution}\
+				\For{(item $\leftarrow$ items)}
+				\State{i = 0}
+				\While{(item \textbf{no} est\'e a\~{n}adido \textbf{y} i $\leq$ tama\~{n}o de solution)}
+				\If{(El item cabe en el cubo i-\'esimo)}
+				\State{A\~{n}adimos el item en el cubo i-\'esimo}
+				\Else
+				\State{i = i + 1}
+				\EndIf
+				\EndWhile
+				\If{(El item no se ha a\~{n}adido a ning\'un cubo)}
+				\State{current = new Bin(capacity)}
+				\State{A\~{n}adimos el item a current}
+				\State{A\~{n}adimos el cubo current a solution}
+				\EndIf
+				\EndFor
+				\State{\textbf{return} solution}
+				
+			\end{algorithmic}
+		\end{minipage}
+	}
+	\\\\
+	
+	Como mencionamos anteriormente, este algoritmo conseguimos mejorar la soluci\'on obtenida seg\'un el m\'etodo Next Fit, pero esto implica que la complejidad algor\'itmica se incrementa. Dado una lista de \textit{n} elementos, el bucle for itera sobre cada uno de ellos, por lo que la complejidad introducida a priori por el bucle es \textit{O(n)}. Pero, a su vez, en cada iteraci\'on el bucle while recorre en el peor de los casos toda la lista de cubos, con lo que su complejidad es tambi\'en \textit{O(n)}. Por lo tanto, la complejidad del algoritmo resulta ser \textit{O(n)}.
+	\\
+	
+	\textbf{QUEDA POR ANALIZAR SU APPROXIMATION RATIO}
+	
+	\subsubsection{Best Fit}
+	Este es el primero de los algoritmos que intenta ofrecernos una mejora "considerable" a la hora de llenar los cubos ya que no solo intenta ir llenando todos los cubos en cada iteraci\'on, sino que los llena de la mejor forma posible, entendiendo esa forma mejor como aquella en la que el elemento seleccionado llena mejor en el cubo. Al igual que el first fit y los m\'etodos posteriores, las mejoras que conseguimos en busca de la soluci\'on \'optima o una aproximada, aparecen a costa de incrementar la complejidad del algoritmo.
+	\\
+	
+	De esta forma, el algoritmo best fit es: seleccionamos el primer objeto de nuestra lista, creamos un nuevo cubo con la capacidad dada en el problema e introducimos el objeto. Para los siguientes elementos buscamos el cubo cuya capacidad restante sea menor y que, adem\'as, quepa el elemento. Si encontramos un cubo que cumpla esta condici\'on introducimos el objeto. En otro caso, creamos un cubo nuevo y lo introducimos.
+	\\
+	
+	Obs\'ervese que aquel cubo donde se verifiquen las condiciones dadas para introducir un nuevo elemento no tiene por qu\'e ser \'unico. Por lo tanto, a la hora de implementar el algoritmo iremos insertando los cubos en nuestra soluci\'on de manera ordenada, con lo que cuando vayamos a seleccionar en qu\'e cubo introducimos un nuevo elemento cuando haya m\'as de una elecci\'on posible, lo haremos eligiendo el primer cubo que encontremos. As\'i, el pseudoc\'odigo del algoritmo queda como sigue: 
+	\\
+	
+	\noindent\fbox{
+		\begin{minipage}{\textwidth}
+			\begin{algorithmic}
+				
+				\State{bestFit (capacity: Int, items: Array[Int]): Array[Bin]}
+				\State{//capacity es la capacidad de los cubos}
+				\State{//items es un array que almacena los elementos que introduciremos en los cubos}
+				\State{//El array solution almacenar\'a los cubos y current ser\'a el \'ultimo cubo creado}
+				\State{//Inicializamos el algoritmo con el array de soluciones sin ning\'un cubo}
+				\State{//targetBin es la posici\'on en solution del cubo con la menor capacidad restante que es mayor o igual que el peso del item seleccionado}
+				\State{//smallerThanTarget es un m\'etodo con el que, dado un array y un elemento, encuentra la posici\'on del menor elemento del array que es mayor o igual que el elemento dado}
+				\State{solution = $\emptyset$}\
+				\For{(item $\leftarrow$ items)}
+				\State{targetBin = 1 + smallerThanTarget(item, solution)}
+				\If{(targetBin $>$ 0 \textbf{y} targetBin $\leq$ longitud de solution)}
+				\State{A\~{n}adimo el item en el cubo que se encuentra en la posicion targetBin}
+				\State{Reordenamos el array solution de menor a mayor capacidad restante}
+				\Else
+				\State{current = new Bin(capacity)}
+				\State{A\~{n}adimo el item en el cubo current}
+				\State{A\~{n}adimo el cubo current en solution}
+				\State{Reordenamos el array solution de menor a mayor capacidad restante}
+				\EndIf
+				\EndFor
+				\State{\textbf{return} solution}
+				
+			\end{algorithmic}
+		\end{minipage}
+	}
+	\\\\
+	
+	\textbf{QUEDA POR ANALIZAR LA COMPLEJIDAD DEL ALGORITMO Y SU APPROXIMATION RATIO}
+	\\
+	
+	\subsubsection{Worst Fit}
+	El m\'etodo Worst Fit es una variante del algoritmo Best Fit. Mientras que en el m\'etodo Best Fit vamos introduciendo los pesos en aquellos cubos que quepan y que tengan la menor capacidad restante posible, en el Worst Fit los introducimos en los cubos que quepan y que, adem\'as, tengan la mayor capacidad restante de entre todos ellos. Tambi\'en, al igual que en el m\'etodo Best Fit, a la hora de implementar el algoritmo tenemos la soluci\'on con los cubos ordenados de menor a mayor capacidad restante. As\'i, como tenemos que elegir aquel cubo con la mayor capacidad restante, lo \'unico que tendremos que comprobar en cada iteraci\'on del algoritmo es que el peso seleccionado quepa en el \'ultimo cubo de la soluci\'on.
+	\\
+	
+	As\'i, el algoritmo quedar\'ia: inicializamos el algoritmo igual que en Best Fit, partiendo de una soluci\'on que tiene un cubo en el cual introducimos el primer peso. A continuaci\'on, para cada elemento buscamos aquel cubo con la mayor capacidad restante y en el que quepa el elemento. Si lo encontramos, introducimos el peso. En otro caso creamos un cubo nuevo, introducimos el elemento y a\~{n}adimos el cubo a la soluci\'on. Por lo tanto, el pseudoc\'odigo del algoritmo quedar\'ia como:
+	\\
+	
+	\noindent\fbox{
+		\begin{minipage}{\textwidth}
+			\begin{algorithmic}
+				
+				\State{worstFit (capacity: Int, items: Array[Int]): Array[Bin]}
+				\State{//capacity es la capacidad de los cubos}
+				\State{//items es un array que almacena los elementos que introduciremos en los cubos}
+				\State{//El array solution almacenar\'a los cubos y current ser\'a el \'ultimo cubo creado}    
+				\State{//targetBin es la posici\'on en solution del cubo con la menor capacidad restante que es mayor o igual que el peso del item seleccionado}
+				\State{//smallerThanTarget es un m\'etodo con el que, dado un array y un elemento, encuentra la posici\'on del menor elemento del array que es mayor o igual que el elemento dado}
+				\State{//Inicializamos el algoritmo con el array de soluciones sin ning\'un cubo}
+				\State{solution = $\emptyset$}\
+				\For{(item $\leftarrow$ items)}
+				\State{targetBin = smallerThanTarget(item, solution)}
+				\If{(targetBin es menor que la longitud de solution)}
+				\State{//Esto equivale a comprobar que item cabe en el \'ultimo cubo}
+				\State{A\~{n}adimo el item en el cubo que se encuentra en la \'ultima posici\'on}
+				\State{Reordenamos el array solution de menor a mayor capacidad restante}
+				\Else
+				\State{current = new Bin(capacity)}
+				\State{A\~{n}adimo el item en el cubo current}
+				\State{A\~{n}adimo el cubo current en solution}
+				\State{Reordenamos el array solution de menor a mayor capacidad restante}
+				\EndIf
+				\EndFor
+				\State{\textbf{return} solution}
+				
+			\end{algorithmic}
+		\end{minipage}
+	}
+	\\\\
+	
+	\textbf{QUEDA POR ANALIZAR LA COMPLEJIDAD DEL ALGORITMO Y SU APPROXIMATION RATIO}
+	\\
+	
+	De aqu\'i en adelante los m\'etodos que emplearemos para buscar mejores soluciones para el problema del BP utilizar\'an de base las t\'ecnicas anteriores. No obstante, antes de llegar a ellos podemos mencionar una serie de variaciones de los algoritmos anteriores que, en funci\'on de la instancia del problema que estemos considerando, pueden ofrecer mejores soluciones que los algoritmos que hemos visto hasta ahora.
+	\\
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	\subsection{Subsecci\'{o}n}
 	Una secci\'{o}n dentro de una secci\'{o}n se denomina subsecci\'{o}n.
 	\subsubsection{Subsubsecci\'{o}n}

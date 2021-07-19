@@ -29,7 +29,7 @@ class AlmostWorstFit(val instance: ProblemInstance) extends Solver {
         val current = new Bin(instance.capacity)
         current.add(item)
         solution += current
-        reorderBufferArrays(targetBin + 1, solution)
+        reorderBufferArrays(solution.length - 1, solution)
       }
     }
     new Solution(solution.toArray)

@@ -15,8 +15,8 @@ class BestFit(val instance: ProblemInstance) extends Solver {
         reorderBufferArrays(targetBin, solution)
       } else {
         val current = new Bin(instance.capacity)
-        solution += current
         current.add(item)
+        solution += current
         reorderBufferArrays(solution.length - 1, solution)
       }
     }
