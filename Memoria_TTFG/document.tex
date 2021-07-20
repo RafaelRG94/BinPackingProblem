@@ -601,8 +601,6 @@
 	De esta forma, el pseudoc\'odigo del algoritmo ser\'ia el siguiente:
 	\\
 	
-	\textbf{NO S\'E C\'OMO HACER QUE EL PSEUDOC\'ODIGO SE INSERTE CORRECTAMENTE EN LAS P\'AGINAS}
-	
 	\noindent\fbox{
 		\begin{minipage}{\textwidth}
 			\begin{algorithmic}
@@ -661,11 +659,11 @@
 				\State{//El array solution almacenar\'a los cubos y current ser\'a el \'ultimo cubo creado}
 				\State{//Inicializamos el algoritmo con el array de soluciones sin ning\'un cubo}
 				\State{//targetBin es la posici\'on en solution del cubo con la menor capacidad restante que es mayor o igual que el peso del item seleccionado}
-				\State{//smallerThanTarget es un m\'etodo con el que, dado un array y un elemento, encuentra la posici\'on del menor elemento del array que es mayor o igual que el elemento dado}
+				\State{//smallerThanTarget es un m\'etodo de b\'usqueda binaria con el que, dado un array y un elemento, encuentra la posici\'on del menor elemento del array que es mayor o igual que el elemento dado}
 				\State{solution = $\emptyset$}\
 				\For{(item $\leftarrow$ items)}
 				\State{targetBin = 1 + smallerThanTarget(item, solution)}
-				\If{(targetBin $>$ 0 \textbf{y} targetBin $\leq$ longitud de solution)}
+				\If{(targetBin $>$ 0 \textbf{y} targetBin $\leq$ longitud de solution - 1)}
 				\State{A\~{n}adimo el item en el cubo que se encuentra en la posicion targetBin}
 				\State{Reordenamos el array solution de menor a mayor capacidad restante}
 				\Else
@@ -682,8 +680,10 @@
 	}
 	\\\\
 	
-	\textbf{QUEDA POR ANALIZAR LA COMPLEJIDAD DEL ALGORITMO Y SU APPROXIMATION RATIO}
+	Como ya veremos en el cap\'itulo dedicado a explicar la implementaci\'on de los m\'etodos aqu\'i descritos, lo primero que debemos tener en cuenta para analizar la complejidad de este algoritmo es que, en cada iteraci\'on, para localizar el cubo donde el objeto seleccionado quede m\'as ajustado realizamos una b\'usqueda binaria con el m\'etodo \textit{smallerThanTarget}, que es \textit{O(log n)}. Por otro lado, tras insertar el elemento, la capacidad del cubo disminuir\'a, con lo que tendremos que desplazarlo a la izquierda (ya que en nuestra implementaci\'on ordenaremos los cubos de menor a mayor capacidad restante) para seguir manteniendo los cubos en orden. En el peor de los casos, este desplazamiento ser\'a \textit{O(n)} si, por ejemplo, tenemos que desplazar un cubo que est\'a en el extremo derecho al extremo izquierdo.
 	\\
+	
+	Por lo tanto, cada iteraci\'on en la que insertamos un nuevo elemento ser\'a \textit{O(log n)} + \textit{O(n)} = \textit{O(n)}. De esta forma, como tenemos que insertar \textit{n} elementos, el coste total del algoritmo ser\'a $n \cdot O(n) = O(n^{2})$.
 	
 	\subsubsection{Worst Fit}
 	El m\'etodo Worst Fit es una variante del algoritmo Best Fit. Mientras que en el m\'etodo Best Fit vamos introduciendo los pesos en aquellos cubos que quepan y que tengan la menor capacidad restante posible, en el Worst Fit los introducimos en los cubos que quepan y que, adem\'as, tengan la mayor capacidad restante de entre todos ellos. Tambi\'en, al igual que en el m\'etodo Best Fit, a la hora de implementar el algoritmo tenemos la soluci\'on con los cubos ordenados de menor a mayor capacidad restante. As\'i, como tenemos que elegir aquel cubo con la mayor capacidad restante, lo \'unico que tendremos que comprobar en cada iteraci\'on del algoritmo es que el peso seleccionado quepa en el \'ultimo cubo de la soluci\'on.
@@ -724,7 +724,7 @@
 	}
 	\\\\
 	
-	\textbf{QUEDA POR ANALIZAR LA COMPLEJIDAD DEL ALGORITMO Y SU APPROXIMATION RATIO}
+	\textbf{QUEDA POR ANALIZAR LA COMPLEJIDAD DEL ALGORITMO}
 	\\
 	
 	De aqu\'i en adelante los m\'etodos que emplearemos para buscar mejores soluciones para el problema del BP utilizar\'an de base las t\'ecnicas anteriores. No obstante, antes de llegar a ellos podemos mencionar una serie de variaciones de los algoritmos anteriores que, en funci\'on de la instancia del problema que estemos considerando, pueden ofrecer mejores soluciones que los algoritmos que hemos visto hasta ahora.

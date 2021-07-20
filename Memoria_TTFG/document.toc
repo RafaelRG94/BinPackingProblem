@@ -13,7 +13,7 @@
 \contentsline {subsubsection}{Next Fit}{13}{}%
 \contentsline {subsubsection}{First Fit}{14}{}%
 \contentsline {subsubsection}{Best Fit}{15}{}%
-\contentsline {subsubsection}{Worst Fit}{16}{}%
-\contentsline {subsection}{\numberline {2.2}Subsecci\'{o}n}{17}{}%
+\contentsline {subsubsection}{Worst Fit}{17}{}%
+\contentsline {subsection}{\numberline {2.2}Subsecci\'{o}n}{18}{}%
 \contentsline {subsubsection}{Subsubsecci\'{o}n}{18}{}%
 \contentsline {chapter}{Bibliograf\'{\i }a}{18}{}%
