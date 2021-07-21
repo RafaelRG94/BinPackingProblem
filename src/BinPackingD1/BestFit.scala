@@ -10,7 +10,7 @@ class BestFit(val instance: ProblemInstance) extends Solver {
     val solution = new ArrayBuffer[Bin]()
     for (item <- instance.items) {
       val targetBin = 1 + smallerThanTarget(item, solution)
-      if (targetBin > 0 && targetBin <= solution.length - 1) {
+      if (targetBin >= 0 && targetBin <= solution.length - 1) {
         solution(targetBin).add(item)
         reorderBufferArrays(targetBin, solution)
       } else {

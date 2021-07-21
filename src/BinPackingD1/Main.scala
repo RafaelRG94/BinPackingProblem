@@ -40,15 +40,17 @@ object Main {
       println(s"Solution is: $sol")
       println("\n")
     }
-    /*
+
     val tree = new FFAVLTree(instance)
     tree.addAll()
     println(tree)
+    println(tree.inOrder)
     println(tree.inOrder.length)
 
     val treeB = new BFAVLTree(instance)
     treeB.addAll()
     println(treeB)
+    println(treeB.inOrder)
     println(treeB.inOrder.length)
 
     val treeBFD = new BFDAVLTree(instance)
@@ -59,12 +61,13 @@ object Main {
     val treeWF = new WFAVLTree(instance)
     treeWF.addAll()
     println(treeWF)
+    println(treeWF.inOrder)
     println(treeWF.inOrder.length)
 
     val treeWFD = new WFDAVLTree(instance)
     treeWFD.addAll()
     println(treeWFD)
     println(treeWFD.inOrder.length)
-    */
+
   }
 }

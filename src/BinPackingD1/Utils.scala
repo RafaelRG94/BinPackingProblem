@@ -9,12 +9,6 @@ object Utils {
     var end = elements.length - 1
     var ans = -1
 
-    // Minimum size of the array should be 1
-    if (end == 0) return -1
-    // If target lies beyond the max element, than the index of strictly smaller
-    // Value than target should be (end - 1)
-    if (target > elements(end).getLeftCapacity) return end
-
     while (start <= end) {
       val mid = (start + end) / 2
       // Move to the left side if the target is smaller

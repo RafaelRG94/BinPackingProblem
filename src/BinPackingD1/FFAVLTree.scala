@@ -4,7 +4,7 @@ import scala.collection.mutable.ArrayBuffer
 
 object FFAVLTree {
 
-  def apply(instance: ProblemInstance)(): FFAVLTree =
+  def apply(instance: ProblemInstance): FFAVLTree =
     new FFAVLTree(instance)
 
   private class Node(var h: Int, var maxRemainingCapacity: Int, var bin: Bin, var left: Node, var right: Node) {

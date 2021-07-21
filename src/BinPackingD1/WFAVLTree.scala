@@ -4,7 +4,7 @@ import scala.collection.mutable.ArrayBuffer
 
 object WFAVLTree {
 
-  def apply(instance: ProblemInstance)(): WFAVLTree =
+  def apply(instance: ProblemInstance): WFAVLTree =
     new WFAVLTree(instance)
 
   private class Node(var h: Int, var bin: Bin, var left: Node, var right: Node) {
@@ -150,7 +150,7 @@ class WFAVLTree(instance: ProblemInstance) extends Solver {
     root = insertRec(root) // inserta empezando por la raíz
   }
 
-  // Elimina y devuelve el menor elemento que es mayor o igual que elem
+
   def deleteLargestEq(elem: Int): Option[Bin] = {
     var deleted: Option[Bin] = None // Acabará almacenando el elemento borrado
 
