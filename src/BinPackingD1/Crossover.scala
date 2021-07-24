@@ -1,9 +1,9 @@
 package BinPackingD1
 
+import scala.Array.copyOf
 import scala.util.Random
 
 object Crossover {
-/*  //en child coloco el hijo
   def pmx(p1: Array[Int], p2: Array[Int], rnd: Random, child: Array[Int]): Unit = {
     val s: Int = p1.size // Assumed both parents have the same size.
 
@@ -11,18 +11,20 @@ object Crossover {
     val left = rnd.nextInt(s) // s excluded.
     val width = rnd.nextInt(s-left) // width+1 gives the number of elements in the crossover swath.
     val right = left + width
-    //rellena el hijo con el cruce
+    //child is filled in with the cross of the two parents
     def pmxOffspring(sender: Array[Int], receiver: Array[Int]): Unit = { // Sender is the parent who donates the swath, whereas receiver is the one adapted.
-      child.setTour(receiver) //rellena el hijo con el contenido de receiver
+      val child = copyOf(receiver, s)
+      //val child = receiver.clone()
       for (i <- left to right) if (child(i) != sender(i)) {
-        val j = child.find(sender(i)) //en que posicion de child se encuentra el objeto sender(i)
+        //val j = child.find(sender(i)) //en que posicion de child se encuentra el objeto sender(i)
+        val j = child.indexWhere(_ == sender(i))
         val temp = child(i)
         child(i) = child(j)
         child(j) = temp
       }
     }
     pmxOffspring(p1, p2)
-  }*/
+  }
   //implemento los dos metodos de pmxOffspring en Utils
 
 

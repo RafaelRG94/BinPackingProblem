@@ -9,36 +9,36 @@ class Population {
   //Añadir método para quitar al peor individuo
   //Crear un método que haga uso de los dos métodos anteriores para reemplazar el peor individuo por uno nuevo
   abstract class Population(rnd: Random, val popSize: Int, instance: ProblemInstance) {
-    val individuals: Array[(Array[Int], Int)] = init(rnd: Random, instance: ProblemInstance)
+    val individuals: Array[Individual] = init(rnd: Random, instance: ProblemInstance)
 
-    def init(rnd: Random, instance: ProblemInstance): Array[(Array[Int], Int)]
+    def init(rnd: Random, instance: ProblemInstance): Array[Individual]
   }
 
   class FirstFitPopulation(rnd: Random, popSize: Int, instance: ProblemInstance) extends Population(rnd, popSize, instance){
-    def init(rnd: Random, instance: ProblemInstance): Array[(Array[Int], Int)] = Populations.fFPopulation(rnd, popSize, instance)
+    def init(rnd: Random, instance: ProblemInstance): Array[Individual] = Populations.fFPopulation(rnd, popSize, instance)
   }
 
   class BestFitPopulation(rnd: Random, popSize: Int, instance: ProblemInstance) extends Population(rnd, popSize, instance){
-    def init(rnd: Random, instance: ProblemInstance): Array[(Array[Int], Int)] = Populations.bFPopulation(rnd, popSize, instance)
+    def init(rnd: Random, instance: ProblemInstance): Array[Individual] = Populations.bFPopulation(rnd, popSize, instance)
   }
 
   class WorstFitPopulation(rnd: Random, popSize: Int, instance: ProblemInstance) extends Population(rnd, popSize, instance){
-    def init(rnd: Random, instance: ProblemInstance): Array[(Array[Int], Int)] = Populations.wFPopulation(rnd, popSize, instance)
+    def init(rnd: Random, instance: ProblemInstance): Array[Individual] = Populations.wFPopulation(rnd, popSize, instance)
   }
 
   class AlmostWorstFitPopulation(rnd: Random, popSize: Int, instance: ProblemInstance) extends Population(rnd, popSize, instance){
-    def init(rnd: Random, instance: ProblemInstance): Array[(Array[Int], Int)] = Populations.aWFPopulation(rnd, popSize, instance)
+    def init(rnd: Random, instance: ProblemInstance): Array[Individual] = Populations.aWFPopulation(rnd, popSize, instance)
   }
 
   class FirstFitAVLTreePopulation(rnd: Random, popSize: Int, instance: ProblemInstance) extends Population(rnd, popSize, instance){
-    def init(rnd: Random, instance: ProblemInstance): Array[(Array[Int], Int)] = Populations.fFAVLTreePopulation(rnd, popSize, instance)
+    def init(rnd: Random, instance: ProblemInstance): Array[Individual] = Populations.fFAVLTreePopulation(rnd, popSize, instance)
   }
 
   class BestFitAVLTreePopulation(rnd: Random, popSize: Int, instance: ProblemInstance) extends Population(rnd, popSize, instance){
-    def init(rnd: Random, instance: ProblemInstance): Array[(Array[Int], Int)] = Populations.bFAVLTreePopulation(rnd, popSize, instance)
+    def init(rnd: Random, instance: ProblemInstance): Array[Individual] = Populations.bFAVLTreePopulation(rnd, popSize, instance)
   }
 
   class WorstFitAVLTreePopulation(rnd: Random, popSize: Int, instance: ProblemInstance) extends Population(rnd, popSize, instance){
-    def init(rnd: Random, instance: ProblemInstance): Array[(Array[Int], Int)] = Populations.wFAVLTreePopulation(rnd, popSize, instance)
+    def init(rnd: Random, instance: ProblemInstance): Array[Individual] = Populations.wFAVLTreePopulation(rnd, popSize, instance)
   }
 }
