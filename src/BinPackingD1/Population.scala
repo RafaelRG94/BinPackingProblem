@@ -40,7 +40,7 @@ class Population {
       }
     }
 
-    def binaryInsertion(child: Individual): Int = { // It returns the position of the Individual.
+    def binaryInsertion(child: Individual): Int = { // It returns the position of the Individual and inserts it in the Population
       var left: Int = 0
       var right: Int = popSize-1
 
@@ -53,7 +53,7 @@ class Population {
       individuals(left) = child
       left
     }
-
+    /*
     def replacement(child: Individual): Unit = {
       /*def wellSorted(): Boolean = {
         var i: Int = 0
@@ -66,15 +66,15 @@ class Population {
       } // Function to check if the population is well sorted.*/
 
       val i = binaryInsertion(child)
-      /*
+
       counter += 1
       print("Generation: %d, Time: %8f.".format(counter, timer.elapsedTime()))
       //print(popul(0).fitness)
       //println("; " + i)
       //println(wellSorted())
       //for (j <- 0 to popSize) println(popul(j))
-      if (i == 0) println(" Better solution just found: %s".format(popul(0).toString)) else println()*/
-    }
+      if (i == 0) println(" Better solution just found: %s".format(popul(0).toString)) else println()
+    }*/
 
   }
 

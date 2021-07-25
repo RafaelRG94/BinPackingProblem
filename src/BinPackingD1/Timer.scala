@@ -20,7 +20,7 @@ case class Timer() {
   private var startTime = getCpuTime // System.currentTimeMillis()
 
   // resets start of timer to current time
-  def reset(): Unit = {
+  def reset: Unit = {
     startTime = getCpuTime // System.currentTimeMillis()
   }
 
