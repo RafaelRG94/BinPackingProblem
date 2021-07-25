@@ -5,7 +5,7 @@ import scala.util.Random
 
 object Crossover {
   def pmx(p1: Array[Int], p2: Array[Int], rnd: Random, child: Array[Int]): Unit = {
-    val s: Int = p1.size // Assumed both parents have the same size.
+    val s: Int = p1.length // Assumed both parents have the same size.
 
     // Left and right will determine the crossover extremes.
     val left = rnd.nextInt(s) // s excluded.
@@ -16,7 +16,7 @@ object Crossover {
       val child = copyOf(receiver, s)
       //val child = receiver.clone()
       for (i <- left to right) if (child(i) != sender(i)) {
-        //val j = child.find(sender(i)) //en que posicion de child se encuentra el objeto sender(i)
+        //val j = child.find(sender(i)) //en que posición de child se encuentra el objeto sender(i)
         val j = child.indexWhere(_ == sender(i))
         val temp = child(i)
         child(i) = child(j)
@@ -25,14 +25,13 @@ object Crossover {
     }
     pmxOffspring(p1, p2)
   }
-  //implemento los dos metodos de pmxOffspring en Utils
 
 
   def inversionCrossover(p1: Array[Int], p2: Array[Int], rnd: Random, child: Array[Int]): Unit = { // Method proposed by Göktürk Üçoluk.
 
     def fromPermToInv(perm: Array[Int]): Array[Int] = {
-      val inv: Array[Int] = new Array[Int](perm.size)
-      for (i <- 0 until perm.size) {
+      val inv: Array[Int] = new Array[Int](perm.length)
+      for (i <- perm.indices) {
         inv(i) = 0
         for (m <- 0 until i) { // This looks at the items on the left of the ith item.
           if (perm(m) > i) inv(i) += 1
@@ -57,7 +56,7 @@ object Crossover {
     }
 
     val (inv1, inv2) = (fromPermToInv(p1), fromPermToInv(p2))
-    val s: Int = p1.size // Assumed both parents have the same size.
+    val s: Int = p1.length // Assumed both parents have the same size.
 
     val crossoverPoint: Int = rnd.nextInt(s)
     for (i <- 0 until crossoverPoint) inv1(i) = inv2(i)

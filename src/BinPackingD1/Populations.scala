@@ -3,7 +3,7 @@ package BinPackingD1
 import scala.util.Random
 
 object Populations {
-  //Crear una clase individuo para que estos métodos me devuelvan un array de individuos
+
   def initPopulation(rnd: Random, popSize: Int, instance: ProblemInstance, fSolver: ProblemInstance => Solver): Array[Individual] = {
     val populations = new Array[Individual](popSize)
     for(i <- 0 until popSize){

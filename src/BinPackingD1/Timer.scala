@@ -14,20 +14,20 @@ case class Timer() {
   // Only valid for single threaded applications
   // see: http://nadeausoftware.com/articles/2008/03/java_tip_how_get_cpu_and_user_time_benchmarking#TimingasinglethreadedtaskusingCPUsystemandusertime
 
-  private def getCpuTime(): Long =
+  private def getCpuTime: Long =
     bean.getCurrentThreadCpuTime
 
-  private var startTime = getCpuTime() // System.currentTimeMillis()
+  private var startTime = getCpuTime // System.currentTimeMillis()
 
   // resets start of timer to current time
   def reset(): Unit = {
-    startTime = getCpuTime() // System.currentTimeMillis()
+    startTime = getCpuTime // System.currentTimeMillis()
   }
 
   // returns elapsed time (in seconds) since last reset
-  def elapsedTime(): Seconds = {
-    val t = getCpuTime() // System.currentTimeMillis()
-    val segs = (t - startTime).toDouble / nanosecond
-    segs
+  def elapsedTime: Seconds = {
+    val t = getCpuTime // System.currentTimeMillis()
+    val secs = (t - startTime).toDouble / nanosecond
+    secs
   }
 }
