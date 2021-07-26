@@ -2,21 +2,21 @@ package BinPackingD1
 
 import scala.util.Random
 
-abstract class EvolutionaryAlgorithm(val popSize: Int, instance: ProblemInstance , val probCross: Double, val seed: Int, val maxTime: Double) extends Solver {
+abstract class EvolutionaryAlgorithm(val popLength: Int, instance: ProblemInstance , val probCross: Double, val seed: Int, val maxTime: Double) {
   def name: String
 
   val rnd = new Random(seed)
-  val probMut: Double = 1/popSize
+  val probMut: Double = 1/popLength
+  val popSize: Int = popLength + 1
 
-  val population: Array[Individual] = Populations.fFPopulation(rnd, popSize, instance)
-  val shuffled: Array[Int] = Array.range(0,popSize)
+  val population = new Population
+  val algorithmPopulation = new population.FirstFitPopulation(rnd, popSize, instance) //guardo child en la ultima posicion del array
+
+  // val shuffled: Array[Int] = Array.range(0,popSize)
   val timer: Timer = Timer()
-  // any time-consuming calculation
-  //val elapsed: timer.Seconds = timer.elapsedTime
-  //println(s"Han pasado $elapsed segundos")
-
+  /*
   var tempToShuffle: Int = 0
-  var tempToReplace: Individual = population(0)
+  var tempToReplace: Individual = algorithmPopulation.individuals(0)
 
   def shuffle(xs: Array[Int]): Unit = {
     for (i <- 0 until 4) {
@@ -24,23 +24,26 @@ abstract class EvolutionaryAlgorithm(val popSize: Int, instance: ProblemInstance
       tempToShuffle = xs(i); xs(i) = xs(j); xs(j) = tempToShuffle
     }
   }
-
-  def crossover(parent1: Individual, parent2: Individual, rnd: Random,  child: Individual): Unit
+  */
+  def crossover(parent1: Individual, parent2: Individual, rnd: Random, child: Individual): Unit
   def mut(): Unit
-  /*
-  def solve(): Unit = {
+
+  def evolve(): Unit = {
     timer.reset
     while(timer.elapsedTime < maxTime) {
       if (rnd.nextDouble() < probCross) {
-        shuffle(shuffled)
-        crossover(population.binaryTournament, population.binaryTournament, rnd,  population(popSize))
+        // shuffle(shuffled)
+        crossover(algorithmPopulation.binaryTournament, algorithmPopulation.binaryTournament, rnd,  algorithmPopulation.individuals(popLength)) // Child is stored in popSize-1 = popLength
       }
-      else population(popSize) = population(rnd.nextInt(popSize)) // The child is chosen randomly.
+      else algorithmPopulation.individuals(popLength) = algorithmPopulation.individuals(rnd.nextInt(popLength)) // The child is chosen randomly.
       if (rnd.nextDouble() < probMut) mut()
-      population(popSize).bins = fitness(popul(popSize).chromosome)
+      val currentInstance = new ProblemInstance(instance.capacity, algorithmPopulation.individuals(popLength).perm) // Child is stored in popSize-1 = popLength
+      val firstFit = new FirstFit(currentInstance)
+      algorithmPopulation.individuals(popLength).bins = firstFit.solve().length // Finds the solution for child
+      algorithmPopulation.binaryInsertion(algorithmPopulation.individuals(popSize)) // Inserts child in the population
     }
-    println("FINAL SOLUTION: " + population(0).toString)
+    println("FINAL SOLUTION: " + algorithmPopulation.individuals(0).toString)
     println("Algorithm time: " + maxTime)
-  }*/
+  }
 
 }

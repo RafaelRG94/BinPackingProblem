@@ -3,10 +3,7 @@ package BinPackingD1
 import scala.util.Random
 
 class Population {
-  //Add here selection method; Binary Tournament done
-  //Add here add new individual method
-  //Add here remove new individual method
-  //Crear un método que haga uso de los dos métodos anteriores para reemplazar el peor individuo por uno nuevo
+
   abstract class Population(rnd: Random, val popSize: Int, instance: ProblemInstance) {
     val individuals: Array[Individual] = init(rnd: Random, instance: ProblemInstance)
 
@@ -24,7 +21,7 @@ class Population {
       else individuals(p2)
     }
 
-    def binarySorting(): Unit = { //Quiero que Array[Individual] sea de tipo Population
+    def binarySorting(): Unit = {
       for (k <- 1 until individuals.length-1) {
         val aux: Individual = individuals(k)
         var left: Int = 0
@@ -40,41 +37,18 @@ class Population {
       }
     }
 
-    def binaryInsertion(child: Individual): Int = { // It returns the position of the Individual and inserts it in the Population
+    def binaryInsertion(child: Individual): Unit = { // It inserts child in the Population
       var left: Int = 0
-      var right: Int = popSize-1
+      var right: Int = popSize-2 // Last position is reserved for storing child; otherwise popSize-1
 
       while (left <= right) {
         val middle = (left + right) / 2
         if (child.bins <= individuals(middle).bins) right = middle - 1
         else left = middle + 1
       }
-      for(i <- popSize-1 to left by -1) individuals(i+1) = individuals(i)
+      for(i <- popSize-2 to left by -1) individuals(i+1) = individuals(i) //As in the second statement of the function
       individuals(left) = child
-      left
     }
-    /*
-    def replacement(child: Individual): Unit = {
-      /*def wellSorted(): Boolean = {
-        var i: Int = 0
-        var soFarSoGood: Boolean = true
-        while (soFarSoGood && i < popSize) {
-          if (individuals(i).bins > individuals(i+1).bins) soFarSoGood = false
-          i += 1
-        }
-        soFarSoGood
-      } // Function to check if the population is well sorted.*/
-
-      val i = binaryInsertion(child)
-
-      counter += 1
-      print("Generation: %d, Time: %8f.".format(counter, timer.elapsedTime()))
-      //print(popul(0).fitness)
-      //println("; " + i)
-      //println(wellSorted())
-      //for (j <- 0 to popSize) println(popul(j))
-      if (i == 0) println(" Better solution just found: %s".format(popul(0).toString)) else println()
-    }*/
 
   }
 
