@@ -9,6 +9,7 @@
 \usepackage{makeidx}
 \usepackage{color}
 \usepackage{algpseudocode}
+\usepackage{hyperref}
 
 \hyphenation{Polyno-mialtime}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -394,7 +395,7 @@
 	
 	Un ejemplo de problema de optimizaci\'on combinatoria que es \textit{NP-dif\'icil} y que ser\'a el objeto central de estudio de este trabajo es el llamado \textit{problema de empaquetamiento} o \textbf{\textit{Bin Packing Problem}}.
 	
-	\section{Algoritmos heur\'{\i}sticos y metaheur\'{\i}sticos. Algoritmos evolutivos?}
+	\section{Algoritmos heur\'{\i}sticos y metaheur\'{\i}sticos}
 	
 	Como ya se mencion\'o con anterioridad, para muchos problemas de optimizaci\'on combinatoria no se conocen algoritmos que sean capaces de obtener una soluci\'on en tiempo polinomial. Algunos incluso no admiten el uso de algoritmos de aproximaci\'on. En estos casos, nos vemos obligados a usar algoritmos heur\'{\i}sticos.
 	\\
@@ -406,15 +407,15 @@
 	
 	\begin{itemize}
 		\item \textbf{M\'etodos de descomposici\'on.} El problema de partida se descompone en subproblemas m\'as sencillos de resolver, sin perder de vista que ambos pertenecen al mismo problema. (\textbf{Ejemplo?})
-		\item \textbf{M\'etodos inductivos.} Estos m\'etodos parten de casos m\'as sencillos del problema general, de manera que analizan propiedades o t\'ecnicas que pueden generalizarse al problema completo. (\textbf{Ejemplo?})
-		\item \textbf{M\'etodos de reducci\'on.} Consiste en seleccionar propiedades que se verifican de forma general en las soluciones consideradas como buenas e introducirlas como restricciones del problema. La finalidad de estos m\'etodos es restringir el espacio de soluciones para simplificar el problema. El inconveniente que presentan estos m\'etodos, es la posibilidad de dejar fuera del espacio de soluciones nuevo aquellas soluciones \'optimas del problema original. (\textbf{Ejemplo?})
+		\item \textbf{M\'etodos inductivos.} Estos m\'etodos parten de casos m\'as sencillos del problema general, de manera que analizan propiedades o t\'ecnicas que pueden generalizarse al problema completo. 
+		\item \textbf{M\'etodos de reducci\'on.} Consiste en seleccionar propiedades que se verifican de forma general en las soluciones consideradas como buenas e introducirlas como restricciones del problema. La finalidad de estos m\'etodos es restringir el espacio de soluciones para simplificar el problema. El inconveniente que presentan estos m\'etodos, es la posibilidad de dejar fuera del espacio de soluciones nuevo aquellas soluciones \'optimas del problema original. 
 		\item \textbf{M\'etodos constructivos.} Son m\'etodos que construyen paso a paso una soluci\'on del problema. Normalmente son m\'etodos deterministas y suelen estar basados en la mejor elecci\'on en cada iteraci\'on. (\textbf{Ejemplo?} - algoritmos voraces)
-		\item \textbf{M\'etodos de b\'usqueda local.} A diferencia de los m\'etodos anteriores, los algoritmos de b\'usqueda o mejora local comienzan con una soluci\'on del problema y la mejoran progresivamente. El algoritmo realiza en cada iteraci\'on un movimiento de una soluci\'on a otra mejor. El m\'etodo finaliza cuando, para una soluci\'on, no existe ninguna otra accesible que la mejore. (\textbf{Ejemplo?} - cualquier algoritmo iterativo?)
+		\item \textbf{M\'etodos de b\'usqueda local.} A diferencia de los m\'etodos anteriores, los algoritmos de b\'usqueda o mejora local comienzan con una soluci\'on del problema y la mejoran progresivamente. El algoritmo realiza en cada iteraci\'on un movimiento de una soluci\'on a otra mejor. El m\'etodo finaliza cuando, para una soluci\'on, no existe ninguna otra accesible que la mejore. 
 	\end{itemize}
 	
 	Cuando se resuelve un problema por m\'etodos heur\'isticos, como la optimalidad no est\'a garantizada, se debe medir la calidad de los resultados. Para ello existen diversos procedimientros, entre los cuales podr\'iamos destacar los siguientes:
 	
-	(\textbf{citar https://core.ac.uk/download/pdf/236383515.pdf})
+	(\textbf{citar Orlando de Antonio Su\'arez})
 	
 	\begin{itemize}
 		\item \textbf{Comparaci\'on con la soluci\'on \'optima.} Aunque normalmente se recurre al algoritmo aproximado por no existir un m\'etodo exacto para obtener el \'otimo, o por ser \'este computacionalmente muy costoso, en ocasiones puede que dispongamos de un m\'etodo que proporcione el \'optimo para un conjunto limitado de ejemplos. Este conjunto de ejemplos puede servir para medir la calidad del m\'etodo heur\'istico. Normalmente se mide, para cada uno de los ejemplos, la desviaci\'on porcentual de la soluci\'on heur\'istica frente a la \'optima, calculando posteriormente el promedio de dichas desviaciones.
@@ -573,7 +574,7 @@
 				\If{(item cabe en current)}
 				\State{A\~{n}adimos el item a current}
 				\Else
-				\State{A\~{n}adimo current a soltion}
+				\State{A\~{n}adimos current a soltion}
 				\State{current = new Bin(capacity)}
 				\State{A\~{n}adimos el item a current}
 				\EndIf
@@ -586,10 +587,54 @@
 	}
 	\\\\
 	
-	Observemos que, dada una lista de \textit{n} pesos, el algoritmo hace una \'unica comprobaci\'on por cada iteraci\'on. Por lo tanto, tenemos que la complejidad del algoritmo es \textit{O(n)}, con lo que la velocidad de resoluci\'on del problema se incrementa de forma lineal conforme lo hace el n\'umero de elementos que tenemos que introducir en los cubos. As\'i pues, como primera aproximaci\'on, ser\'ia un algoritmo \'util, r\'apido y f\'acil de resolver para instancias peque\~{n}as del problema en las que no estamos interesados en obtener el \'optimo.
-	\\
+	Observemos que, dada una lista de \textit{n} pesos, el algoritmo hace una \'unica comprobaci\'on por cada iteraci\'on. Por lo tanto, tenemos que la complejidad del algoritmo es \textit{O(n)}, con lo que la velocidad de resoluci\'on del problema se incrementa de forma lineal conforme lo hace el n\'umero de elementos que tenemos que introducir en los cubos. As\'i pues, como primera aproximaci\'on, ser\'ia un algoritmo \'util, r\'apido y f\'acil de resolver para instancias peque\~{n}as del problema en las que no estamos interesados en obtener el \'optimo. Adem\'as, su sencillez nos permite conseguir resultados como el siguiente:
 	
-	\textbf{QUEDA POR ANALIZAR SU APPROXIMATION RATIO}
+	\begin{teorema}
+		Sea M el n\'umero de cubos de capacidad c necesarios para empaquetar una lista de n objetos de forma \'optima. Entonces el algoritmo Next Fit usar\'a a lo sumo 2M cubos.
+	\end{teorema}
+	
+	\begin{proof}
+		\hfill \break
+		
+		Sea \textit{k} el n\'umero de cubos de la soluci\'on obtenida al aplicar el algoritmo Next Fit y sea $B_{i}$ el cubo i-\'esimo de la soluci\'on. Denotemos por $s(B_{i})$ a la suma de los pesos de los objetos empaquetados en el cubo $B_{i}$.
+		\\
+		
+		Entonces, para cualesquiera dos cubos adyascentes $B_{i}$ y $B_{i+1}$ se verifica que
+		$$s(B_{i}) + s(B_{i+1}) > c$$
+		
+		Dividiremos la demostraci\'on en dos partes en funci\'on de si \textit{k} es par o impar.
+		
+		1. Supongamos que \textit{k} es par.
+		
+		Por lo expuesto anteriormente, tenemos que
+		$$s(B_{1}) + s(B_{2}) > c,\, s(B_{2}) + s(B_{3}) > c,\, ...,\, s(B_{k-1}) + s(B_{k}) > c.$$
+		
+		Por lo tanto, si sumamos todas estas desigualdades llegamos a
+		$$\sum_{i=1}^{k}s(B_{i}) > \frac{k}{2}c.$$
+		
+		Adem\'as, como cualquier cubo de la soluci\'on verifica 
+		$$s(B_{i}) \leq c,$$
+		
+		llegamos a 
+		$$kc \geq \sum_{i=1}^{k}s(B_{i}) > \frac{k}{2}c.$$
+		
+		Por otro lado, observemos que para la soluci\'on \'optima del problema tambi\'en se verifica las desigualdades anteriores, es decir,
+		$$Mc \geq \sum_{i=1}^{M}s(B_{i}).$$
+		
+		Por \'ultimo, teniendo en cuenta que
+		$$\sum_{i=1}^{M}s(B_{i}) = \sum_{i=1}^{k}s(B_{i}),$$
+		
+		llegamos a 
+		$$Mc \geq \sum_{i=1}^{M}s(B_{i}) = \sum_{i=1}^{k}s(B_{i}) > \frac{k}{2}c,$$
+		
+		de donde deducimos que
+		$$Mc > \frac{k}{2}c \Longrightarrow 2M > k$$
+		
+		2. Supongamos que \textit{k} es impar.
+		
+		\textbf{ESTA PARTE NO ME SALE}
+	\end{proof}
+	
 	
 	\subsubsection{First Fit}
 	Podr\'iamos considerar a este algoritmo como un primer intento de mejorar el m\'etodo anterior ya que, aunque no reconsideremos las decisiones tomadas (es decir, si alguno de los items introducidos en los cubos existentes deber\'ia introducirse en otro cubo), que es la idea b\'asica de los algortimos voraces, s\'i que vamos llenando "mejor" los cubos que se van creando en las iteraciones del algoritmo. Adem\'as, posteriormente este ser\'a uno de los algortimos que usaremos como base para implmententar mejores t\'ecnicas de resoluci\'on del problema del BP.
@@ -634,10 +679,21 @@
 	}
 	\\\\
 	
-	Como mencionamos anteriormente, este algoritmo conseguimos mejorar la soluci\'on obtenida seg\'un el m\'etodo Next Fit, pero esto implica que la complejidad algor\'itmica se incrementa. Dado una lista de \textit{n} elementos, el bucle for itera sobre cada uno de ellos, por lo que la complejidad introducida a priori por el bucle es \textit{O(n)}. Pero, a su vez, en cada iteraci\'on el bucle while recorre en el peor de los casos toda la lista de cubos, con lo que su complejidad es tambi\'en \textit{O(n)}. Por lo tanto, la complejidad del algoritmo resulta ser \textit{O(n)}.
+	Como mencionamos anteriormente, este algoritmo conseguimos mejorar la soluci\'on obtenida seg\'un el m\'etodo Next Fit, pero esto implica que la complejidad algor\'itmica se incrementa. Dado una lista de \textit{n} elementos, el bucle for itera sobre cada uno de ellos, por lo que la complejidad introducida a priori por el bucle es \textit{O(n)}. Pero, a su vez, en cada iteraci\'on el bucle while recorre en el peor de los casos toda la lista de cubos, con lo que su complejidad es tambi\'en \textit{O(n)}. Por lo tanto, la complejidad del algoritmo resulta ser $O(n^{2})$.
 	\\
 	
-	\textbf{QUEDA POR ANALIZAR SU APPROXIMATION RATIO}
+	\begin{teorema}
+		Sea M el n\'umero de cubos de capacidad c necesarios para empaquetar una lista de n objetos de forma \'optima. Entonces el algoritmo First Fit no usa m\'as de 1,7M + 2 cubos.
+	\end{teorema}
+	
+	\textbf{FALTA LA DEMOSTRACION}
+	
+	\begin{proof}
+		\hfill \break
+		Aqu\'i va la demostraci\'on. Buscar teorema que acota por 1,7M cubos en lugar de 1,7M + 2 cubos.
+	\end{proof}
+	
+	Para los siguientes algoritmos no se ha conseguido encontrar ninguna cota para el n\'umero de cubos de la soluci\'on.
 	
 	\subsubsection{Best Fit}
 	Este es el primero de los algoritmos que intenta ofrecernos una mejora "considerable" a la hora de llenar los cubos ya que no solo intenta ir llenando todos los cubos en cada iteraci\'on, sino que los llena de la mejor forma posible, entendiendo esa forma mejor como aquella en la que el elemento seleccionado llena mejor en el cubo. Al igual que el first fit y los m\'etodos posteriores, las mejoras que conseguimos en busca de la soluci\'on \'optima o una aproximada, aparecen a costa de incrementar la complejidad del algoritmo.
@@ -663,13 +719,13 @@
 				\State{solution = $\emptyset$}\
 				\For{(item $\leftarrow$ items)}
 				\State{targetBin = 1 + smallerThanTarget(item, solution)}
-				\If{(targetBin $>$ 0 \textbf{y} targetBin $\leq$ longitud de solution - 1)}
-				\State{A\~{n}adimo el item en el cubo que se encuentra en la posicion targetBin}
+				\If{(targetBin $\geq$ 0 \textbf{y} targetBin $\leq$ longitud de solution - 1)}
+				\State{A\~{n}adimos el item en el cubo que se encuentra en la posicion targetBin}
 				\State{Reordenamos el array solution de menor a mayor capacidad restante}
 				\Else
 				\State{current = new Bin(capacity)}
-				\State{A\~{n}adimo el item en el cubo current}
-				\State{A\~{n}adimo el cubo current en solution}
+				\State{A\~{n}adimos el item en el cubo current}
+				\State{A\~{n}adimos el cubo current en solution}
 				\State{Reordenamos el array solution de menor a mayor capacidad restante}
 				\EndIf
 				\EndFor
@@ -708,12 +764,12 @@
 				\State{targetBin = smallerThanTarget(item, solution)}
 				\If{(targetBin es menor que la longitud de solution)}
 				\State{//Esto equivale a comprobar que item cabe en el \'ultimo cubo}
-				\State{A\~{n}adimo el item en el cubo que se encuentra en la \'ultima posici\'on}
+				\State{A\~{n}adimos el item en el cubo que se encuentra en la \'ultima posici\'on}
 				\State{Reordenamos el array solution de menor a mayor capacidad restante}
 				\Else
 				\State{current = new Bin(capacity)}
-				\State{A\~{n}adimo el item en el cubo current}
-				\State{A\~{n}adimo el cubo current en solution}
+				\State{A\~{n}adimos el item en el cubo current}
+				\State{A\~{n}adimos el cubo current en solution}
 				\State{Reordenamos el array solution de menor a mayor capacidad restante}
 				\EndIf
 				\EndFor
@@ -724,17 +780,573 @@
 	}
 	\\\\
 	
-	\textbf{QUEDA POR ANALIZAR LA COMPLEJIDAD DEL ALGORITMO}
+	El razonamiento que tenemos que seguir para analizar la complejidad de este algoritmo es pr\'acticamente an\'alogo al caso del algoritmo Best Fit. A diferencia del algoritmo anterior, en este m\'etodo no tenemos que realizar una b\'usqueda binaria para localizar el cubo donde insertar el objeto, sino que siempre lo intentamos insertar en el \'ultimo cubo de nuestra soluci\'on, lo cual pareciera que reduce la complejidad del algoritmo. Sin embargo, una vez insertado el elemento en el cubo, ya sea en el \'ultimo cubo de la soluci\'on o creando uno nuevo, de nuevo la capacidad de dicho cubo disminuir\'a y tendremos que desplazarlo a la izquierda si as\'i fuera necesario. En el peor de los casos, este desplazamiento ser\'a $O(n)$ si tenemos un cubo por elemento y tuvi\'eramos que desplazar el cubo (siempre desde el extremo derecho) al extremo izquierdo.
+	\\
+	
+	Esto significa que cada iteraci\'on en la que insertamos un elemento, su complejidad ser\'a $O(n)$ y, dado que tenemos que insertar \textit{n} n elementos, el coste total del algoritmo ser\'a $n \cdot O(n) = O(n^{2})$.
 	\\
 	
 	De aqu\'i en adelante los m\'etodos que emplearemos para buscar mejores soluciones para el problema del BP utilizar\'an de base las t\'ecnicas anteriores. No obstante, antes de llegar a ellos podemos mencionar una serie de variaciones de los algoritmos anteriores que, en funci\'on de la instancia del problema que estemos considerando, pueden ofrecer mejores soluciones que los algoritmos que hemos visto hasta ahora.
 	\\
 	
+	\subsection{Algunas variaciones de los m\'etodos anteriores}
+	\subsubsection{Next k Fit}
 	
+	El m\'etodo Next k Fit podr\'ia considerarse como una generalizaci\'on del m\'etodo Next Fit. La diferencia es que mientras que en el m\'etodo Next Fit solo tenemos "abierto" el \'ultimo cubo de la soluci\'on (es decir, solo miramos el \'ultimo a la hora de comprobar si podemos introducir un nuevo elemento o si creamos un cubo nuevo donde introducirlo), en este m\'etodo tenemos abierto los \textit{k} \'ultimos cubos. As\'i, dada una soluci\'on de cubos de longitud \textit{n} y un nuevo elemento a introducir en ellos, comenzar\'iamos comprobando si el elemento cabe en el cubo de posici\'on $n-(k-1)$; si cabe lo introducimos, en otro caso pasamos al cubo de posici\'on $n-(k-2)$ y as\'i sucesivamente hasta llegar al \'ultimo cubo. Como dijimos con anterioridad, el m\'etodo Next Fit no es m\'as que un caso particular de este m\'etodo cuando $k=1$.
+	\\
 	
+	Podemos apreciar a simple vista que este tipo de m\'etodos podr\'ian mejorar al algoritmo Next Fit cuando $k>1$ dado que nos permite "llenar" mejor los cubos de la soluci\'on al comprobar si un elemento dado cabe en m\'as de un cubo.
+	\\
 	
+	\noindent\fbox{
+		\begin{minipage}{\textwidth}
+			\begin{algorithmic}
+				
+				\State{nextKFit (k: Int, capacity: Int, items: Array[Int]): Array[Bin]}
+				\State{//capacity es la capacidad de los cubos}
+				\State{//items es un array que almacena los elementos que introduciremos en los cubos}
+				\State{//El array solution almacenar\'a los cubos y current ser\'a el \'ultimo cubo creado}    
+				\State{//k es un n\'umero entero que representa el n\'umero de cubos que permanecer\'an abiertos en cada iteraci\'on}
+				\State{//Inicializamos el algoritmo con el array de soluciones sin ning\'un cubo}
+				\State{solution = $\emptyset$}\
+				\State{current = new Bin(capacity)}\
+				\For{(item $\leftarrow$ items)}
+				\If{(solution = $\emptyset$)}
+				\If{(puedo a\~{n}adir el item en el cubo current)}
+				\State{A\~{n}adimos el item en el cubo current}
+				\Else
+				\State{A\~{n}adimos el cubo current en solution}
+				\State{current = new Bin(capacity)}
+				\State{A\~{n}adimos el item en el cubo current}
+				\State{A\~{n}adimos el cubo current en solution}
+				\EndIf
+				\ElsIf{(solution $\neq \emptyset$ \textbf{y} solution.length $<$ k)}
+				\State{aux = 0}
+				\While{(aux $\leq k-1$  \textbf{y} el item \textbf{no} est\'e a\~{n}adido)}
+				\If{(el item cabe en el cubo que se encuentra en la posici\'on aux)}
+				\State{A\~{n}ado el elemento al cubo}
+				\Else
+				\State{aux += 1}
+				\EndIf
+				\EndWhile
+				\If{(el item no se ha a\~{n}adido en ning\'un cubo)}
+				\State{current = new Bin(capacity)}\
+				\State{A\~{n}adimos el item en el cubo current}
+				\State{A\~{n}adimos el cubo current en solution}
+				\EndIf
+				\Else
+				\State{i = 1}
+				\While{(el item no est\'e a\~{n}adido y no hayamos comprobado los \'ultimos k cubos)}
+				\If{(podemos a\~{n}adir el item en el cubo (k-i)-\'esimo)}
+				\State{Introducimos el item en el cubo (k-i)-\'esimo}
+				\Else
+				\State{i += 1}
+				\EndIf
+				\EndWhile
+				\If{(el item no se ha a\~{n}adido)}
+				\State{current = new Bin(capacity)}
+				\State{A\~{n}adimos el item en el cubo current}
+				\State{A\~{n}adimos el cubo current en solution}
+				\EndIf
+				\EndIf
+				\EndFor
+				\State{\textbf{return} solution}
+				
+			\end{algorithmic}
+		\end{minipage}
+	}
+	\\\\
 	
+	\textbf{HACER ANALISIS DE SU COMPLEJIDAD; TENGO DUDAS}
 	
+	\subsubsection{Algoritmos de tipo decreasing}
+	Este tipo de algoritmos recoge los m\'etodos ya planteados y les realiza una peque\~{n}a variaci\'on que es, b\'asicamente, ordenar la lista de objetos a introducir en los cubos de manera descendente seg\'un sus pesos. As\'i, este tipo de variaci\'on da lugar a los algoritmos \textit{First Fit Decreasing}, \textit{Best Fit Decreasing} o incluso \textit{Worst Fit Decreasing}. 
+	\\
+	
+	L\'ogicamente, el resto de m\'etodos voraces que presentamos en este trabajo tambi\'en son susceptibles de introducir este cambio en su algoritmo, pero su uso no suele ser tan com\'un ni tampoco introducen mejoras considerables en la obtenci\'on de mejores resultados. Por otro lado, en lugar de ordenar la lista de objetos de manera ascendente, tambi\'en podr\'ia hacerse de forma ascendente, lo cual podr\'ia llegar a resultar beneficioso seg\'un la instancia del problema que se estuviera tratando de resolver.
+	\\
+	
+	En cuanto a la complejidad del algoritmo resultante cuando aplicamos este cambio, podemos observar que no var\'ia en absoluto para los m\'etodos que estamos considerando. Esto es as\'i porque la complejidad del algoritmo de reordenaci\'on es mejor o igual que la complejidad del algoritmo del que partimos, luego la complejidad del nuevo algoritmo no es m\'as que la complejidad de la suma de estos dos algoritmos, que seg\'un tratamos en el primer cap\'itulo, resulta que es el m\'aximo de ambas complejidades, es decir, la peor, que es la complejidad del algoritmo de partida.
+	
+	\subsubsection{Almost Worst Fit}
+	Este algoritmo es una variaci\'on del m\'etodo Worst Fit. La diferencia es que, mientras que en Worst Fit introducimos los pesos en aquel cubo con mayor capacidad restante (cuando cabe el elemento; en otro caso creamos un cubo nuevo y lo introducimos), en Almost Worst Fit comprobamos primero si el peso dado cabe en el cubo con segunda mayor capacidad restante.
+	\\
+	
+	Es decir: al igual que en Worst Fit, tenemos la soluci\'on de cubos ordenada de menor a mayor capacidad restante por lo que, dado un elemento a introducir en alguno de los cubos de nuestra soluci\'on, primero comprobamos si podemos introducirlo en el pen\'ultimo cubo de la soluci\'on. Si podemos lo introducimos pero, si no, comprobamos si podemos a\~{n}adirlo al \'ultimo cubo de la soluci\'on. Si podemos a\~{n}adirlo en este cubo lo hacemos, pero en otro caso creamos un cubo nuevo, introducimos el elemento y, al igual que en los m\'etodos Best Fit y Worst Fit, hacemos una inserci\'on ordenada del cubo en nuestra soluci\'on seg\'un su capacidad restante. De esta forma, el pseudoc\'odigo del algoritmo ser\'ia el siguiente:
+	\\
+	
+	\noindent\fbox{
+		\begin{minipage}{\textwidth}
+			\begin{algorithmic}
+				
+				\State{almostWorstFit (capacity: Int, items: Array[Int]): Array[Bin]}
+				\State{//capacity es la capacidad de los cubos}
+				\State{//items es un array que almacena los elementos que introduciremos en los cubos}
+				\State{//El array solution almacenar\'a los cubos y current ser\'a el \'ultimo cubo creado}    
+				\State{//targetBin es la posici\'on en solution del cubo con la menor capacidad restante que es mayor o igual que el peso del item seleccionado}
+				\State{//smallerThanTarget es un m\'etodo con el que, dado un array y un elemento, encuentra la posici\'on del menor elemento del array que es mayor o igual que el elemento dado}
+				\State{//Inicializamos el algoritmo con el array de soluciones sin ning\'un cubo}
+				\State{solution = $\emptyset$}\
+				\For{(item $\leftarrow$ items)}
+				\State{targetBin = smallerThanTarget(item, solution)}
+				\If{(targetBin es menor que la longitud de solution)}
+				\If{()}
+				\ElsIf{}
+				\Else
+				\EndIf
+				\Else
+				\State{current = new Bin(capacity)}
+				\State{A\~{n}adimos el item en el cubo current}
+				\State{A\~{n}adimos el cubo current en solution}
+				\State{Reordenamos el array solution de menor a mayor capacidad restante}
+				\EndIf
+				\EndFor
+				\State{\textbf{return} solution}
+				
+			\end{algorithmic}
+		\end{minipage}
+	}
+	\\\\
+	
+	Como puede apreciarse f\'acilmente, el pseudoc\'odigo de este algoritmo es pr\'acticamente igual al del m\'etodo Worst Fit, lo cual nos induce a pensar que la complejidad del algoritmo es la misma. Efectivamente esto es as\'i. Al igual que en los m\'etodos anteriores, el bucle for que hay presente tiene un coste \textit{O(n)}. Por otro lado, las comprobaciones que hacemos dentro del bucle no a\~{n}aden complejidad al algoritmo. Sin embargo, en cada iteraci\'on del bucle tenemos que, o bien reordenar el cubo en el que hayamos introducido el nuevo elemento en nuestra soluci\'on o bien hacer una inserci\'on ordenada de un nuevo cubo en la misma cuando sea necesario. En ambos casos, como ya se explic\'o con anterioridad, esta operaci\'on tiene un coste \textit{O(n)} por lo que, de nuevo, la complejidad del algoritmo ser\'a $O(n^{2})$.
+	\\
+	
+	Vemos que de esta forma, al igual que suced\'a con el algoritmo Next k Fit, introducimos una variaci\'on o posible mejora del algoritmo de partida sin incrementar el coste computacional del m\'etodo.
+	\\
+	
+	Destaquemos de nuevo que estas primeras variaciones que hemos introducido, aunque puedan mejorar el resultado de nuestra soluci\'on, no producen una mejora en el coste computacional de los algoritmos que tratamos de mejorar, lo cual resulta fundamental dado que, como hemos visto, la complejidad de estos algoritmos es elevada y resultar\'ia complicado e incluso intratable el resolver instancias muy grandes del problema haciendo uso de los mismos.
+	\\
+	
+	Por lo tanto, deberemos emplear otras t\'ecnicas que nos permitan dise\~{n}ar estos mismos algoritmos pero con un coste computacional menor. Esto es precisamente lo que haremos en la siguiente secci\'on, que ser\'a implementar estos m\'etodos haciendo uso de los \textit{\'arboles AVL balanceados}.
+	
+	\subsection{Primeras mejoras. \'Arboles AVL.}
+	Los \'arboles son una de las estructuras de datos utilizadas con mayor frecuencia, aunque tambi\'en de las m\'as complejas. Se caracterizan por almacenar sus elementos de forma jer\'arquica, a diferencia de los arrays o las listas que lo hacen de manera lineal.
+	\\
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale = 0.8]{arbolvslineal.png}
+		\caption{Estructura de un \'arbol vs estructura lineal}
+		\label{fig:arbol}
+	\end{figure}
+	
+	\textbf{https://www.oscarblancarteblog.com/2014/08/22/estructura-de-datos-arboles/}
+	\\
+	
+	De esta forma, podemos enumerar los siguientes elementos que conforman un \'arbol:
+	\begin{itemize}
+		\item \textbf{Nodos:} Se le llama nodo a cada elemento que contiene un \'arbol.
+		\item \textbf{Nodo ra\'iz:} Se llama nodo ra\'iz o simplemente ra\'iz al primer nodo de un \'arbol. Solo un nodo del \'arbol puede ser la ra\'iz.
+		\item \textbf{Nodo padre:} Se llaman as\'i a aquellos nodos que tiene al menos un hijo.
+		\item \textbf{Nodo hijo:} Son aquellos nodos que tienen un padre.
+		\item \textbf{Nodo hermano:} Los nodos hermanos son aquellos nodos que comparten a un mismo padre.
+		\item \textbf{Nodo hoja:} Son todos los nodos que no tienen hijos, los cuales siempre se encuentran en los extremos del \'arbol.
+		\item \textbf{Nodo rama:} Estos son todos aquellos nodos que no son la ra\'iz  y que ademas tiene al menos un hijo.
+	\end{itemize}
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale = 0.8]{tiposdenodos.png}
+		\caption{Tipos de nodos}
+		\label{fig:nodos}
+	\end{figure}
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale = 0.8]{nodospadrehijohermano.png}
+		\caption{Nodos padre, hijos y hermanos}
+		\label{fig:relacionnodos}
+	\end{figure}
+	
+	Por otra parte, haciendo uso de estos elementos, definimos los siguientes conceptos o caracter\'isticas sobre un \'arbol:
+	
+	\begin{itemize}
+		\item \textbf{Nivel:} Nos referimos como nivel a cada generaci\'on dentro del \'arbol. Por ejemplo, cuando a un nodo hoja le agregamos un hijo, el nodo hoja pasa a ser un nodo rama pero, adem\'as, el \'arbol crece una generaci\'on por lo que tiene un nivel m\'as.Cada generaci\'on tiene un nivel distinto que el resto de generaciones. De este modo: 
+		\begin{enumerate}
+			\item Un \'arbol vac\'io tiene 0 niveles.
+			\item El nivel del nodo ra\'iz es 1
+			\item El nivel de cada nodo se calcula contando cuantos nodos existen sobre \'el hasta llegar a la raíz m\'as 1. Tambi\'en podr\'a calcularse de forma inversa, es decir, contando cuantos nodos existen desde la ra\'iz hasta el nodo buscado m\'as 1.
+		\end{enumerate}
+		\item \textbf{Altura:} Llamamos altura al n\'umero m\'aximo de niveles de un \'arbol. Teniendo en cuenta esta idea, podemos calcular tambi\'en la altura de cada nodo como la altura del sub\'arbol correspondiente a ese nodo. Se calcula de manera recursiva tomando de la siguiente manera:
+		$$ altura = max(altura(hijo1), altura(hijo2), ..., altura(hijoN)) + 1 $$
+		\begin{figure}[h]
+			\centering
+			\includegraphics[scale = 0.8]{alturaniveles.png}
+			\caption{Niveles y altura de un \'arbol}
+			\label{fig:nivelyaltura}
+		\end{figure}
+		\item \textbf{Peso:} Llamamos peso al n\'umero de nodos que tiene un \'arbol. Este factor nos da una idea del tama\~{n}o del \'arbol y el tama\~{n}o en memoria que nos puede ocupar en tiempo de ejecuci\'on. Se puede calcular mediante cualquier algoritmo que recorra todos los nodos del \'arbol. De forma recursiva, el peso se puede calcular como la suma del peso de los sub\'arboles hijos m\'as 1:
+		$$ peso = peso(hijo1) + peso(hijo2) + ... + peso(hijoN) + 1$$
+		\item \textbf{Orden:} Es es el n\'umero m\'aximo de hijos que puede tener un nodo.
+		\item \textbf{Grado:} N\'umero mayor de hijos que tiene alguno de los nodos del \'arbol. Observemos que el grado se encuentra limitado por el orden. Para calcularlo, al igual que en los casos anteriores, lo hacemos de forma recursiva contando el n\'umero de hijos de cada sub\'arbol y el del nodo actual:
+		$$ grado = max(contarHijos(hijo1), contarHijos(hijo2), ..., contarHijos(hijoN) $$
+		$$, contarHijos(this))$$
+	\end{itemize}
+	
+	Podemos encontrar distintas clasificaciones para los \'arboles, pero para el prop\'osito de este trabajo s\'olo mencionaremos una, dentro de la cual se encuentra el tipo de \'arboles con los que trabajaremos en el resto de la secci\'on.
+	\\
+	
+	Dicho tipo de \'arboles son los conocidos como \textit{\'arboles n-arios}. Los \'arboles n-arios son aquellos \'arboles donde el n\'umero m\'aximo de hijos por nodo es \textit{n}. En particular, los \'arboles cuyo n\'umero m\'aximo de hijos por nodos es 2 reciben el nombre de \textit{\'arboles binarios}. Obs\'ervese que los \'arboles binarios tienen grado 2.
+	\\
+	
+	Definimos entonces los \textbf{\'arboles binarios balanceados}, \textbf{\'arboles binarios de b\'usqueda balanceados}, o simplemente, \textbf{\'arboles AVL} como aquellos \'arboles binarios en los que las alturas de los dos sub\'arboles de cada nodo difieren, a lo sumo, en 1. Reciben este nombre en honor a sus creadores Adelson-Velski y Landis y es la estructura de datos que usaremos a lo largo de esta secci\'on para mejorar algunos de los m\'etodos voraces que vimos con anterioridad.
+	\\
+	
+	Sobre este tipo de \'arboles definimos el \textit{factor de equilibrio} (FE), que no es m\'as que la diferencia entre las alturas de sus sub\'arboles, es decir:
+	
+	$$ FB = altura(hijoDrch) - altura(hijoIzq) $$
+	
+	De este modo, deducimos que los posibles valores para el FE son -1, 0 y 1. Que un nodo tenga un FE igual a 0 indicar\'a que las alturas del hijo derecho y el izquierdo son iguales. Por otro lado, que el FE sea 1 significa que la altura del hijo derecho es mayor que la del izquierdo, mientras que cuando vale -1 tenemos el caso contrario, es decir, que la altura del hijo izquierdo es mayor a la del hijo derecho.
+	\\
+	
+	En caso de que el \'arbol no est\'e balanceado, es decir, que se desequilibre a medida que vamos introduciendo nuevos nodos, habr\'a que rebalancear el \'arbol para que siga siendo un \'arbol AVL v\'alido.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale = 0.8]{desequilibrios.png}
+		\caption{Tipos de desequilibrios}
+		\label{fig:desequilibrio}
+	\end{figure}
+	
+	Por consiguiente, en el caso de que el \'arbol est\'e desequilibrado, existen cuatro operaciones que corrigen el balanceo. A saber: 
+	
+	\begin{enumerate}
+		\item Rotaci\'on simple a la derecha.
+		
+		\begin{figure}[h]
+			\centering
+			\includegraphics[scale = 1.2]{RotSimDrcha.png}
+			\caption{Rotaci\'on simple a la derecha.}
+			\label{fig:rotSimpleDrcha}
+		\end{figure}
+		
+		\item Rotaci\'on simple a la izquierda.
+		
+		\begin{figure}[h]
+			\centering
+			\includegraphics[scale = 1.5]{RotSimIzq.png}
+			\caption{Rotaci\'on simple a la izquierda}
+			\label{fig:rotSimpleIzq}
+		\end{figure}
+		
+		\item Rotaci\'on doble a la derecha.
+		\item Rotaci\'on doble a la izquierda.
+	\end{enumerate}
+	
+	Las rotaciones dobles son, b\'asicamente, realizar dos rotaciones simples seguidas. De esta forma, un rotaci\'on doble a la derecha es una rotaci\'on simple a la derecha seguida de una rotaci\'on simple a la izquierda. Por otro lado, una rotaci\'on doble a la izquierda se compone de una rotaci\'on simple a la izquierda seguida de una rotaci\'on simple a la derecha.
+	\\
+	
+	As\'i, por ejemplo, una rotaci\'on doble a la derecha resultar\'ia como en la Figura \ref{fig:rotDobDrcha}.
+	\pagebreak{}
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale = 0.7]{RotDobDrcha.png}
+		\caption{Rotaci\'on doble a la derecha}
+		\label{fig:rotDobDrcha}
+	\end{figure}
+	
+	Como vemos, la idea detr\'as de estas operaciones de equilibrado, es desplazar los nodos de la rama m\'as larga a la rama m\'as corta. Debemos mencionar que existen m\'as tipos de equilibrados y que del que estamos haciendo uso es el que se conoce como equilibrado en altura. Una caracter\'istica importante de este tipo de equilibrado es que se hace en orden ascendente, es decir, s\'olo en el camino desde el nodo insertado o borrado hacia la ra\'iz.
+	\\
+	
+	Hasta ahora hemos dado definido el tipo de \'arbol que vamos a usar y, sobre \'el, hemos definido una serie de conceptos entre los cuales el m\'as importante hasta ahora ha sido el de equilibrio. Por otra parte, para garantizar este equilibrio, hemos definido las operaciones de las rotaciones. Por lo tanto, la pregunta que nos hacemos a continuaci\'on de manera natural es: ?`por qu\'e estamos interesados en utilizar esta estructura de datos?
+	\\
+	
+	Y la respuesta la encontramos en la soluci\'on de la cuesti\'on: ?`cu\'al es la complejidad de la operaci\'on de b\'usqueda en un \'arbol AVL? Ve\'amoslo.
+	\\
+	
+	Supongamos que tenemos un \'arbol AVL de \textit{n} elementos y con una altura \textit{h}. Si queremos buscar un elemento en el \'arbol en el peor de los casos haremos \textit{h} comparaciones. Esto es as\'i porque, en este tipo de \'arboles, tenemos definido un \textit{orden} seg\'un el cual cada nodo padre es "mayor" o "igual que el hijo izquierdo y "menor" que el hijo derecho.
+	\\
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale = 0.9]{busquedaarbolpng.png}
+		\caption{Ejemplo de b\'usqueda en un \'arbol binario.}
+		\label{fig:busquedaAVL}
+	\end{figure}
+	
+	Por lo tanto, la complejidad ser\'a \textit{O(h)}. Notemos tambi\'en que, en cada iteraci\'on de la b\'usqueda, dividimos el espacio de b\'usqueda a la mitad. As\'i
+	\\
+	
+	\textbf{TENGO DUDAS DE COMO LLEGAR A $n=2^{h}\rightarrow h = \log_{2}(n)$}
+	\\
+	
+	De esta forma vemos que la complejidad de la operaci\'on de b\'usqueda en un \'arbol AVL es $O(h) = O(\log_{2}(n))$
+	\\
+	
+	As\'i, las mejoras que vamos a incorporar en esta secci\'on para mejorar algunos de los algoritmos anteriores, no es m\'as que representar la soluci\'on de nuestro problema en una estructura de \'arbol AVL en lugar de en una lista (array) de cubos. 
+	\\
+	
+	Los algoritmos que implementaremos haciendo uso de esta estructura ser\'an First Fit, Best Fit, Worst Fit y sus correspondientes algoritmos de tipo decreasing, ya que la implementaci\'on de estos \'ultimos no requiere de gran esfuerzo extra para realizarlos. 
+	\\
+	
+	De nuevo, recordemos que la complejidad de estos algoritmos es $O(n^{2})$ debido a que, a la hora de buscar un cubo donde introducir un nuevo elemento y reordenar el array soluci\'on, estas operaciones resultaban tener una complejidad \textit{O(n)}, por lo que al tener \textit{n} elementos a introducir en los cubos la complejidad de los algoritmos finalmente es $O(n^{2})$. En cambio, como veremos a medida que vayamos realizando los pseudoc\'odigos de los m\'etodos que implementan estos algoritmos, dado que la b\'usqueda en \'arboles AVL tiene complejidad $O(\log_{2}(n))$, los algoritmos tendr\'an ahora una complejidad $O(n\log_{2}(n))$, lo cual mejora en gran medida la eficiencia de dichos algoritmos a la hora de resolver instancias del BPP muy grandes.
+	\\
+	
+	A continuaci\'on, vamos a estudiar cu\'al es la l\'ogica que siguen estos algoritmos cuando hacen uso de esta estructura de datos. Presentaremos el pseudoc\'odigo de los m\'etodos principales mientras que dejaremos para el cap\'itulo siguiente una explicaci\'on m\'as exhaustiva de c\'omo se ha implementado todo el proyecto.
+	
+	\subsubsection{First Fit usando \'arboles AVL}
+	Dado que un \'arbol est\'a formado por nodos, lo primero que tenemos que establecer es qu\'e informaci\'on va a almacenar cada nodo del \'arbol. De este modo, cada nodo contiene:
+	\begin{enumerate}
+		\item La altura del nodo en el \'arbol.
+		\item La capacidad restante m\'axima del nodo, es decir, la mayor capacidad restante entre la del cubo del nodo actual y la de los cubos de sus dos hijos.
+		\item Un cubo, que a su vez contiene:
+		\begin{itemize}
+			\item Su capacidad restante.
+			\item Una lista con los pesos que ya se han introducido.
+		\end{itemize}
+		\item Aparte de estos datos, cada nodo tambi\'en tendr\'a una referencia a su hijo izquierdo y a su hijo derecho, pero esta informaci\'on solo resulta relevante a la hora de implementar el algoritmo en el ordenador.
+	\end{enumerate}
+	
+	Notemos que, del punto 2, deducimos que la capacidad restante m\'axima del \'arbol ser\'a la capacidad restante m\'axima de la ra\'iz. Adem\'as, si cuando queremos introducir un nuevo objeto en el \'arbol vemos que tiene un peso mayor que la capacidad restante m\'axima de la ra\'iz, esto quiere decir que el objeto no cabe en ninguno de los cubos del \'arbol, es decir, de la soluci\'on, con lo que tendremos que crear un nuevo cubo para este objeto.
+	\\
+	
+	Recordemos que anteriormente tambi\'en mencionamos que sobre los \'arboles AVL tenemos que definir un orden, pero al igual que en la primera implementaci\'on de este algoritmo, el orden que definimos en el \'arbol no es m\'as que el orden en el que se han ido creando los cubos. De esta forma, deducimos que cada vez que creemos un nuevo cubo lo haremos a\~{n}adiendo un nuevo nodo con dicho cubo al final de la \textit{espina derecha}, que no es m\'as que el camino que resulta de recorrer el \'arbol desde la ra\'iz a trav\'es de todos sus hijos derechos, hasta llegar a la hoja que se encuentra en el extremo inferior derecho.
+	\\
+	
+	Observemos que, como siempre introduciremos los nodos nuevos al final de la espina derecha, para equilibrar el \'arbol cuando sea necesario solo har\'a falta realizar rotaciones a la izquierda.
+	\\
+	
+	De esta forma, los m\'etodos que resuelven el algoritmo First Fit haciendo uso de la estructura de \'arboles AVL son los siguientes:
+	
+	\begin{itemize}
+		\item \textbf{addNewBin(bin: Bin)}: Este m\'etodo toma un cubo y lo a\~{n}ade al final de la espina derecha. Para mantener el invariante de los \'arboles AVL, en cada nodo de la espina derecha, si la altura resultante del hijo derecho es m\'as de una unidad superior a la del hijo izquierdo, habr\'a que aplicar una rotaci\'on simple a la izquierda.
+		\\
+		
+		As\'i, el pseudoc\'odigo del m\'etodo ser\'ia
+		
+		\noindent\fbox{
+			\begin{minipage}{\textwidth}
+				\begin{algorithmic}
+					
+					\State{def addNewBin(bin: Bin): Unit}
+					\State{//addBinToNode es un m\'etodo recursivo con el que vamos recorriendo cada hijo derecho}
+					\State{//hasta llegar al final de la espina derecha, que es donde creamos un nuevo nodo con}
+					\State{//el cubo dado}
+					\State{def addBinToNode(node: Node): Node}
+					\If{(node.right es null)}
+					\State{//Esto quiere decir que node no tiene hijo derecho}
+					\State{Creamos el nodo hijo derecho de node y a\~{n}adimos el cubo}
+					\State{Recalculamos la altura de node}
+					\State{Recalculamos la capacidad restante m\'axima de node}
+					\State{Devolvemos el nodo node}
+					\Else
+					\State{//Esto quiere decir que el hijo derecho de node existe y que, por tanto, no estamos}
+					\State{//al final de la espina derecha}
+					\State{node.right = addBinToNode(node.right)}
+					\If{height(node.right) - height(node.left) $>$ 1}
+					\State{Hacemos una rotaci\'on simple a la izquierda de node}
+					\Else
+					\State{Recalculamos la altura de node}
+					\State{Recalculamos la capacidad restante m\'axima de node}
+					\State{Devolvemos el nodo node}
+					\EndIf
+					\EndIf
+					\If{root es null}
+					\State{//Esto quiere decir que el \'arbol est\'a vac\'io}
+					\State{Creamos el nodo ra\'iz y le a\~{n}adimos el cubo}
+					\Else
+					\State{root = addBinToNode(root)}
+					\EndIf
+					
+				\end{algorithmic}
+			\end{minipage}
+		}
+		\\\\
+		
+		\item \textbf{addFirst(initialCapacity: Int, weight: Int): Unit}: Este m\'etodo toma la capacidad de los cubos del problema, el peso de un objeto a introducir y lo a\~{n}ade al primer cubo que pueda contenerlo o a\~{n}ade un nuevo cubo al final de la espina derecha si el objeto nuevo no cabe en ning\'un cubo. El algoritmo funcionar\'ia de la siguiente forma:
+		\begin{itemize}
+			\item Si el \'arbol est\'a vac\'io o el objeto no cabe en ning\'un cubo, se a\~{n}adir\'a un nuevo nodo con un cubo con el objeto al final de la espina derecha.
+			\item  En otro caso, si la capacidad restante m\'axima del hijo izquierdo es mayor o igual al peso del objeto, se a\~{n}adir\'a el objeto al primer cubo posible del hijo izquierdo.
+			\item En otro caso, si la capacidad restante del cubo en el nodo ra\'iz (o nodo padre) es mayor o igual al peso del objeto, se a\~{n}adir\'a el objeto al cubo en la ra\'iz.
+			\item En otro caso, se a\~{n}adir\'a el objeto al primer cubo posible del hijo derecho.
+		\end{itemize}
+		\item \textbf{addAll(): Unit}: Con este m\'etodo a\~{n}adimos todos los objetos de la lista de objetos dada en la instancia del problema y los a\~{n}adimos al \'arbol. Es un m\'etodo muy sencillo cuyo pseudoc\'odigo es
+		
+		\noindent\fbox{
+			\begin{minipage}{\textwidth}
+				\begin{algorithmic}
+					
+					\State{def addAll(): Unit}
+					\State{//instance es un objeto que representa una instancia del problema del BP}
+					\State{//El objeto instance tiene dos atributos, capacity e items, que son la capacidad de los}
+					\State{//cubos y la lista de objetos a introducir en los cubos}
+					\For{(item $\leftarrow$ instance.items)}
+					\State{addFirst(instance.capacity, item)}
+					\EndFor
+					
+				\end{algorithmic}
+			\end{minipage}
+		}
+		\\\\
+	\end{itemize}
+	
+	Para el estudio de la complejidad, supongamos que tenemos \textit{n} elementos a introducir en los cubos. Dado un elemento nuevo a introducir, en el peor de los casos, tendremos que hacerlo al final de la espina derecha o crear un nodo nuevo aqu\'i tambi\'en. En ambos casos, por lo explicado con anterioridad acerca de la complejidad de los algoritmos de b\'usqueda, tenemos que la complejidad de esta parte del algorimo es $O(\log_{2}(n))$. Como tenemos \textit{n} elementos, la complejidad del algoritmo First Fit usando \'arboles AVL es $O(n\log_{2}(n))$, como ya hab\'iamos mencionado.
+	
+	\subsubsection{Best Fit y Worst Fit usando \'arboles AVL}
+	
+	Vamos a englobar estos dos algoritmos en una misma secci\'on dado que su implementaci\'on solo se diferencia en un \'unico m\'etodo.
+	\\
+	
+	En ambos casos, la informaci\'on que almacenaremos encada nodo ser\'a:
+	\begin{enumerate}
+		\item La altura del nodo en el \'arbol.
+		\item Un cubo, el cual contiene los atributos del caso anterior.
+		\item Al igual que en el caso previo, una referencia a su hijo izquierdo y otra a su hijo derecho.
+	\end{enumerate}
+	
+	A diferencia del \'arbol que construimos para First Fit, en este tenemos que definir un orden diferente, el cual viene dado por la capacidad restante del cubo que hay en cada nodo. Esto es, por ejemplo, un nodo es menor que otro si la capacidad restante del cubo del primer nodo es menor que la capacidad restante del cubo del segundo nodo. 
+	\\
+	
+	Otra diferencia con respecto al algoritmo First Fit es c\'omo introducimos un nuevo elemento. En un principio usamos el mismo criterio que usan los m\'etodos Best Fit y Worst Fit ya definidos. Por ejemplo, para el nuevo m\'etodo Best Fit, si queremos introducir un nuevo elemento en alguno de los cubos de los nodos del \'arbol (si es que es posible), tendremos que buscar aquel nodo cuya capacidad restante del cubo sea la menor de todas aquellas que sean mayores o iguales que el peso del elemento dado. An\'alogamente para el m\'etodo Worst Fit. La peculiaridad se encuentra en c\'omo hacemos esa inserci\'on una vez localizado el cubo, porque recordemos que luego tendremos que reordenar los nodos del \'arbol.
+	\\
+	
+	Y es que, lo que hacemos, es guardar el cubo del nodo localizado con el nuevo elemento a\~{n}adido, borrar dicho nodo y hacer una inserci\'on ordenada del cubo anterior, lo cual se traducir\'a en crear un nuevo nodo en la posici\'on que le corresponda dentro del \'arbol que contenga a dicho cubo.
+	\\
+	
+	Observemos tambi\'en que esto \'ultimo significa que, a diferencia del First Fit en el que solo es necesario hacer rotaciones a la izquierda, aqu\'i tendremos que hacer rotaciones simples tanto a la izquierda como a la derecha. Para ello, como veremos en el cap\'itulo siguiente, implementaremos un m\'etodo general que realice el balanceo del \'arbol haciendo uso de los m\'etodos que se encarguen de hacer las rotaciones simples a la derecha o a la izquierda.
+	\\
+	
+	De este modo, los algoritmos Best First y Worst Fit comparten los siguientes m\'etodos:
+	
+	\begin{enumerate}
+		\item \textbf{insert(bin: Bin): Unit}: Con este m\'etodo creamos un nuevo nodo dentro del \'arbol que contenga al cubo que le indicamos. El pseudoc\'odigo es el siguiente:
+		\\
+		
+		\noindent\fbox{
+			\begin{minipage}{\textwidth}
+				\begin{algorithmic}
+					
+					\State{def insert(bin: Bin): Unit}
+					\State{//insertRec es un m\'etodo recursivo con el que recorremos los nodos del \'arbol en orden}
+					\State{//para encontrar el nodo en cuyo hijo crearemos el nodo nuevo con el cubo}
+					\State{def insertRec(node: Node): Node}
+					\If{node es null}
+					\State{//Esto quiere decir que el nodo en el que nos encontramos est\'a vac\'io y solo ocurrir\'a}
+					\State{//cuando lleguemos a la posici\'on donde tenemos que crear el nuevo nodo}
+					\State{Creamos el nuevo nodo con el cubo bin introducido}
+					\Else
+					\State{//getLeftCapacity es un m\'etodo que nos devuelve la capacidad restante de un cubo}
+					\State{cmp = bin.getLeftCapacity - node.bin.getLeftCapacity}
+					\If{(cmp $<$ 0)}
+					\State{//Esta condici\'on significa que la capacidad restante del cubo a introducir es}
+					\State{//menor que la capacidad restante del cubo del nodo actual}
+					\State{//Entonces compruebo el hijo izquierdo}
+					\State{node.left = insertRec(node.left)}
+					\Else
+					\State{//La capacidad restante del cubo a introducir es mayor o igual que la del cubo}
+					\State{//del nodo actual}
+					\State{//Compruebo entonces el hijo derecho}
+					\State{node.rigth = insertRec(node.right)}
+					\EndIf
+					\State{//El m\'etodo balance realiza el balanceo del \'arbol, haciendo las rotaciones y}
+					\State{//reajustando las alturas de los nodos}
+					\State{node.balance}
+					\EndIf
+					\State{//Empezamos comprobando si podemos insertar el cubo desde la ra\'iz}
+					\State{root = insertRec(root)}
+				\end{algorithmic}
+			\end{minipage}
+		}
+		\\\\
+		
+		\item \textbf{add(initialCapacity: Int, weight: Int): Unit}: Dada la capacidad de los cubos y el peso de un objeto a introducir en los mismos, este m\'etodo es el que se encarga de introducirlo en un cubo de alg\'un nodo del \'arbol. Su funcionamiento ya la describimos cuando se explic\'o c\'omo se introduc\'ia un nuevo elemento en el \'arbol. Esto es, primero comprobamos si el elemento cabe en el cubo que almacena alg\'un nodo. Si no cabe en ninguno, creo un nuevo cubo al que le a\~{n}ado el elemento e inserto este cubo en el \'arbol haciendo una llamada al m\'etodo anterior pas\'andole como par\'ametro este cubo. Si cabe en alguno, copio ese cubo, introduzco el elemento y borro el nodo para, a continuaci\'on, llamar de nuevo al m\'etodo anterior pas\'andole como par\'ametro este cubo.
+		\\
+		
+		As\'i el pseudoc\'odigo ser\'ia:
+		
+		\noindent\fbox{
+			\begin{minipage}{\textwidth}
+				\begin{algorithmic}
+					
+					\State{def addl(initialCapacity: Int, weight: Int): Unit}
+					\State{//auxBin es una variable auxiliar que me guarda el cubo en el que cabe el elemento si}
+					\State{//lo encuentra o un valor None}
+					\State{auxBin: Option[Bin] = delete(weight)}
+					\If{(auxBin est\'a vac\'io)}
+					\State{//Creo un cubo con la capacidad inicial dada}
+					\State{bin = new Bin(initialCapacity)}
+					\State{A\~{n}ado el peso del elemento al cubo}
+					\State{insert(bin)}
+					\Else
+					\State{Le a\~{n}ado el elemento al cubo que hemos copiado y cuyo nodo hemos borrado}
+					\State{Insertamos de nuevo el cubo en el \'arbol}
+					\EndIf
+					
+				\end{algorithmic}
+			\end{minipage}
+		}
+		\\\\
+		\item \textbf{addAll(): Unit}: Este m\'etodo es exactamente el mismo que el implementado en First Fit, ya que su \'unica funci\'on es, dada una instancia del problema, ir recorriendo la lista de objetos a introducir en la instancia para a\~{n}adirlos en cubos con la capacidad dada.
+	\end{enumerate}
+	
+	Notemos que en estos m\'etodos ya hemos usado indirectamente a aquel que hace que el m\'etodo Best Fit y Worst Fit sean diferentes, que es la funci\'on que borra los nodos que contienen los cubos en donde vamos a introducir un nuevo elemento (m\'etodo delete que hemos usado en la funci\'on add anterior). Esto es as\'i porque estos m\'etodos incorporan los algoritmos de b\'usqueda de los que hacen uso Best Fit y Worst Fit. 
+	\\
+	
+	\textbf{NO SE SI AQUI DEBERIA EXPLICAR LOS DOS METODOS DELETE JUNTO CON SU PSEUDOCODIGO O DEJARLOS PARA EL CAPITULO SIGUIENTE}
+	
+	\subsection{Algoritmos evolutivos}
+	Los algoritmos evolutivos son una serie de algoritmos metaheur\'isticos inspirados en el proceso evolutivo. Por lo tanto, la idea detr\'as de ellos es sencilla de comprender: partiendo de una poblaci\'on conocida, obtenemos mediante reproducci\'on y selecci\'on natural un individuo "mejor". A continuaci\'on, este nuevo individuo se incorpora a la poblaci\'on de partida y seguimos obteniendo nuevos individuos mediante los mecanismos anteriores y as\'i, sucesivamente. Evidentemente estos nuevos individuos no tienen por qu\'e ser necesariamente mejores, aunque evidentemente trataremos que as\'i sea. Posteriormente, tendremos que especificar cu\'ales son estos mecanismos que simulan los procesos de reproducci\'on y selecci\'on.
+	\\
+	
+	\textbf{MENCIONAR TFG VIGO}
+	\\
+	
+	De esta forma, el algoritmo evolutivo funcionar\'ia como describimos a continuaci\'on:
+	
+	\begin{enumerate}
+		\setcounter{enumi}{-1}
+		\item Antes de arrancar propiamente el algoritmo evolutivo, tenemos que hacer un paso previo que se corresponde con la generaci\'on de la poblaci\'on a partir de la cual vamos a ir consiguiendo las posteriores generaciones de individuos (o poblaciones). Esta poblaci\'on tiene un tama\~{n}o prefijado y se encuentra ordenada de mejor a peor, como veremos m\'as adelante.
+		\item \textbf{Fase de selecci\'on}. Aqu\'i entramos en el ciclo del algoritmo evolutivo. Aparte de los criterios que establezcamos para que se vayan repitiendo el ciclo, deberemos fijar un tiempo de parada para que el algoritmo finalice una vez se haya alcanzado ese tiempo. Existen diversos m\'etodos de selecci\'on, como el m\'etodo de la ruleta, el m\'etodo de la ruleta extendido con rangos o el m\'etodo de selecci\'on por torneo. Precisamente ser\'a este \'ultimo el que usaremos para implementar nuestro algoritmo evolutivo. Ser\'a mediante estos m\'etodos con los que elegiremos los padres a partir de los cuales obtendremos los nuevos individuos que iremos incorporando a la poblaci\'on.
+		\item \textbf{Fase de cruce}. Tanto esta fase como la siguiente, al igual que ocurre en la naturaleza, son dos procesos que no necesariamente tienen que ocurrir, sino que dependen de una cierta probabilidad prefijada. En el caso de que ocurra, lo que el algoritmo realiza es un cruce entre los padres que hemos obtenidos en la selecci\'on anterior para obtener nuevos individuos. Como operaciones de cruce podemos mencionar el cruce de un punto, cruce en dos puntos, cruce uniforme, cruce aritm\'etico, cruce c\'iclico, el cruce PMX.
+		\item \textbf{Fase de mutaci\'on}. Con una cierta probabilidad, los nuevos individuos se someten a alteraciones en su \textit{genoma} seg\'un alg\'un patr\'on. Como operaciones de mutaci\'on, podemos citar la mutaci\'on por intercambio repetido (que es la que usaremos) o la mutaci\'on uniforme.
+		\item \textbf{Fase de ordenaci\'on}. Recordemos que la poblaci\'on tiene un tama\~{n}o prefijado. Por tanto, en esta fase lo que haremos ser\'a evaluar las soluciones que nos proporcionan estos nuevos individuos generados en la iteraci\'on actual del algoritmo y sustituir los peores individuos de la poblaci\'on por estos nuevos, de manera que el tama\~{n}o de la poblaci\'on siempre sea el mismo y sus individuos se est\'en actualizando en cada iteraci\'on.
+		\item Terminamos la iteraci\'on y volvemos a la fase 1.
+	\end{enumerate}
+	
+	Para que el algoritmo quede completamente determinado, aparte de los m\'etodos y variables ya mencionados, tendremos que prefijar el tama\~{n}o de la poblaci\'on, el m\'etodo con el que evaluaremos c\'omo de bueno es un individuo, las probabilidades de cruce y de mutaci\'on y una fuente de aleatoriedad.
+	\\
+	
+	En los algoritmos que hemos visto hasta ahora, dada una instancia del problema de BP, constru\'iamos una soluci\'on introduciendo cada elemento de la instancia seg\'un las reglas que vienen dadas por los algoritmos. As\'i, las mejoras que hemos ido proponiendo, ten\'ian la finalidad de reducir la complejidad de los algoritmos, pero no mejoraban propiamente la soluci\'on. Es decir, por ejemplo, el algoritmo First Fit que usa la implementaci\'on de \'arboles AVL proporciona, en esencia, la "misma" soluci\'on que el primer algoritmo First Fit, con lo que aunque hayamos mejorado su eficiencia, no hemos mejorado mucho su optimalidad.
+	\\
+	
+	El algoritmo evolutivo pretende compensar este hecho. En nuestro caso, el tipo de algoritmo que implementaremos no constituir\'a una mejora en cuanto a la eficiencia de los algoritmos anteriores puesto que, de hecho, fijaremos un tiempo durante el cual el algoritmo se est\'e ejecutando. Tiempo que no tiene por qu\'e ser necesariamente menor del que necesitan os algoritmos anteriores para ejecutarse. En cambio, s\'i que supondr\'a una mejora en cuanto a la calidad de las soluciones.
+	\\
+	
+	Para ello, los individuos que formar\'an la poblaci\'on y aquellos nuevos individuos que iremos generando en cada iteraci\'on del algoritmo, no ser\'an m\'as que permutaciones de los elementos de la lista de objetos dada en una instancia determinada del problema de BP. Por lo tanto, cada individuo de la poblaci\'on tendr\'a dos atributos, que ser\'an la permutaci\'on correspondiente y el n\'umero de cubos que se obtiene al resolver la instancia del problema mediante el m\'etodo con el que dijimos que evaluar\'iamos la calidad de los individuos, Este m\'etodo ser\'a tambi\'en el que nos permita tener ordenados a los individuos de la poblaci\'on de mejor a peor candidato, ya que esta condici\'on es equivalente a ordenar a los individuos seg\'un el n\'umero de cubos que produce su soluci\'on, de menor a mayor cantidad.
+	\\
+	
+	De forma esquem\'atica, el algoritmo evolutivo seguir\'ia el siguiente diagrama:
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale = 0.7]{algev.png}
+		\caption{Diagrama de flujo de un algoritmo evolutivo.}
+		\label{fig:algEvL}
+	\end{figure}
+	
+	As\'i, el pseudoc\'odigo del algoritmo evolutivo quedar\'ia como:
+	
+	\noindent\fbox{
+		\begin{minipage}{\textwidth}
+			\begin{algorithmic}
+				
+				\State{\textbf{begin}}
+				\State{Creamos la poblaci\'on inicial.}
+				\State{Evaluamos la poblaci\'on inicial.}
+				\State{//La condici\'on de parada del bucle while es que alcancemos la SO o que se agote el tiempo.}
+				\While{(no se verifique la condici\'on de parada)}
+				\State{Seleccionamos aleatoriamente los padres en la poblaci\'on.}
+				\State{Cruzamos con cierta probabilidad a los padres para obtener a los hijos.}
+				\State{Mutamos los descendientes con cierta probabilidad.}
+				\State{Evaluamos los nuevos individuos generados.}
+				\State{Sustituimos los peores individuos de la poblaci\'on por los nuevos individuos que hemos generado.}
+				\EndWhile
+				
+			\end{algorithmic}
+		\end{minipage}
+	}
+	\\\\
 	
 	
 	
@@ -742,7 +1354,7 @@
 	Una secci\'{o}n dentro de una secci\'{o}n se denomina subsecci\'{o}n.
 	\subsubsection{Subsubsecci\'{o}n}
 	Esto es una secci\'{o}n dentro de una subsecci\'{o}n, o sea, una subsubsecci\'{o}n.
-	Esto es un ejemplo de cita \cite{Zfinitegrading}
+	Esto es un ejemplo de cita \cite{Zfinitegrading} \cite{Tutor} \cite{enlace}
 	
 	\addcontentsline{toc}{chapter}{Bibliograf\'{\i}a}
 	\bibliographystyle{plain}
