@@ -6,22 +6,34 @@
 \contentsline {section}{\numberline {1}Conceptos generales}{1}{section.1.1}%
 \contentsline {section}{\numberline {2}Complejidad. Problemas P vs NP}{4}{section.1.2}%
 \contentsline {section}{\numberline {3}Algoritmos heur\'{\i }sticos y metaheur\'{\i }sticos}{7}{section.1.3}%
-\contentsline {chapter}{\numberline {2}Problema del Bin Packing}{10}{chapter.2}%
+\contentsline {chapter}{\numberline {2}Problema del empaquetamiento (Bin Packing)}{10}{chapter.2}%
 \contentsline {section}{\numberline {1}Introducci\'on}{10}{section.2.1}%
 \contentsline {section}{\numberline {2}Algoritmos voraces}{12}{section.2.2}%
 \contentsline {subsection}{\numberline {2.1}Primeras aproximaciones}{13}{subsection.2.2.1}%
-\contentsline {subsubsection}{Next Fit}{13}{section*.5}%
-\contentsline {subsubsection}{First Fit}{15}{section*.6}%
-\contentsline {subsubsection}{Best Fit}{16}{section*.7}%
-\contentsline {subsubsection}{Worst Fit}{18}{section*.8}%
-\contentsline {subsection}{\numberline {2.2}Algunas variaciones de los m\'etodos anteriores}{20}{subsection.2.2.2}%
-\contentsline {subsubsection}{Next k Fit}{20}{section*.9}%
-\contentsline {subsubsection}{Algoritmos de tipo decreasing}{22}{section*.10}%
-\contentsline {subsubsection}{Almost Worst Fit}{22}{section*.11}%
-\contentsline {subsection}{\numberline {2.3}Primeras mejoras. \'Arboles AVL.}{24}{subsection.2.2.3}%
-\contentsline {subsubsection}{First Fit usando \'arboles AVL}{31}{section*.12}%
-\contentsline {subsubsection}{Best Fit y Worst Fit usando \'arboles AVL}{33}{section*.13}%
-\contentsline {subsection}{\numberline {2.4}Algoritmos evolutivos}{35}{subsection.2.2.4}%
-\contentsline {subsection}{\numberline {2.5}Subsecci\'{o}n}{38}{subsection.2.2.5}%
-\contentsline {subsubsection}{Subsubsecci\'{o}n}{38}{section*.14}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{38}{section*.14}%
+\contentsline {subsubsection}{Next Fit}{13}{section*.4}%
+\contentsline {subsubsection}{First Fit}{15}{section*.5}%
+\contentsline {subsubsection}{Best Fit}{16}{section*.6}%
+\contentsline {subsubsection}{Worst Fit}{18}{section*.7}%
+\contentsline {subsection}{\numberline {2.2}Algunas variaciones de los m\'etodos anteriores}{19}{subsection.2.2.2}%
+\contentsline {subsubsection}{Next k Fit}{19}{section*.8}%
+\contentsline {subsubsection}{Algoritmos de tipo decreasing/increasing}{21}{section*.9}%
+\contentsline {subsubsection}{Almost Worst Fit}{22}{section*.10}%
+\contentsline {subsection}{\numberline {2.3}\'Arboles AVL.}{24}{subsection.2.2.3}%
+\contentsline {subsubsection}{First Fit usando \'arboles AVL}{31}{section*.11}%
+\contentsline {subsubsection}{Best Fit y Worst Fit usando \'arboles AVL}{33}{section*.12}%
+\contentsline {subsection}{\numberline {2.4}Algoritmos evolutivos}{36}{subsection.2.2.4}%
+\contentsline {chapter}{\numberline {3}Implementaci\'on}{39}{chapter.3}%
+\contentsline {section}{\numberline {1}Introducci\'on}{39}{section.3.1}%
+\contentsline {section}{\numberline {2}Preparaci\'on del problema}{39}{section.3.2}%
+\contentsline {subsection}{\numberline {2.1}La clase Bin}{39}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {2.2}Las clases ProblemInstance y Solution}{40}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {2.3}La clase Utils}{40}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3}Algoritmos voraces}{41}{section.3.3}%
+\contentsline {section}{\numberline {4}El algoritmo evolutivo}{42}{section.3.4}%
+\contentsline {subsection}{\numberline {4.1}Clases para generar la poblaci\'on inicial}{42}{subsection.3.4.1}%
+\contentsline {subsubsection}{Individual}{42}{section*.13}%
+\contentsline {subsubsection}{Populations}{42}{section*.14}%
+\contentsline {subsubsection}{Population}{44}{section*.15}%
+\contentsline {subsection}{\numberline {4.2}Clases para los cruces y mutaciones}{44}{subsection.3.4.2}%
+\contentsline {chapter}{\numberline {4}Conclusiones}{46}{chapter.4}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{47}{chapter.4}%

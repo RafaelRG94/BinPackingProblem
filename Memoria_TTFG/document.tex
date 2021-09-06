@@ -55,12 +55,12 @@
 			
 			% Title
 			%\noindent\rule{\textwidth}{0.4mm}
-			{ \huge \bfseries T\'{\i}tulo del tfg en espa\~{n}ol  \\[0.4cm] }
+			{ \huge \bfseries Algoritmos para la resoluci\'on del problema combinatorio de empaquetamiento  \\[0.4cm] }
 			
 			%\noindent\rule{\textwidth}{0.4mm}
 			\vskip1truecm
 			
-			{ \huge \bfseries T\'{\i}tulo del tfg en ingl\'es \\[0.4cm] }
+			{ \huge \bfseries Algorithms for the resolution of Bin Packing Problem \\[0.4cm] }
 			
 			%\noindent\rule{\textwidth}{0.4mm}
 			
@@ -83,15 +83,15 @@
 		
 		{\bf Autor:} {Rafael Requena Garrido}\\
 		
-		{\bf \'{A}rea de conocimiento y/o departamento:} \\
+		{\bf \'{A}rea de conocimiento y/o departamento:} {Lenguajes y Sistemas Inform\'aticos} \\
 		
-		{\bf Fecha de presentaci\'{o}n: (mes y a\~{n}o)}\\
+		{\bf Fecha de presentaci\'{o}n:} {Septiembre de 2021}\\
 		
-		{\bf Tema:}\\
+		{\bf Tema:} {Resoluci\'on de problemas de optimizaci\'on combinatoria}\\
 		
 		{\bf Tipo:} {(trabajo de revisi\'on bibliogr\'afica, de iniciaci\'on a la investigaci\'on,...)}\\
 		
-		{\bf Modalidad:} {(individual o grupal)}\\
+		{\bf Modalidad:} {Individual}\\
 		
 		{\bf N\'umero de p\'aginas (sin incluir introducci\'on, bibliograf\'{\i}a ni anexos):}\\
 		
@@ -124,17 +124,17 @@
 			%\end{minipage}
 		\end{center}
 		
-		D./D\~{n}a. \textit{(nombre del autor)}, con DNI (NIE o pasaporte) \textit{(DNI, NIE o pasaporte)}, estudiante del Grado en \textit{(titulaci\'{o}n)} de la Facultad de Ciencias de la Universidad de M\'{a}laga,\\
+		D./D\~{n}a. \textit{Rafael Requena Garrido}, con DNI (NIE o pasaporte) \textit{76437428X}, estudiante del Grado en \textit{Matem\'aticas} de la Facultad de Ciencias de la Universidad de M\'{a}laga,\\
 		\textbf{DECLARO:}\\
 		
-		Que he realizado el Trabajo Fin de Grado titulado ``\textit{(T\'{i}tulo)}'' y que lo presento para su evaluaci\'{o}n. Dicho trabajo es original y todas las fuentes bibliogr\'{a}ficas utilizadas para su realizaci\'{o}n han sido debidamente citadas en el mismo.\\
+		Que he realizado el Trabajo Fin de Grado titulado ``\textit{Algoritmos para la resoluci\'on del problema combinatorio de empaquetamiento}'' y que lo presento para su evaluaci\'{o}n. Dicho trabajo es original y todas las fuentes bibliogr\'{a}ficas utilizadas para su realizaci\'{o}n han sido debidamente citadas en el mismo.\\
 		\medskip
 		
 		De no cumplir con este compromiso, soy consciente de que, de acuerdo con la normativa reguladora de los procesos de evaluaci\'on de los aprendizajes del estudiantado de la Universidad de M\'alaga de 23 de julio de 2019, esto podr\'a conllevar la calificaci\'on de suspenso en la asignatura, sin perjuicio de las responsabilidades disciplinarias en las que pudiera incurrir en caso de plagio.
 		\bigskip
 		
 		
-		Para que as\'{i} conste, firmo la presente en M\'{a}laga, el \textit{(fecha)}\\
+		Para que as\'{i} conste, firmo la presente en M\'{a}laga, el \textit{9 de septiembre de 2021}\\
 		
 		
 		
@@ -205,8 +205,6 @@
 	
 	\textsc{key words.}
 	
-	\chapter*{Introducci\'on}
-	
 	
 	\chapter{Optimizaci\'{\o}n combinatoria}
 	\pagenumbering{arabic}
@@ -216,10 +214,10 @@
 	Para comprender con mayor claridad el objetivo de la optimizaci\'{o}n y los elementos que juegan un papel clave en la misma, procederemos a introducirla mediante un ejemplo:
 	\\
 	
-	Supongamos que una compa\~{n}\'ia fabrica y vende dos modelos de mesas, $M_{1}$ y $M_{2}$ . Para su fabricaci\'on, es necesario un trabajo manual de 20 y 30 minutos para los modelos $M_{1}$ y $M_{2}$, respectivamente, m\'as un trabajo de m\'aquina de 20 minutos para el modelo $M_{1}$  y de 10 minutos para el modelo $M_{2}$. Para el trabajo manual se dispone de 100 horas al mes, mientras que, para el de m\'aquina, 80 horas. Sabiendo que el beneficio por unidad es de 150 y 100 euros para $M_{1}$ y $M_{2}$, respectivamente, queremos planificar la producci\'on de manera que obtengamos el beneficio m\'aximo.
+	Supongamos que una compa\~{n}\'ia fabrica y vende dos modelos de mesas, $M_{1}$ y $M_{2}$. Para su fabricaci\'on, es necesario un trabajo manual de 20 y 30 minutos para los modelos $M_{1}$ y $M_{2}$, respectivamente, m\'as un trabajo de m\'aquina de 20 minutos para el modelo $M_{1}$  y de 10 minutos para el modelo $M_{2}$. Para el trabajo manual se dispone de 100 horas al mes, mientras que, para el de m\'aquina, 80 horas. Sabiendo que el beneficio por unidad es de 150 y 100 euros para $M_{1}$ y $M_{2}$, respectivamente, queremos planificar la producci\'on de manera que obtengamos el beneficio m\'aximo.
 	\\
 	
-	Si llamamos $x$ = n\'umero de mesas $M_{1}$ e $y$ = n\'umero de mesas de $M_{2}$, podemos definir la funci\'on beneficio $f(x,y) = 150x + 100y$. Por otro lado, pasando el tiempo a horas, las condiciones dadas en el enunciado se traducen a:
+	Si llamamos $x$ al n\'umero de mesas $M_{1}$ e $y$ al n\'umero de mesas de $M_{2}$, podemos definir la funci\'on beneficio $f(x,y) = 150x + 100y$. Por otro lado, pasando el tiempo a horas, las condiciones dadas en el enunciado se traducen a:
 	
 	$$\frac{1}{3}x + \frac{1}{2}y \leq 100$$
 	$$\frac{1}{3}x + \frac{1}{6}y \leq 80$$
@@ -231,10 +229,10 @@
 	$$\frac{1}{3}x + \frac{1}{6}y \leq 80$$
 	$$x\geq 0, y\geq 0, x,y \in \mathbb{Z} $$
 	
-	De este modo, nuestro problema se reduce a encontrar un par $(x,y)$ que mamximice a la funci\'on $f$ y verifique las restricciones anteriores.
+	De este modo, nuestro problema se reduce a encontrar un par $(x,y)$ que maximice a la funci\'on $f$ y verifique las restricciones anteriores.
 	\\
 	
-	Formalmente, un problema de optimizaci\'on se puede describir (\textbf{citar tesis Pepe}) como una tupla $(D, X, f, R)$ dinde:
+	Formalmente, un problema de optimizaci\'on se puede describir (\textbf{citar tesis Pepe}) como una tupla $(D, X, f, R)$ donde:
 	
 	\begin{enumerate}
 		\item $D = \{D_{1},...,D_{n}\}$ es un conjunto de dominios.
@@ -249,7 +247,7 @@
 	Existen diversas formas de clasificar a los problemas de optimizaci\'on. Como no existe un m\'etodo \'unico para resolver todos los problemas posibles, es importante analizar en qu\'e categor\'ia entra el problema en cuesti\'on ya que, de esta manera, podremos emplear algoritmos que se ajusten mejor al mismo, ya sea reduciendo el tiempo de c\'alculo y/o hallando soluciones m\'as aproximadas o exactas, por ejemplo.
 	\\
 	
-	As\'i, podemos realizar una primera clasificaci\'on atendiendo a la continuidad o no de las variables. En el caso m\'as general, diremos que estamos frente a un problema de \textit{Optimizaci\'on Continua} cuando todas las variables del problema sean de tipo continuo. Dentro de este tipo de problemas, cobran especial importancia los problemas de \textit{Optimizaci\'on Conveza}, en los cuales tenemos que minimizar (en general) una \textit{funci\'on convexa} (usalmente llamada \textit{funci\'on de costos}) sujeta a un conjunto soluci\'on convexo. Cuando la funci\'on objetivo y las restricciones son lineales, decimos que estamos frente a un problema de \textit{Optimizaci\'on Convexa Lineal} o \textit{Programaci\'on Lineal}, mientras que cuando no lo son, decimos que el problema es de \textit{Programaci\'on no Lineal.}
+	As\'i, podemos realizar una primera clasificaci\'on atendiendo a la continuidad o no de las variables. En el caso m\'as general, diremos que estamos frente a un problema de \textit{Optimizaci\'on Continua} cuando todas las variables del problema sean de tipo continuo. Dentro de este tipo de problemas, cobran especial importancia los problemas de \textit{Optimizaci\'on Convexa}, en los cuales tenemos que minimizar (en general) una \textit{funci\'on convexa} (usalmente llamada \textit{funci\'on de costos}) sujeta a un conjunto soluci\'on convexo. Cuando la funci\'on objetivo y las restricciones son lineales, decimos que estamos frente a un problema de \textit{Optimizaci\'on Convexa Lineal} o \textit{Programaci\'on Lineal}, mientras que cuando no lo son, decimos que el problema es de \textit{Programaci\'on no Lineal.}
 	\\
 	
 	En cambio, si las variables son de tipo discreto, es decir, solo pueden tomar valores enteros, decimos que el problema es de \textit{Optimizaci\'on Combinatoria}. Finalmente, decimos que un problema es de \textit{Optimizaci\'on Mixta} cuando tiene algunas variables de tipo continuo y otras de tipo discreto.
@@ -259,17 +257,17 @@
 	
 	\begin{itemize}
 		\item Resoluci\'on mediante c\'alculo,
-		\item Resoluci\'on mediante t\'ecnicas de b\'usquedas.
+		\item Resoluci\'on mediante t\'ecnicas de b\'usqueda.
 		\item Resoluci\'on mediante t\'ecnicas de convergencia de soluciones
 	\end{itemize}
 	
 	Los m\'etodos de resoluci\'on por c\'alculo hacen uso del c\'alculo de derivadas para determinar qu\'e valores del dominio de la funci\'on presentan m\'aximos y m\'inimos. Son m\'etodos muy potentes, pero requieren mucha capacidad de c\'omputo y que la funci\'on objetivo y las restricciones cumplan una serie de condiciones (condiciones de continuidad, derivabilidad, etc.). En la pr\'actica estos m\'etodos no suelen utilizarse, ya que los problemas no suelen cumplir las condiciones necesarias para la aplicaci\'on de estos m\'etodos y tienen demasiada variables como para que sean eficientes. Un ejemplo cl\'asico de estos m\'etodos, es el m\'etodo de los multiplicadores de Lagrange.
 	\\
 	
-	En los m\'etodos de resoluci\'on mediante t\'ecnicas de b\'usquedas, podemos encontrar desde m\'etodos exactos como el tradicional algoritmo del s\'implex (para problemas de Programaci\'on Lineal) y sus variantes hasta t\'ecnicas metaheur\'isticas como la \textit{b\'usqueda tab\'u} o el \textit{recocido simulado (simulated annealing)}, tambi\'en conocido como algoritmo de cristalizaci\'on simulada.
+	En los m\'etodos de resoluci\'on mediante t\'ecnicas de b\'usqueda, podemos encontrar desde m\'etodos exactos como el tradicional algoritmo del s\'implex (para problemas de Programaci\'on Lineal) y sus variantes hasta t\'ecnicas metaheur\'isticas como la \textit{b\'usqueda tab\'u} o el \textit{recocido simulado (simulated annealing)}, tambi\'en conocido como algoritmo de cristalizaci\'on simulada.
 	\\
 	
-	Por otro lado, la mayor\'ia de t\'ecnicas de convergencia de soluciones son de tiempo metaheur\'istico. Se basan en generar gran cantidad de soluciones, determinar cu\'ales son las mejores y, a partir de ellas, generar otro conjunto de soluciones a analizar, repitiendo el proceso hasta que estas soluciones que vamos generando converjan a una. Por lo tanto, dentro de este grupo podemos encontrar t\'ecnicas de tipo iterativo, como el cl\'asico m\'etodo de Newton o el m\'etodo de descenso del gradiente hasta los \textit{algoritmos gen\'eticos} (de tipo metaheur\'istico), que se enmarcan dentro de los \textit(algoritmos evolutivos), diendo estos dos \'ultimos muy empleados en el \'are de la inteligencia artificial.
+	Por otro lado, la mayor\'ia de t\'ecnicas de convergencia de soluciones son de tipo metaheur\'istico. Se basan en generar gran cantidad de soluciones, determinar cu\'ales son las mejores y, a partir de ellas, generar otro conjunto de soluciones a analizar, repitiendo el proceso hasta que estas soluciones que vamos generando converjan a una. Por lo tanto, dentro de este grupo podemos encontrar t\'ecnicas de tipo iterativo, como el cl\'asico m\'etodo de Newton o el m\'etodo de descenso del gradiente, y hasta los \textit{algoritmos gen\'eticos} (de tipo metaheur\'istico), que se enmarcan dentro de los \textit{algoritmos evolutivos}, siendo estos dos \'ultimos muy empleados en el \'area de la inteligencia artificial.
 	\\
 	
 	Hecho este breve contexto, estamos en disposici\'on de centrarnos en el caso que nos ata\~{n}e. La optmizaci\'on combinatoria es una rama de la optimizaci\'on relacionada con la investigaci\'on operativa, la teor\'ia algor\'itmica y la teor\'ia de la complejidad computacional (\textbf{citar wiki/art\'iculo jgarcia}). Observemos que, para un problema de optimizaci\'on combinatoria $P = (D, X, f, R)$, el conjunto $S\subseteq D$ de las posibles soluciones de $P$ es finito, lo cual nos lleva a encontrar un m\'etodo simple con el que hallar el \'optimo global de $P$, que consiste en examinar todas las posibles soluciones del problema. Sin embargo, en la pr\'actica, en la mayor\'ia de problemas de optimizaci\'on combinatoria no es posible la aplicaci\'on de este m\'etodo debido a que el espacio de b\'usqueda crece exponencialmente con el tama\~{n}o del problema (o tama\~{n}o de la instancia del problema), lo cual hace que el coste computacional y el tiempo necesario para examinar cada una de las posibles soluciones sea inviable.
@@ -278,7 +276,7 @@
 	El \textit{tama\~{n}o de una instancia} (\textbf{citar Brassard}) se corresponde formalmente al n\'umero de bits necesarios para representar la instancia en un ordenador, utilizando alg\'un esquema de codificaci\'on definido con precisi\'on y razonablemente compacto. No obstante, para que los an\'alisis sean m\'as claros, normalmente emplearemos la palabra "tama\~{n}o" para referirnos a cualquier n\'umero entero que mida de alg\'un modo el n\'umero de componentes de una instancia. Por ejemplo, cuando hablamos de ordenar, usualmente medimos el tama\~{n}o de la instancia por el n\'umero de elementos a ordenar, independientemente de que dichos elementos necesiten m\'as de un bit para ser representados en un ordenador.
 	\\
 	
-	Esta necesidad de resolver instancias de problemas cada vez m\'as grandes con un coste computacional aceptable nos lleva a desarrollar algoritmos que, aunque no nos proporcionan soluciones exactas, si nos permiten obtener soluciones aproxiamadas razonablemente buenas. Son los ya mencionados algoritmos heur\'isticos.
+	Esta necesidad de resolver instancias de problemas cada vez m\'as grandes con un coste computacional aceptable nos lleva a desarrollar algoritmos que, aunque no nos proporcionan soluciones exactas, si nos permiten obtener soluciones aproximadas razonablemente buenas. Son los ya mencionados algoritmos heur\'isticos.
 	
 	\section{Complejidad. Problemas P vs NP}
 	
@@ -337,10 +335,10 @@
 	Sin embargo, ?`qu\'e significa que un algoritmo sea eficiente? ?`Significa que toma un tiempo en $O(n\,log\,n)$? ?`$O(n^{2})$? Depender\'a del problema a resolver.
 	\\
 	
-	Decimos que un algoritmo es eficiente (\textbf{citar Brassard}) si existe un polinomio $p(n)$ tal que el algoritmo puede resolver cualquier instancia del problema de tama\~{n}o \textit{n} en un tiempo $O(p(n))$. Se dice entonces que el algoritmo es de \textit{tiempo polin\'omico} y que los problemas que se resuelven con dicho algoritmo son resolubles en tiempo polin\'omico. Sin embargo, cuando el tiempo de ejecuci\'on de un algoritmo no se puede expresar mediante una f\'ormula polin\'omica, se dice que dicho algoritmo y su problema asociado son de \textit{tiempo exponencial}. Cuando un problema solo se puede resolver mediante algoritmos de tiempos exponenciales, se dice que el problema es \textit{intratable}.
+	Decimos que un algoritmo es eficiente (\textbf{citar Brassard}) si existe un polinomio $p(n)$ tal que el algoritmo puede resolver cualquier instancia del problema de tama\~{n}o \textit{n} en un tiempo $O(p(n))$. Se dice entonces que el algoritmo es de \textit{tiempo polin\'omico} y que los problemas que se resuelven con dicho algoritmo son resolubles en tiempo polin\'omico. Sin embargo, cuando el tiempo de ejecuci\'on de un algoritmo no se puede acotar mediante una f\'ormula polin\'omica, se dice que dicho algoritmo y su problema asociado son de \textit{tiempo exponencial}. Cuando solo se conocen algoritmos de tiempos exponenciales para resolver un problema, se dice que el problema es \textit{intratable}.
 	\\
 	
-	Para el prop\'osito de este trabajo, nos centraremos en el caso de los problemas de decisi\'on, que son aquellos problemas que tienen como respuesta s\'i o no, o equivalentemente, verdadero o falso. Un problema de decisi\'on puede considerarse como la definici\'on de un conjunto de instancias en los que la respuesta correcta es s\'i.
+	Para lo que sigue, nos centraremos en el caso de los problemas de decisi\'on, que son aquellos problemas que tienen como respuesta s\'i o no, o equivalentemente, verdadero o falso.
 	\\
 	
 	Todas estas consideraciones anteriores nos sirven de base para la introducci\'on de los siguientes conceptos:
@@ -353,7 +351,7 @@
 		La clase de problemas de decisi\'on que pueden ser resueltos por una m\'aquina de Turing determinista en un tiempo polinomial es conocida como clase P (Poly\-nomial-time)
 	\end{definicion}
 	
-	En t\'erminos generales, P corresponde a la clase de problemas que, de forma realista, se pueden \textbf{resolver} con un ordenador. La mayor\'ia de problemas habituales (ordenaci\'on, b\'usqueda, etc.) pertenecen a esta clase.
+	En t\'erminos generales, P corresponde a la clase de problemas que, de forma realista, se pueden \textbf{resolver} con un ordenador. Muchos de los problemas habituales (ordenaci\'on, b\'usqueda, etc.) pertenecen a esta clase.
 	
 	\begin{definicion}
 		Llamamos clase NP (Non-Deterministic Polynomial-time) a aquella formada por los problemas de decisi\'on que son \textbf{verificables} por m\'aquinas de Turing no determinista en tiempos polin\'omicos.
@@ -362,7 +360,7 @@
 	Una relaci\'on evidente entre ambas clases es que $P \subset NP$, ya que si podemos resolver un problema en tiempo polin\'omico, evidentemente tambi\'en podemos verificarlo en tiempo polin\'omico.
 	\\
 	
-	Otro importante subconjunto de la clase \textit{NP} son los problemas \textit{NP-completo}.(\textbf{citar wiki a continuaci\'on})
+	Otro importante subconjunto de la clase \textit{NP} son los problemas \textit{NP-completos}.(\textbf{citar wiki a continuaci\'on})
 	
 	\begin{definicion}
 		Un problema de decisi\'on C es NP-completo si:
@@ -372,10 +370,10 @@
 		\end{enumerate}
 	\end{definicion}
 	
-	Una reducci\'on polin\'omica de \textit{L} en \textit{C} es un algoritmo de tiempo polin\'omico que transforma instancias de \textit{L} en instancias de \textit{C}, de manera que la respuesta a \textit{C} es positiva si y solo si lo es la de \textit{L}. De forma general, la clase \textit{NP-completo} corresponde a la de los problemas que pueden verificarse de forma sencilla pero que solo pueden resolverse por fuerza bruta. Algunos de los problemas que pertenecen a esta clase son el \textbf{problema de satisfacibilidad booleana} (SAT), el \textbf{problema de la mochila} (com\'unmente abreviado por KP), el \textbf{problema del ciclo hamiltoniano} o el \textbf{problema del viajante}. Esta clase tiene la propiedad (\textbf{citar wiki)} de que si alg\'un problema \textit{NP-completo} puede ser resuelto en tiempo polin\'omico, entonces todo problema en \textit{NP} tiene una soluci\'on en tiempo polin\'omico, es decir, $P = NP$.
+	Una reducci\'on polin\'omica de \textit{L} en \textit{C} es un algoritmo de tiempo polin\'omico que transforma instancias de \textit{L} en instancias de \textit{C}, de manera que la respuesta a \textit{C} es positiva si y solo si lo es la de \textit{L}. De forma general, la clase \textit{NP-completo} corresponde a la de los problemas que pueden verificarse de forma sencilla pero que, en el caso de que su espacio de soluciones sea muy grande, solo pueden resolverse por fuerza bruta. Algunos de los problemas que pertenecen a esta clase son el \textbf{problema de satisfacibilidad booleana} (SAT), el \textbf{problema de la mochila} (com\'unmente abreviado por KP), el \textbf{problema del ciclo hamiltoniano} o el \textbf{problema del viajante}. Esta clase tiene la propiedad (\textbf{citar wiki)} de que si alg\'un problema \textit{NP-completo} puede ser resuelto en tiempo polin\'omico, entonces todo problema en \textit{NP} tiene una soluci\'on en tiempo polin\'omico, es decir, $P = NP$.
 	\\
 	
-	A pesar de a\~{n}os de investigaci\'on, la cuesti\'on de si $P = NP$ contin\'ua a\'un abieta y es considerado uno de los problemas del milenio. La importancia de este resultado radica en el hecho de que si $P \neq NP$, entonces los problemas \textit{NP-completo} son intratables, ya que si alg\'un problema en \textit{NP} requiere m\'as tiempo que uno polinomial, entonces uno \textit{NP-completo} tambi\'en.
+	A pesar de a\~{n}os de investigaci\'on, la cuesti\'on de si $P = NP$ contin\'ua a\'un abierta y es considerado uno de los problemas del milenio. La importancia de este resultado radica en el hecho de que si $P \neq NP$, entonces los problemas \textit{NP-completos} son intratables, ya que si alg\'un problema en \textit{NP} requiere m\'as tiempo que uno polinomial, entonces uno \textit{NP-completo} tambi\'en.
 	\\
 	
 	Una clase m\'as general de problemas no restringida a los problemas de decisi\'on es la clase de complejidad \textit{NP-dif\'icil} (\textit{NP-hard}). (\textbf{citar wiki para la def.})
@@ -384,7 +382,7 @@
 		La clase de complejidad NP-dif\'icil es el conjunto que contiene a los problemas C tales que todo problema L en NP puede ser transformado polinomialmente en C.
 	\end{definicion}
 	
-	Esta clase contiene a aquellos problemas que son, como m\'inimo, tan dif\'iciles como un problema de \textit{NP}. De esta forma, la clase \textit{NP-completo} puede definirse como la intersecci\'on entre las clases \textit{NP} y \textit{NP-dif\'icil}. (\textbf{imagen de wiki})
+	Esta clase contiene a aquellos problemas que son, como m\'inimo, tan dif\'iciles como un problema de \textit{NP}. De esta forma, la clase de problemas \textit{NP-completo} puede definirse como la intersecci\'on entre las clases \textit{NP} y \textit{NP-dif\'icil}. (\textbf{imagen de wiki})
 	
 	\begin{figure}[h]
 		\centering
@@ -397,7 +395,7 @@
 	
 	\section{Algoritmos heur\'{\i}sticos y metaheur\'{\i}sticos}
 	
-	Como ya se mencion\'o con anterioridad, para muchos problemas de optimizaci\'on combinatoria no se conocen algoritmos que sean capaces de obtener una soluci\'on en tiempo polinomial. Algunos incluso no admiten el uso de algoritmos de aproximaci\'on. En estos casos, nos vemos obligados a usar algoritmos heur\'{\i}sticos.
+	Como ya se mencion\'o con anterioridad, para muchos problemas de optimizaci\'on combinatoria no se conocen algoritmos que sean capaces de obtener una soluci\'on \'optima en tiempo polinomial. Algunos incluso no admiten el uso de algoritmos de aproximaci\'on. En estos casos, nos vemos obligados a usar algoritmos heur\'{\i}sticos.
 	\\
 	
 	Los m\'etodos heur\'{i}sticos son algoritmos que se limitan a proporcionar una "buena" soluci\'on del problema, no necesariamente \'optima, con un coste computacional razonable. Adem\'as, aunque un buen heur\'{\i}stico encuentre muy buenas soluciones para la mayor\'{\i}a de instancias de un problema, no hay garant\'{\i}a de que siempre encuentre una buena soluci\'on para todas las instancias del problema.
@@ -418,7 +416,7 @@
 	(\textbf{citar Orlando de Antonio Su\'arez})
 	
 	\begin{itemize}
-		\item \textbf{Comparaci\'on con la soluci\'on \'optima.} Aunque normalmente se recurre al algoritmo aproximado por no existir un m\'etodo exacto para obtener el \'otimo, o por ser \'este computacionalmente muy costoso, en ocasiones puede que dispongamos de un m\'etodo que proporcione el \'optimo para un conjunto limitado de ejemplos. Este conjunto de ejemplos puede servir para medir la calidad del m\'etodo heur\'istico. Normalmente se mide, para cada uno de los ejemplos, la desviaci\'on porcentual de la soluci\'on heur\'istica frente a la \'optima, calculando posteriormente el promedio de dichas desviaciones.
+		\item \textbf{Comparaci\'on con la soluci\'on \'optima.} Aunque normalmente se recurre al algoritmo aproximado por no existir un m\'etodo exacto para obtener el \'optimo, o por ser \'este computacionalmente muy costoso, en ocasiones puede que dispongamos de un m\'etodo que proporcione el \'optimo para un conjunto limitado de ejemplos. Este conjunto de ejemplos puede servir para medir la calidad del m\'etodo heur\'istico. Normalmente se mide, para cada uno de los ejemplos, la desviaci\'on porcentual de la soluci\'on heur\'istica frente a la \'optima, calculando posteriormente el promedio de dichas desviaciones.
 		\item \textbf{Comparaci\'on con una cota.}  En ocasiones el \'optimo del problema no est\'a disponible ni siquiera para un conjunto limitado de ejemplos. Un m\'etodo alternativo de evaluaci\'on consiste en comparar el valor de la soluci\'on que proporciona el heur\'istico con una cota del problema (inferior si el problema es de minimizar y superior si es de maximizar). La bondad de esta medida depender\'a de la bondad de la cota, es decir, de c\'omo de cercana se encuentre del \'optimo del problema, por lo que de alguna manera, tendremos que tener informaci\'on de lo buena que es dicha cota. En caso contrario, la comparaci\'on propuesta no resulta de utilidad.
 		\item \textbf{Comparaci\'on con un m\'etodo exacto truncado.} Para ello elegimos un m\'etodo exacto que resuelva el problema y establecemos un l\'imite de iteraciones o de tiempo m\'aximo conforme a una serie de criterios que nos garanticen que de esta forma obtenemos una buena soluci\'on. Una vez hecho esto, usamos esta soluci\'on para compararla con la que obtenemos seg\'un el heur\'istico. Evidentemente, en este caso suponemos que la resoluci\'on del problema mediante cualquier m\'etodo exacto es inabordable por el coste computacional que requiere.
 		\item \textbf{Comparaci\'on con otros heur\'isticos.} Es un m\'etodo usado usalmente en problemas NP-duros para los que se conocen buenos heur\'isticos.
@@ -439,13 +437,13 @@
 	
 	
 	
-	\chapter{Problema del Bin Packing}
+	\chapter{Problema del empaquetamiento (Bin Packing)}
 	
 	\section{Introducci\'on}
 	Existen diversas formulaciones para el problema de Bin Packing, al que nos referiremos de ahora en adelante de manera abreviada como BP o BPP. De forma sencilla, podemos enunciarlo como:
 	
 	\begin{center}
-		Dados \textit{n} objetos de tama\~{n}o $w_{1},..., w_{n}$, queremos encontrar el menor n\'umero de cubos de tama\~{n}o \textit{c} en donde se coloquen todos los objetos.
+		Dados \textit{n} objetos de tama\~{n}o $w_{1},..., w_{n}$, queremos encontrar el menor n\'umero de cubos de capacidad \textit{c} necesario para empaquetar todos los objetos.
 	\end{center}
 	
 	A los objetos $w_{i}$ anteriores se les denomina habitualmente pesos. Son m\'ultiples las aplicaciones que tienen los problemas de tipo BP, adem\'as que podemos considerar variantes multidimensionales: desde el llenado de contenedores y/o camiones con restricciones de volumen y peso a la creaci\'on de copias de seguridad de archivos o una asignaci\'on eficiente de la memoria de un ordenador. 
@@ -454,7 +452,7 @@
 	Como vemos, es un problema d\'ificil de resolver debido a que su complejidad crece exponencialmente con el n\'umero de objetos a almacenar y variables a considerar, como por ejemplo si dichos objetos fueran tridimensionales y tuvi\'eramos que considerar su volumen y su peso a la hora de imponer las restricciones del problema. Resulta aqu\'i visible la dificultad que presentan los problemas de optimizaci\'on combinatoria y la necesidad de desarrollar algoritmos suficientemente buenos que puedan resolverlos en tiempos aceptables.
 	
 	\begin{observacion}
-		Cuando el n\'umero de cubos se limita a uno y cada objeto se caracteriza por su peso y su volument, el problema de maximizar el peso de los objetos que pueden caber en el contenedor se conoce como el  ya mencionado problema de la mochila.
+		Cuando el n\'umero de cubos se limita a uno y cada objeto se caracteriza por su peso, el problema de maximizar el peso de los objetos que pueden caber en el contenedor se conoce como el  ya mencionado problema de la mochila.
 	\end{observacion}
 	
 	El BPP tambi\'en puede considerarse como un caso especial del \textit{cutting stock problem}, cuyo origen est\'a asociado a la industria maderera: (citar wiki)
@@ -467,10 +465,13 @@
 	$$ s.a\, \sum_{i=1}^{n}a_{ij}x_{i},\, \forall j=1,...,m $$
 	$$ x_{i}\in \mathbb{Z^{+}},\, \forall i=1,...,n $$
 	\\
-	donde $a_{ij}$ es el n\'umero de veces que en la orden \textit{j} aparece el patr\'on \textit{i} y $c_{i}$ es el costo (a menudo llamado \textit{residuo}) del patr\'on \textit{i}. Cuando $c_{i} = 1$ la funci\'on objetivo minimiza el n\'umero de elementos utilizados y, si larestricci\'on de los elementos a producir se sustituye por la igualdad, obtenemos el BPP (\textbf{esta parte no la entiendo}). As\'i, procedemos a continuaci\'on a formular matem\'aticamente el problema BP.
+	donde $a_{ij}$ es el n\'umero de veces que en la orden \textit{j} aparece el patr\'on \textit{i} y $c_{i}$ es el costo (a menudo llamado \textit{residuo}) del patr\'on \textit{i}.
 	\\
 	
-	Sea \textit{n} objetos (items) y \textit{n} cubos (bins), donde
+	As\'i, procedemos a continuaci\'on a formular matem\'aticamente el problema BP.
+	\\
+	
+	Sean \textit{n} objetos (items) y \textit{n} cubos (bins), donde
 	
 	$$w_{j} = \mbox{peso del item \textit{j}},$$
 	$$c = \mbox{capacidad de cada cubo},$$
@@ -495,16 +496,16 @@
 	\\
 	Supondremos, adem\'as, que los pesos $w_{j}$ son enteros positivos. Por lo tanto, sin p\'erdida de generalidad, podemos suponer que
 	
-	$$ c \mbox{es un entero positivo,} $$
+	$$ c \mbox{ es un entero positivo,} $$
 	$$ w_{j} \leq c,\, \forall j = 1,...,n. $$
 	\\
 	Si alg\'un item no verifica la \'ultima suposici\'on, entonces el problema es trivialmente imposible.
 	\\
 	
-	En lo que sige, propondremos una serie de algoritmos con los que aproximar las soluciones de distintas instancias del problema BP, a la par que analizaremos c\'omo de buenos son y a qu\'e coste. Para ello, el primer tipo de m\'etodos que analizaremos ser\'an los algoritmos voraces (\textit{greedy alhorithm}).
+	En lo que sige, propondremos una serie de algoritmos con los que aproximar las soluciones de distintas instancias del problema BP, a la par que analizaremos c\'omo de buenos son y qu\'e coste computacional tienen. Para ello, el primer tipo de m\'etodos que analizaremos ser\'an los algoritmos voraces (\textit{greedy alghorithm}).
 	
 	\section{Algoritmos voraces}
-	Por algoritmos voraces se entienden aquellos algoritmos que siguen un esquema de resoluci\'on llamado m\'etodo voraz. Dicho esquema forma parte de una familia de algoritmos m\'as amplia denominada \textit{algoritmos de b\'usqueda local}, de la que tambi\'en forman parte, por ejemplo, el m\'etodo del gradiente, los algoritmos gen\'eticos o los algoritmos de cristalizaci\'on simulada. Los algoritmos que siguen este m\'etodo son, en general, los que menos dificultades plantean a la hora de implementar y comprobar su funcionamiento, y suelen aplicarse en problemas de optimizaci\'on.
+	Por algoritmos voraces se entienden aquellos algoritmos que siguen un esquema de resoluci\'on llamado m\'etodo voraz. Dicho esquema consiste esencialmente en construir una soluci\'on de forma incremental, tomando decisiones localmente \'optimas en cada paso, lo cual no implica que la soluci\'on final sea globalmente \'optima. Esquema que siguen algoritmos como, por ejemplo, el m\'etodo del gradiente, los algoritmos gen\'eticos o los algoritmos de cristalizaci\'on simulada. Los algoritmos que siguen este m\'etodo son, en general, los que menos dificultades plantean a la hora de implementar y comprobar su funcionamiento, y suelen aplicarse en problemas de optimizaci\'on.
 	\\
 	
 	Frecuentemente, los algoritmos de tipo greedy y los problemas que pueden resolver, se caracterizan por la mayor\'ia de las siguientes caracter\'isticas (\textbf{citar Brassard}):
@@ -555,7 +556,7 @@
 	
 	\subsection{Primeras aproximaciones}
 	\subsubsection{Next Fit}
-	Este algoritmo es el m\'as sencillo de implementar y con el que obtener una r\'apida soluci\'on del problema, aunque no muy buena. Funciona de la siguiente manera: comenzamos con una soluci\'on en la que no tenemos ning\'un cubo. A continuaci\'on, seleccionamos el primer objeto de la lista de objetos que queremos introducir en los cubos y lo introducimos en un nuevo cubo dado que es el primer elemento seleccionado. Para los siguientes objetos, el algoritmo comprueba si podemos introducir el elemento seleccionado en el \'ultimo cubo creado. Si se puede, lo introducimos. En otro caso, creamos un cubo nuevo y lo introducimos.
+	Este algoritmo es el m\'as sencillo de implementar y con el que podemos obtener una r\'apida soluci\'on del problema, aunque no muy buena. Funciona de la siguiente manera: comenzamos con una soluci\'on en la que no tenemos ning\'un cubo. A continuaci\'on, seleccionamos el primer objeto de la lista de objetos que queremos introducir en los cubos y lo introducimos en un nuevo cubo dado que es el primer elemento seleccionado. Para los siguientes objetos, el algoritmo comprueba si podemos introducir el elemento seleccionado en el \'ultimo cubo creado. Si se puede, lo introducimos. En otro caso, creamos un cubo nuevo y lo introducimos.
 	\\
 	
 	Vemos que, aunque es un algoritmo que nos permite obtener una soluci\'on de manera sencilla y r\'apida (puesto que no hay muchas comprobaciones que realizar), no resulta muy eficiente como veremos. As\'i, el pseudoc\'odigo del algoritmo ser\'ia el siguiente:
@@ -574,7 +575,7 @@
 				\If{(item cabe en current)}
 				\State{A\~{n}adimos el item a current}
 				\Else
-				\State{A\~{n}adimos current a soltion}
+				\State{A\~{n}adimos current a solution}
 				\State{current = new Bin(capacity)}
 				\State{A\~{n}adimos el item a current}
 				\EndIf
@@ -587,7 +588,7 @@
 	}
 	\\\\
 	
-	Observemos que, dada una lista de \textit{n} pesos, el algoritmo hace una \'unica comprobaci\'on por cada iteraci\'on. Por lo tanto, tenemos que la complejidad del algoritmo es \textit{O(n)}, con lo que la velocidad de resoluci\'on del problema se incrementa de forma lineal conforme lo hace el n\'umero de elementos que tenemos que introducir en los cubos. As\'i pues, como primera aproximaci\'on, ser\'ia un algoritmo \'util, r\'apido y f\'acil de resolver para instancias peque\~{n}as del problema en las que no estamos interesados en obtener el \'optimo. Adem\'as, su sencillez nos permite conseguir resultados como el siguiente:
+	Observemos que, dada una lista de \textit{n} pesos, el algoritmo hace una \'unica comprobaci\'on por cada iteraci\'on. Por lo tanto, tenemos que la complejidad del algoritmo es \textit{O(n)}, con lo que el tiempo necesario para la resoluci\'on del problema se incrementa de forma lineal conforme lo hace el n\'umero de elementos que tenemos que introducir en los cubos. As\'i pues, como primera aproximaci\'on, ser\'ia un algoritmo \'util, r\'apido y f\'acil de resolver para instancias peque\~{n}as del problema en las que no estamos interesados en obtener el \'optimo. Adem\'as, su sencillez nos permite conseguir resultados como el siguiente:
 	
 	\begin{teorema}
 		Sea M el n\'umero de cubos de capacidad c necesarios para empaquetar una lista de n objetos de forma \'optima. Entonces el algoritmo Next Fit usar\'a a lo sumo 2M cubos.
@@ -596,20 +597,16 @@
 	\begin{proof}
 		\hfill \break
 		
-		Sea \textit{k} el n\'umero de cubos de la soluci\'on obtenida al aplicar el algoritmo Next Fit y sea $B_{i}$ el cubo i-\'esimo de la soluci\'on. Denotemos por $s(B_{i})$ a la suma de los pesos de los objetos empaquetados en el cubo $B_{i}$.
+		Haremos la demostraci\'on para el caso par. Sea \textit{k} el n\'umero de cubos de la soluci\'on obtenida al aplicar el algoritmo Next Fit y sea $B_{i}$ el cubo i-\'esimo de la soluci\'on. Denotemos por $s(B_{i})$ a la suma de los pesos de los objetos empaquetados en el cubo $B_{i}$.
 		\\
 		
 		Entonces, para cualesquiera dos cubos adyascentes $B_{i}$ y $B_{i+1}$ se verifica que
 		$$s(B_{i}) + s(B_{i+1}) > c$$
 		
-		Dividiremos la demostraci\'on en dos partes en funci\'on de si \textit{k} es par o impar.
+		Por lo tanto, tenemos que
+		$$s(B_{1}) + s(B_{2}) > c,\, s(B_{3}) + s(B_{4}) > c,\, ...,\, s(B_{k-1}) + s(B_{k}) > c.$$
 		
-		1. Supongamos que \textit{k} es par.
-		
-		Por lo expuesto anteriormente, tenemos que
-		$$s(B_{1}) + s(B_{2}) > c,\, s(B_{2}) + s(B_{3}) > c,\, ...,\, s(B_{k-1}) + s(B_{k}) > c.$$
-		
-		Por lo tanto, si sumamos todas estas desigualdades llegamos a
+		Con lo que, si sumamos todas estas desigualdades llegamos a
 		$$\sum_{i=1}^{k}s(B_{i}) > \frac{k}{2}c.$$
 		
 		Adem\'as, como cualquier cubo de la soluci\'on verifica 
@@ -630,14 +627,13 @@
 		de donde deducimos que
 		$$Mc > \frac{k}{2}c \Longrightarrow 2M > k$$
 		
-		2. Supongamos que \textit{k} es impar.
+		Podemos ver una prueba m\'as general en \cite{Graduatecourse}.
 		
-		\textbf{ESTA PARTE NO ME SALE}
 	\end{proof}
 	
 	
 	\subsubsection{First Fit}
-	Podr\'iamos considerar a este algoritmo como un primer intento de mejorar el m\'etodo anterior ya que, aunque no reconsideremos las decisiones tomadas (es decir, si alguno de los items introducidos en los cubos existentes deber\'ia introducirse en otro cubo), que es la idea b\'asica de los algortimos voraces, s\'i que vamos llenando "mejor" los cubos que se van creando en las iteraciones del algoritmo. Adem\'as, posteriormente este ser\'a uno de los algortimos que usaremos como base para implmententar mejores t\'ecnicas de resoluci\'on del problema del BP.
+	Podr\'iamos considerar a este algoritmo como un primer intento de mejorar el m\'etodo anterior ya que, aunque no reconsideremos las decisiones tomadas (es decir, si alguno de los items introducidos en los cubos existentes deber\'ia introducirse en otro cubo), que es la idea b\'asica de los algortimos voraces, s\'i que vamos llenando "mejor" los cubos que se van creando en las iteraciones del algoritmo. Adem\'as, posteriormente \'este ser\'a uno de los algortimos que usaremos como base para implemententar mejores t\'ecnicas de resoluci\'on del problema del BP.
 	\\
 	
 	El algoritmo es el siguiente: empezamos igual que en el caso anterior; partimos de una soluci\'on que no tiene ningu\'un cubo. Seleccionamos el primer elemento de nuestra lista de objetos a introducir en los cubos y creamos un primer cubo donde a\~{n}adimos el elemento. Para los siguientes elementos, recorremos nuestra soluci\'on de cubos y a\~{n}adimos el elemento en el primer cubo que encontremos donde quepa el objeto. Si no hay ning\'un cubo en el que quepa el elemento seleccionado, creamos un nuevo cubo y lo introducimos.
@@ -679,30 +675,27 @@
 	}
 	\\\\
 	
-	Como mencionamos anteriormente, este algoritmo conseguimos mejorar la soluci\'on obtenida seg\'un el m\'etodo Next Fit, pero esto implica que la complejidad algor\'itmica se incrementa. Dado una lista de \textit{n} elementos, el bucle for itera sobre cada uno de ellos, por lo que la complejidad introducida a priori por el bucle es \textit{O(n)}. Pero, a su vez, en cada iteraci\'on el bucle while recorre en el peor de los casos toda la lista de cubos, con lo que su complejidad es tambi\'en \textit{O(n)}. Por lo tanto, la complejidad del algoritmo resulta ser $O(n^{2})$.
+	Como mencionamos anteriormente, este algoritmo conseguimos mejorar la soluci\'on obtenida seg\'un el m\'etodo Next Fit, pero esto implica que la complejidad algor\'itmica se incrementa. Dada una lista de \textit{n} elementos, el bucle for itera sobre cada uno de ellos, por lo que la complejidad introducida a priori por el bucle es \textit{O(n)}. Pero, a su vez, en cada iteraci\'on el bucle while recorre en el peor de los casos toda la lista de cubos, con lo que su complejidad es tambi\'en \textit{O(n)}. Por lo tanto, la complejidad del algoritmo resulta ser $O(n^{2})$.
 	\\
 	
 	\begin{teorema}
-		Sea M el n\'umero de cubos de capacidad c necesarios para empaquetar una lista de n objetos de forma \'optima. Entonces el algoritmo First Fit no usa m\'as de 1,7M + 2 cubos.
+		Sea M el n\'umero de cubos de capacidad c necesarios para empaquetar una lista de n objetos de forma \'optima. Entonces el algoritmo First Fit no usa m\'as de 1,7M cubos.
 	\end{teorema}
-	
-	\textbf{FALTA LA DEMOSTRACION}
 	
 	\begin{proof}
 		\hfill \break
-		Aqu\'i va la demostraci\'on. Buscar teorema que acota por 1,7M cubos en lugar de 1,7M + 2 cubos.
+		Se omite la demostraci\'on de este resultado debido a su larga extensi\'on y a que requiere de unos cuantos resultados previos que se alejan del prop\'osito de lo que aqu\'i tratamos. No obstante, podemos encontrarla en \cite{1.7OPT}
 	\end{proof}
 	
-	Para los siguientes algoritmos no se ha conseguido encontrar ninguna cota para el n\'umero de cubos de la soluci\'on.
 	
 	\subsubsection{Best Fit}
-	Este es el primero de los algoritmos que intenta ofrecernos una mejora "considerable" a la hora de llenar los cubos ya que no solo intenta ir llenando todos los cubos en cada iteraci\'on, sino que los llena de la mejor forma posible, entendiendo esa forma mejor como aquella en la que el elemento seleccionado llena mejor en el cubo. Al igual que el first fit y los m\'etodos posteriores, las mejoras que conseguimos en busca de la soluci\'on \'optima o una aproximada, aparecen a costa de incrementar la complejidad del algoritmo.
+	Este es el primero de los algoritmos que intenta ofrecernos una mejora "considerable" a la hora de llenar los cubos ya que no solo intenta ir llenando todos los cubos en cada iteraci\'on, sino que los llena de la mejor forma posible, entendiendo esa forma mejor como aquella en la que el elemento seleccionado rellena mejor en el cubo. Al igual que para First Fit y los m\'etodos posteriores, las mejoras que conseguimos en busca de la soluci\'on \'optima o una aproximada, aparecen a costa de incrementar la complejidad del algoritmo.
 	\\
 	
-	De esta forma, el algoritmo best fit es: seleccionamos el primer objeto de nuestra lista, creamos un nuevo cubo con la capacidad dada en el problema e introducimos el objeto. Para los siguientes elementos buscamos el cubo cuya capacidad restante sea menor y que, adem\'as, quepa el elemento. Si encontramos un cubo que cumpla esta condici\'on introducimos el objeto. En otro caso, creamos un cubo nuevo y lo introducimos.
+	De esta forma, el algoritmo Best Bit es: seleccionamos el primer objeto de nuestra lista, creamos un nuevo cubo con la capacidad dada en el problema e introducimos el objeto. Para los siguientes elementos buscamos el cubo cuya capacidad restante sea menor y en el que, adem\'as, quepa el elemento. Si encontramos un cubo que cumpla esta condici\'on introducimos el objeto. En otro caso, creamos un cubo nuevo y lo introducimos.
 	\\
 	
-	Obs\'ervese que aquel cubo donde se verifiquen las condiciones dadas para introducir un nuevo elemento no tiene por qu\'e ser \'unico. Por lo tanto, a la hora de implementar el algoritmo iremos insertando los cubos en nuestra soluci\'on de manera ordenada, con lo que cuando vayamos a seleccionar en qu\'e cubo introducimos un nuevo elemento cuando haya m\'as de una elecci\'on posible, lo haremos eligiendo el primer cubo que encontremos. As\'i, el pseudoc\'odigo del algoritmo queda como sigue: 
+	Obs\'ervese que el cubo que verifique las condiciones dadas para introducir un nuevo elemento no tiene por qu\'e ser \'unico. Por lo tanto, a la hora de implementar el algoritmo iremos insertando los cubos en nuestra soluci\'on de manera ordenada, con lo que cuando vayamos a seleccionar en qu\'e cubo introducimos un nuevo elemento cuando haya m\'as de una elecci\'on posible, lo haremos eligiendo el primer cubo que encontremos. As\'i, el pseudoc\'odigo del algoritmo queda como sigue: 
 	\\
 	
 	\noindent\fbox{
@@ -715,7 +708,7 @@
 				\State{//El array solution almacenar\'a los cubos y current ser\'a el \'ultimo cubo creado}
 				\State{//Inicializamos el algoritmo con el array de soluciones sin ning\'un cubo}
 				\State{//targetBin es la posici\'on en solution del cubo con la menor capacidad restante que es mayor o igual que el peso del item seleccionado}
-				\State{//smallerThanTarget es un m\'etodo de b\'usqueda binaria con el que, dado un array y un elemento, encuentra la posici\'on del menor elemento del array que es mayor o igual que el elemento dado}
+				\State{//smallerThanTarget es un m\'etodo de b\'usqueda binaria con el que, dado un array de cubos ordenados seg\'un sus capacidades restantes de forma creciente y un elemento, encuentra la posici\'on del menor elemento del array que es mayor o igual que el elemento dado}
 				\State{solution = $\emptyset$}\
 				\For{(item $\leftarrow$ items)}
 				\State{targetBin = 1 + smallerThanTarget(item, solution)}
@@ -757,13 +750,10 @@
 				\State{//items es un array que almacena los elementos que introduciremos en los cubos}
 				\State{//El array solution almacenar\'a los cubos y current ser\'a el \'ultimo cubo creado}    
 				\State{//targetBin es la posici\'on en solution del cubo con la menor capacidad restante que es mayor o igual que el peso del item seleccionado}
-				\State{//smallerThanTarget es un m\'etodo con el que, dado un array y un elemento, encuentra la posici\'on del menor elemento del array que es mayor o igual que el elemento dado}
 				\State{//Inicializamos el algoritmo con el array de soluciones sin ning\'un cubo}
 				\State{solution = $\emptyset$}\
 				\For{(item $\leftarrow$ items)}
-				\State{targetBin = smallerThanTarget(item, solution)}
-				\If{(targetBin es menor que la longitud de solution)}
-				\State{//Esto equivale a comprobar que item cabe en el \'ultimo cubo}
+				\If{(solution no est\'a vac\'io \textbf{y} el item cabe en el \'ultimo cubo de solution)}
 				\State{A\~{n}adimos el item en el cubo que se encuentra en la \'ultima posici\'on}
 				\State{Reordenamos el array solution de menor a mayor capacidad restante}
 				\Else
@@ -795,7 +785,7 @@
 	El m\'etodo Next k Fit podr\'ia considerarse como una generalizaci\'on del m\'etodo Next Fit. La diferencia es que mientras que en el m\'etodo Next Fit solo tenemos "abierto" el \'ultimo cubo de la soluci\'on (es decir, solo miramos el \'ultimo a la hora de comprobar si podemos introducir un nuevo elemento o si creamos un cubo nuevo donde introducirlo), en este m\'etodo tenemos abierto los \textit{k} \'ultimos cubos. As\'i, dada una soluci\'on de cubos de longitud \textit{n} y un nuevo elemento a introducir en ellos, comenzar\'iamos comprobando si el elemento cabe en el cubo de posici\'on $n-(k-1)$; si cabe lo introducimos, en otro caso pasamos al cubo de posici\'on $n-(k-2)$ y as\'i sucesivamente hasta llegar al \'ultimo cubo. Como dijimos con anterioridad, el m\'etodo Next Fit no es m\'as que un caso particular de este m\'etodo cuando $k=1$.
 	\\
 	
-	Podemos apreciar a simple vista que este tipo de m\'etodos podr\'ian mejorar al algoritmo Next Fit cuando $k>1$ dado que nos permite "llenar" mejor los cubos de la soluci\'on al comprobar si un elemento dado cabe en m\'as de un cubo.
+	Podemos apreciar a simple vista que m\'etodos de este tipo podr\'ian mejorar al algoritmo Next Fit cuando $k>1$ dado que nos permite "llenar" mejor los cubos de la soluci\'on al comprobar si un elemento dado cabe en m\'as de un cubo.
 	\\
 	
 	\noindent\fbox{
@@ -857,16 +847,38 @@
 	}
 	\\\\
 	
-	\textbf{HACER ANALISIS DE SU COMPLEJIDAD; TENGO DUDAS}
+	La complejidad de este algoritmo es id\'entica al Next Fit. Esto se debe a que el bucle for recorre toda la lista de objetos, luego al igual que en los algoritmos previos, su complejidad es \textit{O(n)}. Por otra parte, el bucle while itera, a lo sumo, k veces, con lo que la complejidad del algoritmo es $k\cdot O(n) = O(n)$ ya que k es una constante.
 	
-	\subsubsection{Algoritmos de tipo decreasing}
-	Este tipo de algoritmos recoge los m\'etodos ya planteados y les realiza una peque\~{n}a variaci\'on que es, b\'asicamente, ordenar la lista de objetos a introducir en los cubos de manera descendente seg\'un sus pesos. As\'i, este tipo de variaci\'on da lugar a los algoritmos \textit{First Fit Decreasing}, \textit{Best Fit Decreasing} o incluso \textit{Worst Fit Decreasing}. 
+	\subsubsection{Algoritmos de tipo decreasing/increasing}
+	Este tipo de algoritmos recoge los m\'etodos ya planteados y les realiza una peque\~{n}a variaci\'on que es, b\'asicamente, ordenar antes de empezar el proceso la lista de objetos a introducir en los cubos de manera descendente seg\'un sus pesos. As\'i, este tipo de variaci\'on da lugar a los algoritmos \textit{First Fit Decreasing}, \textit{Best Fit Decreasing} o incluso \textit{Worst Fit Decreasing}. 
 	\\
 	
-	L\'ogicamente, el resto de m\'etodos voraces que presentamos en este trabajo tambi\'en son susceptibles de introducir este cambio en su algoritmo, pero su uso no suele ser tan com\'un ni tampoco introducen mejoras considerables en la obtenci\'on de mejores resultados. Por otro lado, en lugar de ordenar la lista de objetos de manera ascendente, tambi\'en podr\'ia hacerse de forma ascendente, lo cual podr\'ia llegar a resultar beneficioso seg\'un la instancia del problema que se estuviera tratando de resolver.
+	L\'ogicamente, el resto de m\'etodos voraces que presentamos en este trabajo tambi\'en son susceptibles de introducir este cambio en su algoritmo, pero su uso no suele ser tan com\'un ni tampoco introducen mejoras considerables en la obtenci\'on de mejores resultados. Por otro lado, en lugar de ordenar la lista de objetos de manera descendente, tambi\'en podr\'ia hacerse de forma ascendente, lo cual podr\'ia llegar a resultar beneficioso seg\'un la instancia del problema que se estuviera tratando de resolver.
 	\\
 	
-	En cuanto a la complejidad del algoritmo resultante cuando aplicamos este cambio, podemos observar que no var\'ia en absoluto para los m\'etodos que estamos considerando. Esto es as\'i porque la complejidad del algoritmo de reordenaci\'on es mejor o igual que la complejidad del algoritmo del que partimos, luego la complejidad del nuevo algoritmo no es m\'as que la complejidad de la suma de estos dos algoritmos, que seg\'un tratamos en el primer cap\'itulo, resulta que es el m\'aximo de ambas complejidades, es decir, la peor, que es la complejidad del algoritmo de partida.
+	En cuanto a la complejidad del algoritmo resultante cuando aplicamos este cambio, podemos observar que no var\'ia en absoluto para los m\'etodos que estamos considerando. Esto es as\'i porque la complejidad del algoritmo de reordenaci\'on previa es $O(n \log(n))$, que es la que tienen los mejores algoritmos de ordenaci\'on. De esta forma la complejidad del nuevo algoritmo no es m\'as que la complejidad de la suma de estos dos algoritmos, que seg\'un tratamos en el primer cap\'itulo, resulta que es el m\'aximo de ambas complejidades, es decir, la peor, que es la complejidad del algoritmo de partida.
+	\\
+	
+	\begin{teorema}
+		Sea M el n\'umero de cubos de capacidad c necesarios para empaquetar una lista de n objetos de forma \'optima. Entonces el algoritmo First Fit Decreasing no usa m\'as de 1,5M cubos \cite{Graduatecourse}.
+	\end{teorema}
+	
+	\begin{proof}
+		\hfill \break
+		Sea \textit{I} el conjunto de los elementos a introducir en los cubos. Sea k el n\'umero de cubos hallados seg\'un el algoritmo First Fit Decreasing y sea k* la soluci\'on \'optima del problema de BP.
+		\\
+		
+		Consideremos el cubo que se encuentra en la posici\'on $j = [\frac{2}{3}k]$, donde $[\cdot]$ denota la parte entera de un n\'umero. Si dicho cubo contiene un elemento $i$ con $s_{i}>\frac{c}{2}$, donde $s_{i}$ representa el peso del elemento $i$, entonces cada cubo $j'<j$ no tiene capacidad restante suficiente para el elemento $i$. Por lo tanto, a $j$ se le asign\'o un elemento $i'$ con $i'<i$. Como los elementos se consideran en orden no creciente de tama\~{n}o, tenemos $s_{i'} \geq s_{i} > \frac{c}{2}$. Es decir, hay al menos $j$ elementos de tama\~{n}o superior a $\frac{c}{2}$. Estos elementos deben colocarse en cubos individuales. Esto significa que
+		$$k* \geq j \geq \frac{2}{3}k$$
+		
+		En caso contrario, el cubo $j$ y cualquier cubo $j'>j$ no contienen ning\'un elemento de tama\~{n}o superior a $\frac{c}{2}$. Por tanto, los cubos que se encuentran en las posiciones $j, j+1, ..., k$ contienen al menos $2(k-j)+1$ elementos, ninguno de los cuales cabe en los cubos que se encuentran en las posiciones $1, ..., j-1$. Por lo tanto, tenemos
+		$$c\cdot s(I) > c\cdot min\{j-1, 2(k-j)+1\} \geq c\cdot min\{[\frac{2}{3}k]-1, 2(k-(\frac{2}{3}k + \frac{2}{3}))+1\} = c\cdot ([\frac{2}{3}k]-1)$$
+		
+		y $c\cdot k* \geq c\cdot s(I) > c\cdot([\frac{2}{3}k]-1)$. Pero esto implica que
+		$$k* \geq [\frac{2}{3}k] \geq \frac{2}{3}k$$,
+		
+		de donde llegamos a lo que quer\'iamos probar.
+	\end{proof}
 	
 	\subsubsection{Almost Worst Fit}
 	Este algoritmo es una variaci\'on del m\'etodo Worst Fit. La diferencia es que, mientras que en Worst Fit introducimos los pesos en aquel cubo con mayor capacidad restante (cuando cabe el elemento; en otro caso creamos un cubo nuevo y lo introducimos), en Almost Worst Fit comprobamos primero si el peso dado cabe en el cubo con segunda mayor capacidad restante.
@@ -884,17 +896,28 @@
 				\State{//items es un array que almacena los elementos que introduciremos en los cubos}
 				\State{//El array solution almacenar\'a los cubos y current ser\'a el \'ultimo cubo creado}    
 				\State{//targetBin es la posici\'on en solution del cubo con la menor capacidad restante que es mayor o igual que el peso del item seleccionado}
-				\State{//smallerThanTarget es un m\'etodo con el que, dado un array y un elemento, encuentra la posici\'on del menor elemento del array que es mayor o igual que el elemento dado}
 				\State{//Inicializamos el algoritmo con el array de soluciones sin ning\'un cubo}
 				\State{solution = $\emptyset$}\
 				\For{(item $\leftarrow$ items)}
-				\State{targetBin = smallerThanTarget(item, solution)}
-				\If{(targetBin es menor que la longitud de solution)}
-				\If{()}
-				\ElsIf{}
-				\Else
+				\State{found = false}
+				\If{(solution \textbf{no} est\'a vac\'io)}
+				\If{(solution.length $=$ 1 \textbf{y} cabe en el cubo)}
+				\State{found = true}
+				\State{targetBin = solution.length - 1}
+				\ElsIf{(solution.length $>$ 1)}
+				\If{(item cabe en el pen\'ultimo cubo)}
+				\State{found = true}
+				\State{targetBin = solution.length - 2}
+				\ElsIf{(item cabe en el \'ultimo cubo)}
+				\State{found = true}
+				\State{targetBin = solution.length - 1}
 				\EndIf
-				\Else
+				\EndIf
+				\EndIf
+				\If{(found)}
+				\State{A\~{n}adimos el item al cubo en la posici\'on targetBin}
+				\State{Reordenamos el array solution de menor a mayor capacidad restante}
+				\ElsIf{(solution est\'a vac\'io \textbf{o} found = false)}
 				\State{current = new Bin(capacity)}
 				\State{A\~{n}adimos el item en el cubo current}
 				\State{A\~{n}adimos el cubo current en solution}
@@ -911,15 +934,15 @@
 	Como puede apreciarse f\'acilmente, el pseudoc\'odigo de este algoritmo es pr\'acticamente igual al del m\'etodo Worst Fit, lo cual nos induce a pensar que la complejidad del algoritmo es la misma. Efectivamente esto es as\'i. Al igual que en los m\'etodos anteriores, el bucle for que hay presente tiene un coste \textit{O(n)}. Por otro lado, las comprobaciones que hacemos dentro del bucle no a\~{n}aden complejidad al algoritmo. Sin embargo, en cada iteraci\'on del bucle tenemos que, o bien reordenar el cubo en el que hayamos introducido el nuevo elemento en nuestra soluci\'on o bien hacer una inserci\'on ordenada de un nuevo cubo en la misma cuando sea necesario. En ambos casos, como ya se explic\'o con anterioridad, esta operaci\'on tiene un coste \textit{O(n)} por lo que, de nuevo, la complejidad del algoritmo ser\'a $O(n^{2})$.
 	\\
 	
-	Vemos que de esta forma, al igual que suced\'a con el algoritmo Next k Fit, introducimos una variaci\'on o posible mejora del algoritmo de partida sin incrementar el coste computacional del m\'etodo.
+	Vemos que de esta forma, al igual que suced\'ia con el algoritmo Next k Fit, introducimos una variaci\'on o posible mejora del algoritmo de partida sin incrementar el coste computacional del m\'etodo.
 	\\
 	
-	Destaquemos de nuevo que estas primeras variaciones que hemos introducido, aunque puedan mejorar el resultado de nuestra soluci\'on, no producen una mejora en el coste computacional de los algoritmos que tratamos de mejorar, lo cual resulta fundamental dado que, como hemos visto, la complejidad de estos algoritmos es elevada y resultar\'ia complicado e incluso intratable el resolver instancias muy grandes del problema haciendo uso de los mismos.
+	Destaquemos de nuevo que estas primeras variaciones que hemos introducido, aunque puedan mejorar el resultado de nuestra soluci\'on, no producen una mejora en el coste computacional de los algoritmos que tratamos de mejorar, lo cual resulta fundamental dado que, como hemos visto, la complejidad de estos algoritmos es elevada y resultar\'ia ineficiente y costoso en tiempo el resolver instancias muy grandes del problema haciendo uso de los mismos.
 	\\
 	
-	Por lo tanto, deberemos emplear otras t\'ecnicas que nos permitan dise\~{n}ar estos mismos algoritmos pero con un coste computacional menor. Esto es precisamente lo que haremos en la siguiente secci\'on, que ser\'a implementar estos m\'etodos haciendo uso de los \textit{\'arboles AVL balanceados}.
+	Por lo tanto, deberemos emplear otras t\'ecnicas que nos permitan implementar estos mismos algoritmos pero con un coste computacional menor. Esto es precisamente lo que haremos en la siguiente secci\'on, que ser\'a implementar estos m\'etodos haciendo uso de los \textit{\'arboles AVL balanceados}.
 	
-	\subsection{Primeras mejoras. \'Arboles AVL.}
+	\subsection{\'Arboles AVL.}
 	Los \'arboles son una de las estructuras de datos utilizadas con mayor frecuencia, aunque tambi\'en de las m\'as complejas. Se caracterizan por almacenar sus elementos de forma jer\'arquica, a diferencia de los arrays o las listas que lo hacen de manera lineal.
 	\\
 	
@@ -930,18 +953,15 @@
 		\label{fig:arbol}
 	\end{figure}
 	
-	\textbf{https://www.oscarblancarteblog.com/2014/08/22/estructura-de-datos-arboles/}
-	\\
-	
-	De esta forma, podemos enumerar los siguientes elementos que conforman un \'arbol:
+	De esta forma, podemos enumerar los siguientes elementos que conforman un \'arbol \cite{estructuraarboles}:
 	\begin{itemize}
 		\item \textbf{Nodos:} Se le llama nodo a cada elemento que contiene un \'arbol.
 		\item \textbf{Nodo ra\'iz:} Se llama nodo ra\'iz o simplemente ra\'iz al primer nodo de un \'arbol. Solo un nodo del \'arbol puede ser la ra\'iz.
-		\item \textbf{Nodo padre:} Se llaman as\'i a aquellos nodos que tiene al menos un hijo.
+		\item \textbf{Nodo padre:} Se llaman as\'i a aquellos nodos que tienen al menos un hijo.
 		\item \textbf{Nodo hijo:} Son aquellos nodos que tienen un padre.
-		\item \textbf{Nodo hermano:} Los nodos hermanos son aquellos nodos que comparten a un mismo padre.
+		\item \textbf{Nodo hermano:} Los nodos hermanos son aquellos nodos que comparten un mismo padre.
 		\item \textbf{Nodo hoja:} Son todos los nodos que no tienen hijos, los cuales siempre se encuentran en los extremos del \'arbol.
-		\item \textbf{Nodo rama:} Estos son todos aquellos nodos que no son la ra\'iz  y que ademas tiene al menos un hijo.
+		\item \textbf{Nodo rama o internos:} Estos son todos aquellos nodos que no son la ra\'iz  y que ademas tiene al menos un hijo.
 	\end{itemize}
 	
 	\begin{figure}[h]
@@ -967,7 +987,7 @@
 			\item El nivel del nodo ra\'iz es 1
 			\item El nivel de cada nodo se calcula contando cuantos nodos existen sobre \'el hasta llegar a la raíz m\'as 1. Tambi\'en podr\'a calcularse de forma inversa, es decir, contando cuantos nodos existen desde la ra\'iz hasta el nodo buscado m\'as 1.
 		\end{enumerate}
-		\item \textbf{Altura:} Llamamos altura al n\'umero m\'aximo de niveles de un \'arbol. Teniendo en cuenta esta idea, podemos calcular tambi\'en la altura de cada nodo como la altura del sub\'arbol correspondiente a ese nodo. Se calcula de manera recursiva tomando de la siguiente manera:
+		\item \textbf{Altura:} Llamamos altura al n\'umero m\'aximo de niveles de un \'arbol. Teniendo en cuenta esta idea, podemos calcular tambi\'en la altura de cada nodo como la altura del sub\'arbol correspondiente a ese nodo. Se calcula de manera recursiva de la siguiente manera:
 		$$ altura = max(altura(hijo1), altura(hijo2), ..., altura(hijoN)) + 1 $$
 		\begin{figure}[h]
 			\centering
@@ -979,8 +999,7 @@
 		$$ peso = peso(hijo1) + peso(hijo2) + ... + peso(hijoN) + 1$$
 		\item \textbf{Orden:} Es es el n\'umero m\'aximo de hijos que puede tener un nodo.
 		\item \textbf{Grado:} N\'umero mayor de hijos que tiene alguno de los nodos del \'arbol. Observemos que el grado se encuentra limitado por el orden. Para calcularlo, al igual que en los casos anteriores, lo hacemos de forma recursiva contando el n\'umero de hijos de cada sub\'arbol y el del nodo actual:
-		$$ grado = max(contarHijos(hijo1), contarHijos(hijo2), ..., contarHijos(hijoN) $$
-		$$, contarHijos(this))$$
+		$$ grado = max(grado(hijo1), grado(hijo2), ..., grado(hijoN), grado(this))$$
 	\end{itemize}
 	
 	Podemos encontrar distintas clasificaciones para los \'arboles, pero para el prop\'osito de este trabajo s\'olo mencionaremos una, dentro de la cual se encuentra el tipo de \'arboles con los que trabajaremos en el resto de la secci\'on.
@@ -989,7 +1008,7 @@
 	Dicho tipo de \'arboles son los conocidos como \textit{\'arboles n-arios}. Los \'arboles n-arios son aquellos \'arboles donde el n\'umero m\'aximo de hijos por nodo es \textit{n}. En particular, los \'arboles cuyo n\'umero m\'aximo de hijos por nodos es 2 reciben el nombre de \textit{\'arboles binarios}. Obs\'ervese que los \'arboles binarios tienen grado 2.
 	\\
 	
-	Definimos entonces los \textbf{\'arboles binarios balanceados}, \textbf{\'arboles binarios de b\'usqueda balanceados}, o simplemente, \textbf{\'arboles AVL} como aquellos \'arboles binarios en los que las alturas de los dos sub\'arboles de cada nodo difieren, a lo sumo, en 1. Reciben este nombre en honor a sus creadores Adelson-Velski y Landis y es la estructura de datos que usaremos a lo largo de esta secci\'on para mejorar algunos de los m\'etodos voraces que vimos con anterioridad.
+	Definimos entonces los \textbf{\'arboles binarios balanceados}, \textbf{\'arboles binarios de b\'usqueda balanceados}, o simplemente, \textbf{\'arboles AVL} \cite{arbolAVL} como aquellos \'arboles binarios en los que las alturas de los dos sub\'arboles de cada nodo difieren, a lo sumo, en 1. Reciben este nombre en honor a sus creadores Adelson-Velski y Landis \cite{Adelson-Velsky} y es la estructura de datos que usaremos a lo largo de esta secci\'on para mejorar algunos de los m\'etodos voraces que vimos con anterioridad.
 	\\
 	
 	Sobre este tipo de \'arboles definimos el \textit{factor de equilibrio} (FE), que no es m\'as que la diferencia entre las alturas de sus sub\'arboles, es decir:
@@ -1000,6 +1019,7 @@
 	\\
 	
 	En caso de que el \'arbol no est\'e balanceado, es decir, que se desequilibre a medida que vamos introduciendo nuevos nodos, habr\'a que rebalancear el \'arbol para que siga siendo un \'arbol AVL v\'alido.
+	\\
 	
 	\begin{figure}[h]
 		\centering
@@ -1008,7 +1028,7 @@
 		\label{fig:desequilibrio}
 	\end{figure}
 	
-	Por consiguiente, en el caso de que el \'arbol est\'e desequilibrado, existen cuatro operaciones que corrigen el balanceo. A saber: 
+	Por consiguiente, en el caso de que el \'arbol est\'e desequilibrado, existen cuatro operaciones que corrigen el balanceo \cite{arbolesAVL}. A saber: 
 	
 	\begin{enumerate}
 		\item Rotaci\'on simple a la derecha.
@@ -1055,7 +1075,7 @@
 	Y la respuesta la encontramos en la soluci\'on de la cuesti\'on: ?`cu\'al es la complejidad de la operaci\'on de b\'usqueda en un \'arbol AVL? Ve\'amoslo.
 	\\
 	
-	Supongamos que tenemos un \'arbol AVL de \textit{n} elementos y con una altura \textit{h}. Si queremos buscar un elemento en el \'arbol en el peor de los casos haremos \textit{h} comparaciones. Esto es as\'i porque, en este tipo de \'arboles, tenemos definido un \textit{orden} seg\'un el cual cada nodo padre es "mayor" o "igual que el hijo izquierdo y "menor" que el hijo derecho.
+	Supongamos que tenemos un \'arbol AVL de \textit{n} elementos y con una altura \textit{h}. Si queremos buscar un elemento en el \'arbol en el peor de los casos haremos \textit{h} comparaciones. Esto es as\'i porque, en este tipo de \'arboles, tenemos definido un \textit{orden} seg\'un el cual cada nodo padre es "mayor" o "igual" que todos los que est\'as en su hijo izquierdo y "menor" que todos los del hijo derecho.
 	\\
 	
 	\begin{figure}[h]
@@ -1065,22 +1085,27 @@
 		\label{fig:busquedaAVL}
 	\end{figure}
 	
-	Por lo tanto, la complejidad ser\'a \textit{O(h)}. Notemos tambi\'en que, en cada iteraci\'on de la b\'usqueda, dividimos el espacio de b\'usqueda a la mitad. As\'i
+	Por lo tanto, la complejidad para localizar un elemento ser\'a \textit{O(h)} \cite{Tema4}. Notemos tambi\'en que, en cada iteraci\'on de la b\'usqueda, dividimos el espacio de b\'usqueda a la mitad. As\'i
 	\\
 	
-	\textbf{TENGO DUDAS DE COMO LLEGAR A $n=2^{h}\rightarrow h = \log_{2}(n)$}
+	Sea \textit{N(h)} el m\'inimo n\'umero de nodos de un \'arbol AVL de altura h. Entonces 
+	
+	$$N(h) = 1 + N(h-1) + N(h-2),\hspace{2pt} h > 2,$$
+	
+	donde el primer sumando se debe al nodo que se encuentra en la ra\'iz del \'arbol, el segundo a que la altura de un hijo debe ser $h-1$ y el tercero a que la diferencia de las alturas de los hijos debe ser menor o igual que 1, y el m\'inimo de nodos corresponde a $h-2$. Por lo tanto,
+	
+	$$N(h) = O(\phi^{h}) \rightarrow h = O(\log_{\phi}(n))$$
+	
+	De esta forma vemos que la complejidad de la operaci\'on de b\'usqueda en un \'arbol AVL es $O(h) = O(\log_{\phi}(n))$
 	\\
 	
-	De esta forma vemos que la complejidad de la operaci\'on de b\'usqueda en un \'arbol AVL es $O(h) = O(\log_{2}(n))$
-	\\
-	
-	As\'i, las mejoras que vamos a incorporar en esta secci\'on para mejorar algunos de los algoritmos anteriores, no es m\'as que representar la soluci\'on de nuestro problema en una estructura de \'arbol AVL en lugar de en una lista (array) de cubos. 
+	As\'i, las mejoras que vamos a incorporar en esta secci\'on para mejorar algunos de los algoritmos anteriores, no es m\'as que representar la soluci\'on de nuestro problema mediante una estructura de \'arbol AVL en lugar de en una lista (array) de cubos. 
 	\\
 	
 	Los algoritmos que implementaremos haciendo uso de esta estructura ser\'an First Fit, Best Fit, Worst Fit y sus correspondientes algoritmos de tipo decreasing, ya que la implementaci\'on de estos \'ultimos no requiere de gran esfuerzo extra para realizarlos. 
 	\\
 	
-	De nuevo, recordemos que la complejidad de estos algoritmos es $O(n^{2})$ debido a que, a la hora de buscar un cubo donde introducir un nuevo elemento y reordenar el array soluci\'on, estas operaciones resultaban tener una complejidad \textit{O(n)}, por lo que al tener \textit{n} elementos a introducir en los cubos la complejidad de los algoritmos finalmente es $O(n^{2})$. En cambio, como veremos a medida que vayamos realizando los pseudoc\'odigos de los m\'etodos que implementan estos algoritmos, dado que la b\'usqueda en \'arboles AVL tiene complejidad $O(\log_{2}(n))$, los algoritmos tendr\'an ahora una complejidad $O(n\log_{2}(n))$, lo cual mejora en gran medida la eficiencia de dichos algoritmos a la hora de resolver instancias del BPP muy grandes.
+	De nuevo, recordemos que la complejidad de estos algoritmos es $O(n^{2})$ debido a que, a la hora de buscar un cubo donde introducir un nuevo elemento y reordenar el array soluci\'on, estas operaciones resultaban tener una complejidad \textit{O(n)}, por lo que al tener \textit{n} elementos a introducir en los cubos la complejidad de los algoritmos finalmente es $O(n^{2})$. En cambio, como veremos a medida que vayamos realizando los pseudoc\'odigos de los m\'etodos que implementan estos algoritmos, dado que la b\'usqueda en \'arboles AVL tiene complejidad $O(\log_{\phi}(n))$, los algoritmos tendr\'an ahora una complejidad $O(n\log_{\phi}(n))$, lo cual mejora en gran medida la eficiencia de dichos algoritmos a la hora de resolver instancias del BPP muy grandes.
 	\\
 	
 	A continuaci\'on, vamos a estudiar cu\'al es la l\'ogica que siguen estos algoritmos cuando hacen uso de esta estructura de datos. Presentaremos el pseudoc\'odigo de los m\'etodos principales mientras que dejaremos para el cap\'itulo siguiente una explicaci\'on m\'as exhaustiva de c\'omo se ha implementado todo el proyecto.
@@ -1181,14 +1206,14 @@
 		\\\\
 	\end{itemize}
 	
-	Para el estudio de la complejidad, supongamos que tenemos \textit{n} elementos a introducir en los cubos. Dado un elemento nuevo a introducir, en el peor de los casos, tendremos que hacerlo al final de la espina derecha o crear un nodo nuevo aqu\'i tambi\'en. En ambos casos, por lo explicado con anterioridad acerca de la complejidad de los algoritmos de b\'usqueda, tenemos que la complejidad de esta parte del algorimo es $O(\log_{2}(n))$. Como tenemos \textit{n} elementos, la complejidad del algoritmo First Fit usando \'arboles AVL es $O(n\log_{2}(n))$, como ya hab\'iamos mencionado.
+	Para el estudio de la complejidad, supongamos que tenemos \textit{n} elementos a introducir en los cubos. Dado un elemento nuevo a introducir, en el peor de los casos, tendremos que hacerlo al final de la espina derecha o crear un nodo nuevo aqu\'i tambi\'en. En ambos casos, por lo explicado con anterioridad acerca de la complejidad de los algoritmos de b\'usqueda, tenemos que la complejidad de esta parte del algorimo es $O(\log_{\phi}(n))$. Como tenemos \textit{n} elementos, la complejidad del algoritmo First Fit usando \'arboles AVL es $O(n\log_{\phi}(n))$, como ya hab\'iamos mencionado.
 	
 	\subsubsection{Best Fit y Worst Fit usando \'arboles AVL}
 	
 	Vamos a englobar estos dos algoritmos en una misma secci\'on dado que su implementaci\'on solo se diferencia en un \'unico m\'etodo.
 	\\
 	
-	En ambos casos, la informaci\'on que almacenaremos encada nodo ser\'a:
+	En ambos casos, la informaci\'on que almacenaremos en cada nodo ser\'a:
 	\begin{enumerate}
 		\item La altura del nodo en el \'arbol.
 		\item Un cubo, el cual contiene los atributos del caso anterior.
@@ -1349,18 +1374,184 @@
 	\\\\
 	
 	
+	\chapter{Implementaci\'on}
 	
-	\subsection{Subsecci\'{o}n}
-	Una secci\'{o}n dentro de una secci\'{o}n se denomina subsecci\'{o}n.
-	\subsubsection{Subsubsecci\'{o}n}
-	Esto es una secci\'{o}n dentro de una subsecci\'{o}n, o sea, una subsubsecci\'{o}n.
-	Esto es un ejemplo de cita \cite{Zfinitegrading} \cite{Tutor} \cite{enlace}
+	\section{Introducci\'on}
+	En este cap\'itulo vamos a explicar brevemente c\'omo est\'a estructurada la soluci\'on que se propone en este trabajo. En el cap\'itulo anterior hemos explicado los algoritmos que hemos implementado para dar distintas soluciones a un problema de tipo BP por lo que, a continuaci\'on, lo que haremos ser\'a explicar las clases y m\'etodos que hemos implementado para poder llevar a cabo los algoritmos anteriores. En el siguiente enlace podemos consultar el c\'odigo completo:
+	\\
+	
+	\url{https://github.com/RafaelRG94/BinPackingProblem}
+	
+	\section{Preparaci\'on del problema}
+	En esta primera parte vamos a explicar qu\'e clases hemos implementado para introducir los datos y prepararlos para su posterior uso en los algoritmos que hemos presentado previamente.
+	
+	\subsection{La clase Bin}
+	L\'gicamente este es el primer fichero que hemos tenido que implementar. Con \'el hemos creado un objeto con el que representar la informaci\'on que guarda un cubo del problema as\'i como los m\'etodos principales para interactuar con el mismo.
+	\\
+	
+	En primer lugar tenemos dos \'unicos atributos, a saber: \textit{items}, que es un array de tipo buffer y es la variable donde almacenaremos los elementos que se vayan introduciendo en el cubo y \textit{leftCapacity}, que almacena un entero cuya clase recibe como constructor y no es m\'as que la capacidad restante del cubo. El motivo por el que se elige el arraybuffer para almacenar los objetos que se van introduciendo es que es una estructura de datos mutable (que es lo que nos permite ir introduciendo nuevos elemento en el cubo) que comparte mucho de los m\'etodos que los arrays tienen predefinidos. 
+	\\
+	
+	Por otra parte, podemos encontrar los siguientes m\'etodos principales:
+	\begin{itemize}
+		\item \textbf{add}: Este m\'etodo toma como par\'ametro un entero y lo introduce en el cubo.
+		\item \textbf{canAdd}: Dado un entero, esta funci\'on comprueba si el elemento se puede introducir en el cubo.
+		\item \textbf{getLeftCapacity}: Con este m\'etodo podemos consultar la capacidad restante de la instancia del cubo que estemos interesados.
+	\end{itemize}
+	
+	\subsection{Las clases ProblemInstance y Solution}
+	Estas dos clases las usamos para crear objetos que representen tanto la instancia de un problema de BP como su soluci\'on. Ambos implementan un m\'etodo \textbf{toString} para posteriormente mostrar distintos datos por pantalla. Adem\'as, podemos encontrar los dos siguientes m\'etodos:
+	\begin{itemize}
+		\item \textbf{sortDescendingInstance}: M\'etodo de la clase ProblemInstance con el que ordenamos de manera descendente la lista de objetos que tenemos en la instancia de un problema BP. Este m\'etodo es necesario para su posterior uso en los algoritmos de tipo decreasing. Su implementaci\'on es muy sencilla dado que lo \'unico que hacemos es copiar la lista de objetos de la instancia del problema, ordenarla y devolver un objeto de tipo ProblemInstance que tenga a esta \'ultima lista como objetos a introducir en los cubos.
+		\item \textbf{length}: M\'etodo de la clase Solution con el que devolvemos la longitud de la soluci\'on de una instancia del problema.
+	\end{itemize}
+	
+	\subsection{La clase Utils}
+	En el fichero Utils.scala tenemos tres m\'etodos auxiliares de los que posteriormente hacemos uso cuando implementamos los algoritmos:
+	
+	\begin{itemize}
+		\item \textbf{smallerThanTarget}: Se trata de un m\'etodo de b\'usqueda binaria \cite{smallerThanTarget} con el que, dado un entero y un arraybuffer de cubos ordenados seg\'un sus capacidades restantes de forma creciente, encuentra la posici\'on del cubo con la menor capacidad restante que es mayor o igual que el entero dado. 
+		\item \textbf{reorderBufferArrays}: Este m\'etodo toma como par\'ametros un arraybuffer de cubos que se encuentran ordenados seg\'un sus capacidades restantes y la posici\'on de un elemento del array que se encuentra desordenado y, lo que realiza, es la reordenaci\'on de dicho elemento. Su implementaci\'on es sencilla dado que, lo que hacemos, es usar el m\'etodo anterior para encontrar la nueva posici\'on de dicho cubo en el array para luego guardar el cubo en una variable auxiliar y, haciendo uso de que los arraybuffer son estructuras de datos mutables, usar los m\'etodos predefinidos de las librer\'ias de Scala para borrar el elemento del array y reinsertarlo en la posici\'on que hab\'iamos calculado previamente.
+		\item \textbf{sortDescending}: Este es un m\'etodo de ordenaci\'on que usamos para ordenar de manera descendente los elementos de la lista de objetos que nos proporciona las distintas instancias del problema. B\'asicamente hacemos uso del algoritmo QuickSort para realizar tal ordenaci\'on \cite{sortDescending}.
+	\end{itemize}
+	
+	\section{Algoritmos voraces}
+	Esta parte del c\'odigo se corresponde con aquellas clases que implementan los algoritmos de tipo greedy. Recordemos que la mayor\'ia de algoritmos propuestos tienen dos implementaciones diferentes en funci\'on de qu\'e tipo de estructura de datos usemos para almacenar la soluci\'on que vamos calculando. As\'i, tenemos:
+	\begin{itemize}
+		\item Ficheros de los algoritmos que almacenan sus soluciones en un \textbf{arraybuffer}: . 
+		\begin{enumerate}
+			\item AlmostWorstFit.
+			\item BestFit.
+			\item BestFitDecreasing.
+			\item FirstFit.
+			\item FirstFitDecreasing.
+			\item NextFit.
+			\item NextKFit.
+			\item WorstFit.
+			\item WorstFitDecreasing.
+		\end{enumerate}
+		Estos ficheros contienen los m\'etodos de la clase de los objetos que, dada una instancia del problema de BP, resuelven el problema seg\'un los algoritmos que hemos descrito en la primera parte del segundo cap\'itulo, almacenando cada nuevo cubo que se va creando en las iteraciones en un arraybuffer.
+		\item Ficheros de los algoritmos que almacenan sus soluciones en un \textbf{\'arbol AVL}:
+		\begin{enumerate}
+			\item BFAVLTree.
+			\item BFDAVLTree.
+			\item FFAVLTree.
+			\item FFDAVLTree.
+			\item WFAVLTree.
+			\item WFDAVLTree.
+		\end{enumerate}
+		Estos ficheros contienen los m\'etodos necesarios para implementar los algoritmos Best Fit, First Fit, Worst Fit y sus respectivos algoritmos de tipo decreasing almacenando los cubos de la soluci\'on en \'arboles AVL.
+	\end{itemize} 
+	
+	Como ya mencionamos en el cap\'itulo anterior, los m\'etodos necesarios para implementar los algoritmos Best Fit y Worst Fit mediante \'arboles AVL son pr\'acticamente iguales, cambiando \'unicamente el m\'etodo \textbf{delete} de ambos. Por tanto, para tener un c\'odigo m\'as limpio, se ha creado la clase abstracta AVLTree para implementar todos los m\'etodos de los que hacen uso ambos alogirtmos. Posteriormente, las clases BFAVLTree y WFAVLTree heredan de la clase abstracta anterior para implementar el m\'etodo delete.
+	\\
+	
+	\textbf{EXPLICO AQUI LAS DIFERENCIAS DE LOS METODOS DELETE?}
+	
+	\section{El algoritmo evolutivo}
+	Recordemos que el algoritmo evolutivo va realizando iteraciones hasta que alcanza una condici\'on de parada. En nuestro caso, dicha condici\'on de parada es que se est\'e ejecutando durante el tiempo que le indiquemos. Para ello, la primera clase que implementamos es la clase \textbf{Timer}. Dicha clase contiene los m\'etodos necesarios para obtener el tiempo que marca el reloj interno del ordenador y as\'i, poder establecer un instante inicial y ser capaces de medir intervalos de tiempo \cite{Vigo}.
+	
+	\subsection{Clases para generar la poblaci\'on inicial}
+	\subsubsection{Individual}
+	Los objetos de esta clase pretenden representar a los individuos que forman a la poblaci\'on. Por otro lado, como el objetivo del algoritmo evolutivo es encontrar la permutaci\'on de la lista de objetos dada en una instancia del problema de BP con la que obtenemos la mejor soluci\'on del problema seg\'un un algoritmo concreto, la informaci\'on que almacenan los objetos de la clase es la permutaci\'on correspondiente de la lista de objetos a introducir en los cubos, el n\'umero de cubos que obtenemos cuando resolvemos el problema seg\'un un algoritmo dado y los m\'etodos necesarios para interactuar con estos datos.
+	
+	\subsubsection{Populations}
+	El fichero \textbf{Populations.scala} contiene un objeto de tipo Populations con los m\'etodos auxiliares necesarios para luego crear distintos tipos de poblaciones. Recordemos que la poblaci\'on del algoritmo evolutivo no solo contiene las distintas permutaciones de la lista de objetos dada en la instancia del problema, sino tambi\'en el n\'umero de cubos que obtenemos cuando resolvemos el problema para las distintas permutaciones seg\'un el m\'etodo que le indicamos para, posteriormente, ordenar esas permutaciones de mejor a peor seg\'un el n\'umero de cubos obtenidos. Por lo tanto, podemos tener distintos algoritmos evolutivos seg\'un el m\'etodo con el que decidamos resolver las distintas instancias que nos porporcionan los individuos de la poblaci\'on.
+	\\
+	
+	En este sentido, en Populations podemos identificar dos partes claramente diferenciadas:
+	\begin{itemize}
+		\item \textbf{initPopulation}: Con este m\'etodo, dada una instancia del problema de BP y una funci\'on \textit{Solver} (es decir, una funci\'on con la que resolvemos la instancia del problema), generamos una poblaci\'on (que no es m\'as que un array de individuos) para el algoritmo evolutivo. Para ello, lo que hacemos es que vamos generando permutaciones de la lista de objetos de la instancia del problema de BP mediante el algoritmo de Fisher-Yates (funci\'on shuffle), luego resolvemos la permutaci\'on obtenida con el Solver seleccionado y finalmente ordenamos a los individuos de mejor a peor. La caracter\'stica fundamental por la que elegimos el algoritmo de Fisher-Yates es que genera cada permutaci\'on seg\'un una distribuci\'on uniforme.
+		\item M\'etodos con los que generamos distintas poblaciones seg\'un los \textit{Solvers} de los que disponemos (indicamos \'unicamente que algoritmo usan para resolver las instancias):
+		\begin{enumerate}
+			\item \textbf{fFPopulation}: First Fit.
+			\item \textbf{bFPopulation}: Best Fit.
+			\item \textbf{wFPopulation}: Worst Fit.
+			\item \textbf{aWFPopulation}: Almost Worst Fit.
+			\item \textbf{fFAVLTreePopulation}: First Fit (seg\'un el esquema de \'arbol AVL).
+			\item \textbf{bFAVLTreePopulation}: Best Fit (seg\'un el esquema de \'arbol AVL).
+			\item \textbf{wFAVLTreePopulation}: Worst Fit (seg\'un el esquema de \'arbol AVL).
+		\end{enumerate} 
+	\end{itemize}
+	
+	A continuaci\'on, vamos a probar lo afirmado sobre el algoritmo de Fisher-Yates \cite{Vigo}
+	
+	\begin{lema}(Buen funcionamiento del algoritmo Fisher-Yates)\hfill\break
+		Sea $v = (v_{1},...,v_{n})$ un vector con $\{v_{i}\}_{i=1}^{n}=\{1,...,n\}$, esto es, sus componentes son los elementos 1,...,n permutados. Sean $i \in \{1,...,n\}$ y $k \in \mathbb{N}^{+}$. Definimos la variable aleatoria $X_{i}^{k}$ como la nueva posici\'on del elemento i-\'esimo despu\'es de la k-\'esima permutaci\'on mediante el algoritmo Fisher-Yates (de izquierda a derecha). Entonces $X_{i}^{k} \sim U(1,...,n)$.
+	\end{lema}
+	
+	\begin{proof}
+		Nuestro objetivo es el de determinar que, para todos \textit{i} y \textit{k}, la posibilidad de que el elemento \textit{i}-\'esimo caiga en cualquier casilla sea $\frac{1}{n}$. Vamos a hacerlo por inducci\'on sobre \textit{k}.
+		\begin{itemize}
+			\item Caso $k=1$. Aprovechamos la recursividad del algoritmo para demostrar que $X_{i}^{k} \sim U(1,...,n)$.
+			\\
+			
+			Para $n = 1$ no hay nada que probar, y para $n = 2$, notamos que el bucle principal tiene una \'unica iteraci\'on. Supuesto que $j_{1}$ puede valer 1 con probabilidad $\frac{1}{2}$ o 2 con probabilidad $\frac{1}{2}$, $X_{1}^{1}, X_{1}^{2} \sim U(1,2)$ como quer\'iamos ver.
+			\\
+			
+			Suponemos ahora que el resultado es cierto para $n$ y veamos que se cumple para $n+1$. Para aprovechar la hip\'otesis de inducci\'on, discriminamos la posici\'on 1 para aplicar dicha hip\'otesis sobre el resto de elementos. Si en la primera iteraci\'on $j_{1} = 1$, entonces $v_{1}$ permanece en la casilla 1. La posici\'on 1 no se ve afectada por las iteraciones siguientes, de manera que $v_{1}$ permanecer\'a en la posici\'on 1 acabada la permutaci\'on. Por el contrario, si en la primera iteraci\'on $j_{1} \neq 1$, al finalizar \'esta el elemento $v_{1}$ se encontrar\'a en una posici\'on distinta de 1, a la que no podr\'a regresar. El valor de $j_{1}$ determina la posici\'on de $v_{1}$. Notamos por $A$ el suceso $"j_{1} = 1"$ Entonces:
+			$$P(X_{1}^{1} = 1) = P(A) = \frac{1}{n+1}$$.
+			
+			Si vemos tambi\'en que, dado $x \neq 1, P(X_{1}^{1} = x) = \frac{1}{n+1}$, habremos acabado la inducci\'on (para $k = 1$). Para que $v_{1}$ acabe en la posici\'on $x$, despu\'es de ser colocado en la posici\'on $j_{1}$ tras la primera iteraci\'on, solo queda que el elemento ahora en posici\'on $j_{1}$ acabe en la casilla $x$, a lo que llamamos suceso $B$. Ahora bien, dejando de lado la primera posici\'on, podemos pensar en el resto del vector como un vector de tama\~{n}o $n$ sobre el que se puede emplear la hip\'otesis de inducci\'on. En tales circunstancias, la probabilidad de que el elemento en posici\'on $j_{1}$ acabe en la posici\'on $x$ es $\frac{1}{n}$.
+			$$P(X_{i}^{1} = x) = P(\={A}\cap B) = P(B|\={A})P(\={A}) = \frac{1}{n} \frac{n}{n+1}$$.
+			
+			\item Caso $k+1$ y supuesto cierto para $k$. Veamos que $X_{i}^{k+1} \sim U(1,...,n)$. Consideremos entonces $m \in \{1,...,n\}$ y veamos que $P(X_{i}^{k+1} = m) = \frac{1}{n}$.
+			$$P(X_{i}^{k+1} = m) = \sum_{j=1}^{n} P(X_{j}^{k+1} = m|X_{i}^{k} = j) P(X_{i}^{k} = j) = \sum_{j=1}^{n} \frac{1}{n} \frac{1}{n} = \frac{1}{n}$$.
+			
+			En la primera igualdad hemos hecho uso del teorema de la probabilidad total y en la segunda de dos cosas: la probabilidad condicionada coincide con la probabilidad asociada a permutar los elementos una vez y puede aplicarse el caso $k = 1$; en la otra probabilidad hemos empleado la hip\'otesis de inducci\'on.
+		\end{itemize}
+	\end{proof}
+	
+	\subsubsection{Population}
+	El fichero Population.scala consta de una clase abstracta Population que implementa los m\'etodos necesarios a la hora de interactuar con los distintos tipos de poblaciones. Los m\'as importantes:
+	\begin{enumerate}
+		\item \textbf{binaryTournament}: M\'etodo que implementa el algoritmo del torneo binario con el cual seleccionamos un individuo de la poblaci\'on aleatoriamente.
+		\item \textbf{binaryInsertion}: M\'etodo de inserci\'on binaria con el que, dado un nuevo individuo, lo sustituimos por uno de los que se encuentran en la poblaci\'on para insertarlo.
+	\end{enumerate}
+	
+	Adem\'as, dentro del fichero tenemos definidas otras clases que extienden a la clase abstracta anterior y que hacen uso de los m\'etodos del objeto Populations para as\'i definir las distintas poblaciones seg\'un el \textit{Solver} elegido para resolver la instancia del problema de BP.
+	
+	\subsection{Clases para los cruces y mutaciones}
+	Por una parte tenemos la clase \textbf{Crossover}, la cual implementa dos algoritmos de cruce distintos:
+	\begin{enumerate}
+		\item Algoritmo de cruce seg\'un el esquema PMX (Partially Mapped Crossover): \textbf{pmx}.
+		\item Algoritmo de cruce por vectores de inversi\'on: \textbf{inversionCrossover}. Se define como vector de inversiones de una permutaci\'on $(\pi(i))_{i=1}^{n}$ un vector $(a_{i})_{i=1}^{n}$ donde $a_{i}$ indica el n\'umero de elementos situados a la izquierda de $i$ que son mayores que $i$ \cite{Vigo}.
+	\end{enumerate}
+	Para m\'as informaci\'on acerca de estos esquemas as\'i como del c\'odigo en el que nos hemos basado para desarrollar los algoritmos que usamos, consultar \cite{Vigo}.
+	\\
+	
+	Por otra parte, en la clase \textbf{Mutation} tenemos los siguientes algoritmos para representar una mutaci\'on en los individuos de la poblaci\'on (notemos que cuando hablemos de los \textit{genes} nos referiremos a los elementos de las permutaciones de la lista de objetos de la instancia del problema de BP) \cite{Vigo}:
+	\begin{enumerate}
+		\item \textbf{swapMutation}: Los genes de los extremos izquierdo y derecho intercambian sus posiciones.
+		\item \textbf{insertMutation}: El gen situado en el extremo derecho se coloca yuxtapuesto a la derecha del gen del extremo izquierdo y desplaza a la derecha todos los que se encontraban en la franja central.
+		\item \textbf{scrambleMutation}: Se permutan los genes de la franja central.
+		\item \textbf{inversionMutation}: Se invierte el orden de los genes de la franja central.
+	\end{enumerate}
+	
+	Finalmente tenemos la clase \textbf{EvolutionaryAlgorithm} la cual, siguiendo el esquema descrito en el cap\'itulo anterior, hace uso de las clases que acabamos de describir y sus m\'etodos para implementar el m\'etodo \textbf{evolve}, el cual resuelve el algoritmo evolutivo.
+	
+	\chapter{Conclusiones}
+	La finalidad de este trabajo es la de, a trav\'es de un problema de optimizaci\'on combinatoria concreto, pasar del marco te\'orico de las matem\'aticas al pr\'actico. Para ello, hemos hecho uso de la potencia de c\'omputo que nos ofrecen los ordenadores, los cuales nos permiten dar mejores soluciones para este tipo de problemas a medida que la tecnolog\'ia avanza. Este hecho ha quedado reflejado, sobre todo, en el algoritmo evolutivo, ya que cuanto m\'as potente sea la m\'aquina de la que disponemos, m\'as iteraciones podremos realizar en el mismo intervalo de tiempo.
+	\\
+	
+	En realidad, todo lo que se ha expuesto a lo largo del trabajo ha sido para concurrir en el algoritmo evolutivo y ver la cantidad de posibilidades que ofrece. Hemos comenzado explicando una de las versiones m\'as simples del problema de empaquetamiento; posteriormente, hemos presentado una serie de algoritmos que siguen el esquema de los m\'etodos voraces para resolverlo, es decir, el de aquellos m\'etodos que no se replantean las decisiones ya tomadas. A su vez, hemos comprobado que cuanto mejor elecci\'on quisieramos hacer a la hora de introducir un elemento en uno de los cubos, los algoritmos resultantes son cada vez menos eficientes.
+	\\
+	
+	A continuaci\'on, hemos conseguido una mejora significativa en las complejidades de los algotirmos anteriores haciendo uso de la estructura de \'arboles AVL para almacenar la soluci\'on de las instancias del problema. Esto implica, a su vez, que la implementaci\'on del algoritmo sea m\'as compleja.
+	\\
+	
+	Una vez hecho todo este trabajo, hemos podido pasar propiamente a la implementaci\'on del algoritmo evolutivo, pues su funcionamiento se basa en cualquiera de los m\'etodos presentados hasta ahora. De esta forma, vemos que podemos tener un algoritmo evolutivo diferente por cada uno de estos m\'etodos. Adem\'as, si tenemos en cuenta los diferentes algoritmos de selecci\'on, de cruce y de mutaci\'on que hay, vemos que podemos encontrar multitud de combinaciones de todos estos m\'etodos que dan distintos algoritmos evolutivos, lo cual pone de manifiesto la cantidad de opciones existentes a la hora de obtener una "buena" soluci\'on de un problema dado en un tiempo "aceptable". 
+	\\ 
+	
+	Como trabajo futuro, queda pendiente el comparar y analizar c\'omo cada uno de estos m\'etodos resuelven distintas instancias cada vez mayores del problema de empaquetamiento para as\'i verificar que, lo que obtenemos, se ajusta a los resultados y conclusiones que aqu\'i se han expuesto.
+	
+	No obstante, queda tambi\'en claro la necesidad de encontrar mejores algoritmos que nos permitan resolver problemas cuyo espacio de b\'usqueda de soluciones sea muy grande en tiempos razonables y no solo en este tipo de problemas. En general, a medida que la tecnolog\'ia avanza y con ello nuestra capacidad de generar y recopilar datos, se hace m\'as y m\'as necesario que nuestra capacidad de procesar esos datos, analizarlos y obtener conclusiones y resultados a partir de ellos sea cada vez mejor. Es gracias a ello que, al igual que nuestro algoritmo evolutivo, la especie humana consigue adaptarse, mejorar y evolucionar.
 	
 	\addcontentsline{toc}{chapter}{Bibliograf\'{\i}a}
 	\bibliographystyle{plain}
 	\bibliography{ref}% Crear archivo bib con referencias en bibtex
 	
-	
+
 	
 	
 \end{document}
