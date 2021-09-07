@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.6.3)  6 SEP 2021 22:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.6.3)  7 SEP 2021 23:28
 entering extended mode
 **./document.tex
 (document.tex
@@ -505,7 +505,7 @@ LaTeX Info: Redefining \nameref on input line 33.
 \@outlinefile=\write3
 \openout3 = `document.out'.
 
-<logo-facultad-ciencias-uma.jpg, id=104, 401.5pt x 401.5pt>
+<logo-facultad-ciencias-uma.jpg, id=101, 401.5pt x 401.5pt>
 File: logo-facultad-ciencias-uma.jpg Graphic file (type jpg)
 <use logo-facultad-ciencias-uma.jpg>
 Package pdftex.def Info: logo-facultad-ciencias-uma.jpg  used on input line 38.
@@ -588,15 +588,11 @@ Package spanish Warning: Replacing `OT1/cmr/bx/sc' by
 Package spanish Warning: Replacing `OT1/cmr/bx/sc' by 
 (spanish)                faked small caps on input line 3.
 
-
-Package spanish Warning: Replacing `OT1/cmr/bx/sc' by 
-(spanish)                faked small caps on input line 4.
-
-LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
 (C:\Users\rafae\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 6.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
 
 (C:\Users\rafae\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -608,59 +604,65 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.I}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.176 	
+l.175 	
         [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
+Underfull \hbox (badness 10000) in paragraph at lines 178--179
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 187--188
+Underfull \hbox (badness 10000) in paragraph at lines 182--184
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 189--190
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 195--196
+Underfull \hbox (badness 10000) in paragraph at lines 197--198
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--205
+Underfull \hbox (badness 10000) in paragraph at lines 202--204
 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--211
+
+ []
+
+
+Overfull \hbox (7.23764pt too wide) in paragraph at lines 212--213
+\OT1/cmr/m/sc/12 rithms, evo-lu-tio-nary al-go-rithms, al-go-rith-mic com-ple-x
+ity, asym-pto-tic cost,
  []
 
 [3]
 Cap\'{\i }tulo 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 214--216
+Underfull \hbox (badness 10000) in paragraph at lines 220--222
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--219
+Underfull \hbox (badness 10000) in paragraph at lines 223--225
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--234
+Underfull \hbox (badness 10000) in paragraph at lines 238--240
 
  []
 
 [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 244--246
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 247--249
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 250--252
 
  []
@@ -671,14 +673,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 253--255
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 264--266
+Underfull \hbox (badness 10000) in paragraph at lines 256--258
 
  []
 
-LaTeX Info: Redefining \. on input line 266.
-LaTeX Info: Redefining \% on input line 266.
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 267--269
+
+Underfull \hbox (badness 10000) in paragraph at lines 259--261
 
  []
 
@@ -687,7 +687,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 270--272
 
  []
 
-
+LaTeX Info: Redefining \. on input line 272.
+LaTeX Info: Redefining \% on input line 272.
+[2]
 Underfull \hbox (badness 10000) in paragraph at lines 273--275
 
  []
@@ -698,14 +700,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 276--278
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 283--285
+Underfull \hbox (badness 10000) in paragraph at lines 279--281
 
  []
 
-LaTeX Info: Redefining \. on input line 285.
-LaTeX Info: Redefining \% on input line 285.
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 286--288
+
+Underfull \hbox (badness 10000) in paragraph at lines 282--284
 
  []
 
@@ -714,306 +714,303 @@ Underfull \hbox (badness 10000) in paragraph at lines 289--291
 
  []
 
-
+LaTeX Info: Redefining \. on input line 291.
+LaTeX Info: Redefining \% on input line 291.
+[3]
 Underfull \hbox (badness 10000) in paragraph at lines 292--294
 
  []
 
-<grafico-complejidad-computacionala3.png, id=185, 813.0375pt x 638.385pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--297
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 298--300
+
+ []
+
+LaTeX Info: Redefining \. on input line 331.
+LaTeX Info: Redefining \% on input line 331.
+[4]
+<grafico-complejidad-computacionala3.png, id=199, 813.0375pt x 638.385pt>
 File: grafico-complejidad-computacionala3.png Graphic file (type png)
 <use grafico-complejidad-computacionala3.png>
 Package pdftex.def Info: grafico-complejidad-computacionala3.png  used on input
- line 327.
+ line 335.
 (pdftex.def)             Requested size: 325.20924pt x 255.34947pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 332--334
+Underfull \hbox (badness 10000) in paragraph at lines 340--342
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 335--337
-
- []
-
-LaTeX Info: Redefining \. on input line 338.
-LaTeX Info: Redefining \% on input line 338.
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 338--340
+Underfull \hbox (badness 10000) in paragraph at lines 343--345
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 341--343
+Underfull \hbox (badness 10000) in paragraph at lines 346--348
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 349--351
 
  []
 
 LaTeX Info: Redefining \. on input line 355.
 LaTeX Info: Redefining \% on input line 355.
 [5 <./grafico-complejidad-computacionala3.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 360--362
+Underfull \hbox (badness 10000) in paragraph at lines 368--370
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 373--375
+Underfull \hbox (badness 10000) in paragraph at lines 381--383
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 376--378
+Underfull \hbox (badness 10000) in paragraph at lines 384--386
 
  []
 
-<PNP.png, id=205, 803.0pt x 568.1225pt>
+<PNP.png, id=212, 803.0pt x 568.1225pt>
 File: PNP.png Graphic file (type png)
 <use PNP.png>
-Package pdftex.def Info: PNP.png  used on input line 389.
+Package pdftex.def Info: PNP.png  used on input line 397.
 (pdftex.def)             Requested size: 321.1943pt x 227.24496pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 398--400
-
- []
-
-LaTeX Info: Redefining \. on input line 400.
-LaTeX Info: Redefining \% on input line 400.
+LaTeX Info: Redefining \. on input line 403.
+LaTeX Info: Redefining \% on input line 403.
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 401--403
+Underfull \hbox (badness 10000) in paragraph at lines 406--408
 
  []
 
-LaTeX Info: Redefining \. on input line 410.
-LaTeX Info: Redefining \% on input line 410.
+
+Underfull \hbox (badness 10000) in paragraph at lines 409--411
+
+ []
+
+LaTeX Info: Redefining \. on input line 417.
+LaTeX Info: Redefining \% on input line 417.
 [7 <./PNP.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 426--428
+LaTeX Info: Redefining \. on input line 429.
+LaTeX Info: Redefining \% on input line 429.
+ [8]
+Underfull \hbox (badness 10000) in paragraph at lines 432--434
 
  []
 
-LaTeX Info: Redefining \. on input line 428.
-LaTeX Info: Redefining \% on input line 428.
-[8]
-LaTeX Info: Redefining \. on input line 440.
-LaTeX Info: Redefining \% on input line 440.
- [9]
+LaTeX Info: Redefining \. on input line 446.
+LaTeX Info: Redefining \% on input line 446.
+[9]
 Cap\'{\i }tulo 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 449--451
+Underfull \hbox (badness 10000) in paragraph at lines 455--457
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--460
+Underfull \hbox (badness 10000) in paragraph at lines 464--466
 
  []
 
 [10
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 466--470
+Underfull \hbox (badness 10000) in paragraph at lines 472--476
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 471--473
+Underfull \hbox (badness 10000) in paragraph at lines 477--479
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 490--492
+Underfull \hbox (badness 10000) in paragraph at lines 496--498
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 500--504
+Underfull \hbox (badness 10000) in paragraph at lines 506--510
 
  []
 
-LaTeX Info: Redefining \. on input line 506.
-LaTeX Info: Redefining \% on input line 506.
+LaTeX Info: Redefining \. on input line 512.
+LaTeX Info: Redefining \% on input line 512.
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 508--510
+Underfull \hbox (badness 10000) in paragraph at lines 514--516
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 524--527
+Underfull \hbox (badness 10000) in paragraph at lines 530--533
 
  []
 
-LaTeX Info: Redefining \. on input line 527.
-LaTeX Info: Redefining \% on input line 527.
+LaTeX Info: Redefining \. on input line 533.
+LaTeX Info: Redefining \% on input line 533.
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 528--553
+Underfull \hbox (badness 10000) in paragraph at lines 534--559
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 528--553
+Underfull \hbox (badness 10000) in paragraph at lines 534--559
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 559--561
+Underfull \hbox (badness 10000) in paragraph at lines 565--567
 
  []
 
 
-Overfull \hbox (14.63324pt too wide) in paragraph at lines 564--590
+Overfull \hbox (14.63324pt too wide) in paragraph at lines 570--596
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 564--590
+Underfull \hbox (badness 10000) in paragraph at lines 570--596
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 564--590
+Underfull \hbox (badness 10000) in paragraph at lines 570--596
 
  []
 
-LaTeX Info: Redefining \. on input line 590.
-LaTeX Info: Redefining \% on input line 590.
+LaTeX Info: Redefining \. on input line 596.
+LaTeX Info: Redefining \% on input line 596.
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 598--599
+Underfull \hbox (badness 10000) in paragraph at lines 604--605
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 600--602
+Underfull \hbox (badness 10000) in paragraph at lines 606--608
 
  []
 
-LaTeX Info: Redefining \. on input line 616.
-LaTeX Info: Redefining \% on input line 616.
+LaTeX Info: Redefining \. on input line 622.
+LaTeX Info: Redefining \% on input line 622.
 [14]
-
-LaTeX Warning: Citation `Graduatecourse' on page 15 undefined on input line 630
-.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 636--638
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 639--641
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 642--644
 
  []
 
 
-Overfull \hbox (14.63324pt too wide) in paragraph at lines 645--677
+Underfull \hbox (badness 10000) in paragraph at lines 645--647
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 648--650
+
+ []
+
+
+Overfull \hbox (14.63324pt too wide) in paragraph at lines 651--683
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 645--677
+Underfull \hbox (badness 10000) in paragraph at lines 651--683
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 645--677
+Underfull \hbox (badness 10000) in paragraph at lines 651--683
 
  []
 
-LaTeX Info: Redefining \. on input line 677.
-LaTeX Info: Redefining \% on input line 677.
+LaTeX Info: Redefining \. on input line 683.
+LaTeX Info: Redefining \% on input line 683.
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 678--680
+Underfull \hbox (badness 10000) in paragraph at lines 684--686
 
  []
 
 
-LaTeX Warning: Citation `1.7OPT' on page 16 undefined on input line 687.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 692--694
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 695--697
-
- []
-
-LaTeX Info: Redefining \. on input line 697.
-LaTeX Info: Redefining \% on input line 697.
-[16]
 Underfull \hbox (badness 10000) in paragraph at lines 698--700
 
  []
 
 
-Overfull \hbox (14.63324pt too wide) in paragraph at lines 701--731
+Underfull \hbox (badness 10000) in paragraph at lines 701--703
+
+ []
+
+LaTeX Info: Redefining \. on input line 703.
+LaTeX Info: Redefining \% on input line 703.
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 704--706
+
+ []
+
+
+Overfull \hbox (14.63324pt too wide) in paragraph at lines 707--737
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 701--731
+Underfull \hbox (badness 10000) in paragraph at lines 707--737
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 701--731
+Underfull \hbox (badness 10000) in paragraph at lines 707--737
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 732--734
-
- []
-
-LaTeX Info: Redefining \. on input line 735.
-LaTeX Info: Redefining \% on input line 735.
-[17]
 Underfull \hbox (badness 10000) in paragraph at lines 738--740
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 741--743
+LaTeX Info: Redefining \. on input line 740.
+LaTeX Info: Redefining \% on input line 740.
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 744--746
 
  []
 
 
-Overfull \hbox (14.63324pt too wide) in paragraph at lines 744--772
+Underfull \hbox (badness 10000) in paragraph at lines 747--749
+
+ []
+
+
+Overfull \hbox (14.63324pt too wide) in paragraph at lines 750--778
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 744--772
+Underfull \hbox (badness 10000) in paragraph at lines 750--778
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 744--772
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 773--775
-
- []
-
-LaTeX Info: Redefining \. on input line 775.
-LaTeX Info: Redefining \% on input line 775.
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 776--778
+Underfull \hbox (badness 10000) in paragraph at lines 750--778
 
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 779--781
+
+ []
+
+LaTeX Info: Redefining \. on input line 781.
+LaTeX Info: Redefining \% on input line 781.
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 782--784
 
  []
 
@@ -1023,232 +1020,209 @@ Underfull \hbox (badness 10000) in paragraph at lines 785--787
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 788--790
+Underfull \hbox (badness 10000) in paragraph at lines 791--793
 
  []
 
 
-Overfull \hbox (14.63324pt too wide) in paragraph at lines 791--849
+Underfull \hbox (badness 10000) in paragraph at lines 794--796
+
+ []
+
+
+Overfull \hbox (14.63324pt too wide) in paragraph at lines 797--855
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 791--849
+Underfull \hbox (badness 10000) in paragraph at lines 797--855
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 791--849
+Underfull \hbox (badness 10000) in paragraph at lines 797--855
 
  []
 
-LaTeX Info: Redefining \. on input line 849.
-LaTeX Info: Redefining \% on input line 849.
+LaTeX Info: Redefining \. on input line 855.
+LaTeX Info: Redefining \% on input line 855.
 [19]
 Overfull \vbox (32.0169pt too high) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 849.
-LaTeX Info: Redefining \% on input line 849.
+LaTeX Info: Redefining \. on input line 855.
+LaTeX Info: Redefining \% on input line 855.
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 853--855
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 856--858
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 859--861
 
  []
 
 
-LaTeX Warning: Citation `Graduatecourse' on page 21 undefined on input line 863
-.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 867--870
+Underfull \hbox (badness 10000) in paragraph at lines 862--864
 
  []
 
-LaTeX Info: Redefining \. on input line 875.
-LaTeX Info: Redefining \% on input line 875.
+
+Underfull \hbox (badness 10000) in paragraph at lines 865--867
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 873--876
+
+ []
+
+LaTeX Info: Redefining \. on input line 881.
+LaTeX Info: Redefining \% on input line 881.
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 884--886
+Underfull \hbox (badness 10000) in paragraph at lines 890--892
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 887--889
+Underfull \hbox (badness 10000) in paragraph at lines 893--895
 
  []
 
 
-Overfull \hbox (14.63324pt too wide) in paragraph at lines 890--933
+Overfull \hbox (14.63324pt too wide) in paragraph at lines 896--939
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 890--933
+Underfull \hbox (badness 10000) in paragraph at lines 896--939
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 890--933
-
- []
-
-LaTeX Info: Redefining \. on input line 933.
-LaTeX Info: Redefining \% on input line 933.
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 934--936
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 937--939
+Underfull \hbox (badness 10000) in paragraph at lines 896--939
 
  []
 
 LaTeX Info: Redefining \. on input line 939.
 LaTeX Info: Redefining \% on input line 939.
-[23]
+[22]
 Underfull \hbox (badness 10000) in paragraph at lines 940--942
 
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 943--945
+
+ []
+
+LaTeX Info: Redefining \. on input line 945.
+LaTeX Info: Redefining \% on input line 945.
+[23]
 Underfull \hbox (badness 10000) in paragraph at lines 946--948
 
  []
 
-<arbolvslineal.png, id=301, 369.63094pt x 346.29375pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 952--954
+
+ []
+
+<arbolvslineal.png, id=328, 369.63094pt x 346.29375pt>
 File: arbolvslineal.png Graphic file (type png)
 <use arbolvslineal.png>
-Package pdftex.def Info: arbolvslineal.png  used on input line 951.
+Package pdftex.def Info: arbolvslineal.png  used on input line 957.
 (pdftex.def)             Requested size: 295.70514pt x 277.03537pt.
-
-LaTeX Warning: Citation `estructuraarboles' on page 24 undefined on input line 
-956.
-
-LaTeX Info: Redefining \. on input line 960.
-LaTeX Info: Redefining \% on input line 960.
+LaTeX Info: Redefining \. on input line 966.
+LaTeX Info: Redefining \% on input line 966.
 [24 <./arbolvslineal.png>]
-<tiposdenodos.png, id=307, 353.82187pt x 219.82124pt>
+<tiposdenodos.png, id=336, 353.82187pt x 219.82124pt>
 File: tiposdenodos.png Graphic file (type png)
 <use tiposdenodos.png>
-Package pdftex.def Info: tiposdenodos.png  used on input line 969.
+Package pdftex.def Info: tiposdenodos.png  used on input line 975.
 (pdftex.def)             Requested size: 283.05788pt x 175.85722pt.
-<nodospadrehijohermano.png, id=308, 404.26031pt x 139.27031pt>
+<nodospadrehijohermano.png, id=337, 404.26031pt x 139.27031pt>
 File: nodospadrehijohermano.png Graphic file (type png)
 <use nodospadrehijohermano.png>
-Package pdftex.def Info: nodospadrehijohermano.png  used on input line 976.
+Package pdftex.def Info: nodospadrehijohermano.png  used on input line 982.
 (pdftex.def)             Requested size: 323.40869pt x 111.41638pt.
-LaTeX Info: Redefining \. on input line 989.
-LaTeX Info: Redefining \% on input line 989.
+LaTeX Info: Redefining \. on input line 995.
+LaTeX Info: Redefining \% on input line 995.
  [25 <./tiposdenodos.png> <./nodospadrehijohermano.png>]
-<alturaniveles.png, id=316, 358.33875pt x 256.70906pt>
+<alturaniveles.png, id=345, 358.33875pt x 256.70906pt>
 File: alturaniveles.png Graphic file (type png)
 <use alturaniveles.png>
-Package pdftex.def Info: alturaniveles.png  used on input line 994.
+Package pdftex.def Info: alturaniveles.png  used on input line 1000.
 (pdftex.def)             Requested size: 286.67139pt x 205.36751pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1005--1007
+Underfull \hbox (badness 10000) in paragraph at lines 1011--1013
 
  []
 
-LaTeX Info: Redefining \. on input line 1008.
-LaTeX Info: Redefining \% on input line 1008.
+LaTeX Info: Redefining \. on input line 1014.
+LaTeX Info: Redefining \% on input line 1014.
 [26 <./alturaniveles.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1008--1010
+Underfull \hbox (badness 10000) in paragraph at lines 1014--1016
 
  []
 
 
-LaTeX Warning: Citation `arbolAVL' on page 27 undefined on input line 1011.
-
-
-LaTeX Warning: Citation `Adelson-Velsky' on page 27 undefined on input line 101
-1.
-
-
-Overfull \hbox (5.77112pt too wide) in paragraph at lines 1011--1013
+Overfull \hbox (5.77112pt too wide) in paragraph at lines 1017--1019
 []\OT1/cmr/m/n/12 Definimos en-ton-ces los \OT1/cmr/bx/sc/12 arbo-les bi-na-ri
 os ba-lan-cea-dos\OT1/cmr/m/n/12 , \OT1/cmr/bx/sc/12 arbo-les bi-na-rios de b
 usque-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1011--1013
+Underfull \hbox (badness 10000) in paragraph at lines 1017--1019
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1018--1020
+Underfull \hbox (badness 10000) in paragraph at lines 1024--1026
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1021--1023
+Underfull \hbox (badness 10000) in paragraph at lines 1027--1029
 
  []
 
-<desequilibrios.png, id=325, 449.88075pt x 364.36125pt>
+<desequilibrios.png, id=356, 449.88075pt x 364.36125pt>
 File: desequilibrios.png Graphic file (type png)
 <use desequilibrios.png>
-Package pdftex.def Info: desequilibrios.png  used on input line 1026.
+Package pdftex.def Info: desequilibrios.png  used on input line 1032.
 (pdftex.def)             Requested size: 359.90509pt x 291.48938pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: Citation `arbolesAVL' on page 27 undefined on input line 1031.
-
-<RotSimDrcha.png, id=326, 338.76563pt x 173.14688pt>
+<RotSimDrcha.png, id=358, 338.76563pt x 173.14688pt>
 File: RotSimDrcha.png Graphic file (type png)
 <use RotSimDrcha.png>
-Package pdftex.def Info: RotSimDrcha.png  used on input line 1038.
+Package pdftex.def Info: RotSimDrcha.png  used on input line 1044.
 (pdftex.def)             Requested size: 406.51671pt x 207.7752pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<RotSimIzq.png, id=327, 216.3282pt x 91.0602pt>
+<RotSimIzq.png, id=359, 216.3282pt x 91.0602pt>
 File: RotSimIzq.png Graphic file (type png)
 <use RotSimIzq.png>
-Package pdftex.def Info: RotSimIzq.png  used on input line 1047.
+Package pdftex.def Info: RotSimIzq.png  used on input line 1053.
 (pdftex.def)             Requested size: 324.4915pt x 136.58995pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1056--1058
+Underfull \hbox (badness 10000) in paragraph at lines 1062--1064
 
  []
 
-LaTeX Info: Redefining \. on input line 1061.
-LaTeX Info: Redefining \% on input line 1061.
+LaTeX Info: Redefining \. on input line 1067.
+LaTeX Info: Redefining \% on input line 1067.
 [27]
-<RotDobDrcha.png, id=338, 542.025pt x 551.05875pt>
+<RotDobDrcha.png, id=373, 542.025pt x 551.05875pt>
 File: RotDobDrcha.png Graphic file (type png)
 <use RotDobDrcha.png>
-Package pdftex.def Info: RotDobDrcha.png  used on input line 1064.
+Package pdftex.def Info: RotDobDrcha.png  used on input line 1070.
 (pdftex.def)             Requested size: 379.4149pt x 385.73848pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1069--1071
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1072--1074
-
- []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 1075--1077
@@ -1260,120 +1234,115 @@ Underfull \hbox (badness 10000) in paragraph at lines 1078--1080
 
  []
 
-<busquedaarbolpng.png, id=339, 484.81125pt x 222.23026pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1081--1083
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1084--1086
+
+ []
+
+<busquedaarbolpng.png, id=374, 484.81125pt x 222.23026pt>
 File: busquedaarbolpng.png Graphic file (type png)
 <use busquedaarbolpng.png>
-Package pdftex.def Info: busquedaarbolpng.png  used on input line 1083.
+Package pdftex.def Info: busquedaarbolpng.png  used on input line 1089.
 (pdftex.def)             Requested size: 436.32608pt x 200.00537pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Citation `Tema4' on page 28 undefined on input line 1088.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1088--1090
+Underfull \hbox (badness 10000) in paragraph at lines 1094--1096
 
  []
 
-LaTeX Info: Redefining \. on input line 1093.
-LaTeX Info: Redefining \% on input line 1093.
+LaTeX Info: Redefining \. on input line 1099.
+LaTeX Info: Redefining \% on input line 1099.
 [28 <./desequilibrios.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1099--1101
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1102--1104
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 1105--1107
 
  []
 
-LaTeX Info: Redefining \. on input line 1107.
-LaTeX Info: Redefining \% on input line 1107.
-[29 <./RotSimDrcha.png> <./RotSimIzq.png>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 1108--1110
 
  []
 
-LaTeX Info: Redefining \. on input line 1116.
-LaTeX Info: Redefining \% on input line 1116.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1111--1113
+
+ []
+
+LaTeX Info: Redefining \. on input line 1113.
+LaTeX Info: Redefining \% on input line 1113.
+[29 <./RotSimDrcha.png> <./RotSimIzq.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1114--1116
+
+ []
+
+LaTeX Info: Redefining \. on input line 1122.
+LaTeX Info: Redefining \% on input line 1122.
 [30 <./RotDobDrcha.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1126--1128
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1129--1131
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 1132--1134
 
  []
 
-LaTeX Info: Redefining \. on input line 1134.
-LaTeX Info: Redefining \% on input line 1134.
-[31 <./busquedaarbolpng.png>]
+
+Underfull \hbox (badness 10000) in paragraph at lines 1135--1137
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 1138--1140
 
  []
 
+LaTeX Info: Redefining \. on input line 1140.
+LaTeX Info: Redefining \% on input line 1140.
+[31 <./busquedaarbolpng.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1144--1146
 
-Overfull \hbox (44.00793pt too wide) in paragraph at lines 1143--1181
+ []
+
+
+Overfull \hbox (44.00793pt too wide) in paragraph at lines 1149--1187
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1143--1181
+Underfull \hbox (badness 10000) in paragraph at lines 1149--1187
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1143--1181
+Underfull \hbox (badness 10000) in paragraph at lines 1149--1187
 
  []
 
-LaTeX Info: Redefining \. on input line 1184.
-LaTeX Info: Redefining \% on input line 1184.
+LaTeX Info: Redefining \. on input line 1190.
+LaTeX Info: Redefining \% on input line 1190.
 [32]
-Overfull \hbox (44.00793pt too wide) in paragraph at lines 1191--1207
+Overfull \hbox (44.00793pt too wide) in paragraph at lines 1197--1213
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1191--1207
+Underfull \hbox (badness 10000) in paragraph at lines 1197--1213
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1191--1207
+Underfull \hbox (badness 10000) in paragraph at lines 1197--1213
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1213--1215
+Underfull \hbox (badness 10000) in paragraph at lines 1219--1221
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1223--1225
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1226--1228
-
- []
-
-LaTeX Info: Redefining \. on input line 1228.
-LaTeX Info: Redefining \% on input line 1228.
-[33]
 Underfull \hbox (badness 10000) in paragraph at lines 1229--1231
 
  []
@@ -1383,310 +1352,362 @@ Underfull \hbox (badness 10000) in paragraph at lines 1232--1234
 
  []
 
+LaTeX Info: Redefining \. on input line 1234.
+LaTeX Info: Redefining \% on input line 1234.
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 1235--1237
+
+ []
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 1238--1240
 
  []
 
 
-Overfull \hbox (44.00793pt too wide) in paragraph at lines 1241--1277
+Underfull \hbox (badness 10000) in paragraph at lines 1244--1246
+
+ []
+
+
+Overfull \hbox (44.00793pt too wide) in paragraph at lines 1247--1283
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1241--1277
+Underfull \hbox (badness 10000) in paragraph at lines 1247--1283
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1241--1277
+Underfull \hbox (badness 10000) in paragraph at lines 1247--1283
 
  []
 
-LaTeX Info: Redefining \. on input line 1277.
-LaTeX Info: Redefining \% on input line 1277.
+LaTeX Info: Redefining \. on input line 1283.
+LaTeX Info: Redefining \% on input line 1283.
 [34]
-Underfull \hbox (badness 10000) in paragraph at lines 1278--1280
+Underfull \hbox (badness 10000) in paragraph at lines 1284--1286
 
  []
 
 
-Overfull \hbox (44.00793pt too wide) in paragraph at lines 1283--1305
+Overfull \hbox (44.00793pt too wide) in paragraph at lines 1289--1311
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1283--1305
+Underfull \hbox (badness 10000) in paragraph at lines 1289--1311
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1283--1305
+Underfull \hbox (badness 10000) in paragraph at lines 1289--1311
 
  []
 
-LaTeX Info: Redefining \. on input line 1305.
-LaTeX Info: Redefining \% on input line 1305.
+LaTeX Info: Redefining \. on input line 1311.
+LaTeX Info: Redefining \% on input line 1311.
 [35]
-Underfull \hbox (badness 10000) in paragraph at lines 1308--1310
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 1314--1316
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1317--1319
+Underfull \hbox (badness 10000) in paragraph at lines 1319--1321
 
  []
 
-LaTeX Info: Redefining \. on input line 1325.
-LaTeX Info: Redefining \% on input line 1325.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1322--1324
+
+ []
+
+LaTeX Info: Redefining \. on input line 1327.
+LaTeX Info: Redefining \% on input line 1327.
 [36]
-Underfull \hbox (badness 10000) in paragraph at lines 1332--1334
+Underfull \hbox (badness 10000) in paragraph at lines 1330--1332
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 1335--1337
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1338--1340
-
- []
-
-LaTeX Info: Redefining \. on input line 1340.
-LaTeX Info: Redefining \% on input line 1340.
+LaTeX Info: Redefining \. on input line 1341.
+LaTeX Info: Redefining \% on input line 1341.
 [37]
-Underfull \hbox (badness 10000) in paragraph at lines 1341--1343
+Underfull \hbox (badness 10000) in paragraph at lines 1345--1347
 
  []
 
-<algev.png, id=406, 525.965pt x 258.9675pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1348--1350
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1351--1353
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1354--1356
+
+ []
+
+<algev.png, id=445, 525.965pt x 258.9675pt>
 File: algev.png Graphic file (type png)
 <use algev.png>
-Package pdftex.def Info: algev.png  used on input line 1348.
+Package pdftex.def Info: algev.png  used on input line 1361.
 (pdftex.def)             Requested size: 368.17297pt x 181.27599pt.
 
-Overfull \hbox (14.63324pt too wide) in paragraph at lines 1355--1375
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (14.63324pt too wide) in paragraph at lines 1368--1389
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1355--1375
+Underfull \hbox (badness 10000) in paragraph at lines 1368--1389
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1355--1375
+Underfull \hbox (badness 10000) in paragraph at lines 1368--1389
 
  []
 
-LaTeX Info: Redefining \. on input line 1377.
-LaTeX Info: Redefining \% on input line 1377.
-[38 <./algev.png>]
+LaTeX Info: Redefining \. on input line 1389.
+LaTeX Info: Redefining \% on input line 1389.
+[38]
+LaTeX Info: Redefining \. on input line 1391.
+LaTeX Info: Redefining \% on input line 1391.
+ [39 <./algev.png>]
 Cap\'{\i }tulo 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1380--1382
+Underfull \hbox (badness 10000) in paragraph at lines 1394--1396
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1389--1391
+Underfull \hbox (badness 10000) in paragraph at lines 1403--1405
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1392--1394
+Underfull \hbox (badness 10000) in paragraph at lines 1406--1408
 
  []
 
-[39
+[40
 
 ]
-
-LaTeX Warning: Citation `smallerThanTarget' on page 40 undefined on input line 
-1413.
-
-
-LaTeX Warning: Citation `sortDescending' on page 40 undefined on input line 141
-5.
-
-LaTeX Info: Redefining \. on input line 1420.
-LaTeX Info: Redefining \% on input line 1420.
-[40]
-Underfull \hbox (badness 10000) in paragraph at lines 1446--1448
+LaTeX Info: Redefining \. on input line 1434.
+LaTeX Info: Redefining \% on input line 1434.
+ [41]
+Underfull \hbox (badness 10000) in paragraph at lines 1460--1462
 
  []
 
-
-LaTeX Warning: Citation `Vigo' on page 41 undefined on input line 1452.
-
-LaTeX Info: Redefining \. on input line 1453.
-LaTeX Info: Redefining \% on input line 1453.
-[41]
-Underfull \hbox (badness 10000) in paragraph at lines 1459--1461
-
- []
-
-LaTeX Info: Redefining \. on input line 1470.
-LaTeX Info: Redefining \% on input line 1470.
+LaTeX Info: Redefining \. on input line 1465.
+LaTeX Info: Redefining \% on input line 1465.
 [42]
-
-LaTeX Warning: Citation `Vigo' on page 43 undefined on input line 1477.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1486--1488
+Underfull \hbox (badness 10000) in paragraph at lines 1471--1473
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 1489--1491
-
- []
-
-
-LaTeX Warning: Command \= invalid in math mode on input line 1496.
-
-! Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \spacefactor ...
-l.1496 			$$P(X_{i}^{1} = x) = P(\={A}
-                                      \cap B) = P(B|\={A})P(\={A}) = \frac{1...
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-! You can't use `\spacefactor' in display math mode.
-\add@accent ... \accent #1 #2\egroup \spacefactor 
-                                                  \accent@spacefactor 
-l.1496 			$$P(X_{i}^{1} = x) = P(\={A}
-                                      \cap B) = P(B|\={A})P(\={A}) = \frac{1...
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-
-LaTeX Warning: Command \= invalid in math mode on input line 1496.
-
-! Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \spacefactor ...
-l.1496 ...i}^{1} = x) = P(\={A}\cap B) = P(B|\={A}
-                                                  )P(\={A}) = \frac{1}{n} \f...
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-! You can't use `\spacefactor' in display math mode.
-\add@accent ... \accent #1 #2\egroup \spacefactor 
-                                                  \accent@spacefactor 
-l.1496 ...i}^{1} = x) = P(\={A}\cap B) = P(B|\={A}
-                                                  )P(\={A}) = \frac{1}{n} \f...
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-
-LaTeX Warning: Command \= invalid in math mode on input line 1496.
-
-! Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \spacefactor ...
-l.1496 ... x) = P(\={A}\cap B) = P(B|\={A})P(\={A}
-                                                  ) = \frac{1}{n} \frac{n}{n...
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-! You can't use `\spacefactor' in display math mode.
-\add@accent ... \accent #1 #2\egroup \spacefactor 
-                                                  \accent@spacefactor 
-l.1496 ... x) = P(\={A}\cap B) = P(B|\={A})P(\={A}
-                                                  ) = \frac{1}{n} \frac{n}{n...
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-Missing character: There is no ç in font cmex10!
-Missing character: There is no ç in font cmex10!
-Missing character: There is no ç in font cmex10!
-LaTeX Info: Redefining \. on input line 1499.
-LaTeX Info: Redefining \% on input line 1499.
+LaTeX Info: Redefining \. on input line 1482.
+LaTeX Info: Redefining \% on input line 1482.
 [43]
-
-LaTeX Warning: Citation `Vigo' on page 44 undefined on input line 1518.
-
-
-LaTeX Warning: Citation `Vigo' on page 44 undefined on input line 1520.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1520--1522
+Underfull \hbox (badness 10000) in paragraph at lines 1498--1500
 
  []
 
 
-LaTeX Warning: Citation `Vigo' on page 44 undefined on input line 1523.
+Underfull \hbox (badness 10000) in paragraph at lines 1501--1503
 
-LaTeX Info: Redefining \. on input line 1527.
-LaTeX Info: Redefining \% on input line 1527.
+ []
+
+
+LaTeX Warning: Command \= invalid in math mode on input line 1508.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.1508 			$$P(X_{i}^{1} = x) = P(\={A}
+                                      \cap B) = P(B|\={A})P(\={A}) = \frac{1...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in display math mode.
+\add@accent ... \accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.1508 			$$P(X_{i}^{1} = x) = P(\={A}
+                                      \cap B) = P(B|\={A})P(\={A}) = \frac{1...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \= invalid in math mode on input line 1508.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.1508 ...i}^{1} = x) = P(\={A}\cap B) = P(B|\={A}
+                                                  )P(\={A}) = \frac{1}{n} \f...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in display math mode.
+\add@accent ... \accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.1508 ...i}^{1} = x) = P(\={A}\cap B) = P(B|\={A}
+                                                  )P(\={A}) = \frac{1}{n} \f...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \= invalid in math mode on input line 1508.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.1508 ... x) = P(\={A}\cap B) = P(B|\={A})P(\={A}
+                                                  ) = \frac{1}{n} \frac{n}{n...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in display math mode.
+\add@accent ... \accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.1508 ... x) = P(\={A}\cap B) = P(B|\={A})P(\={A}
+                                                  ) = \frac{1}{n} \frac{n}{n...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+Missing character: There is no ç in font cmex10!
+Missing character: There is no ç in font cmex10!
+Missing character: There is no ç in font cmex10!
+LaTeX Info: Redefining \. on input line 1511.
+LaTeX Info: Redefining \% on input line 1511.
 [44]
-LaTeX Info: Redefining \. on input line 1533.
-LaTeX Info: Redefining \% on input line 1533.
- [45]
+Underfull \hbox (badness 10000) in paragraph at lines 1532--1534
+
+ []
+
+LaTeX Info: Redefining \. on input line 1539.
+LaTeX Info: Redefining \% on input line 1539.
+[45]
+LaTeX Info: Redefining \. on input line 1545.
+LaTeX Info: Redefining \% on input line 1545.
+ [46]
 Cap\'{\i }tulo 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1534--1536
+Underfull \hbox (badness 10000) in paragraph at lines 1546--1548
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1537--1539
+Underfull \hbox (badness 10000) in paragraph at lines 1549--1551
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1540--1542
+Underfull \hbox (badness 10000) in paragraph at lines 1552--1554
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1543--1545
+Underfull \hbox (badness 10000) in paragraph at lines 1555--1557
 
  []
 
-[46
+[47
 
 ] (document.bbl
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [47]) [48
+ [48]
+Underfull \hbox (badness 4859) in paragraph at lines 4--7
+[]\OT1/cmr/m/n/12 Algoritmo de ka-ratsu-ba.  []$\OT1/cmtt/m/n/12 https : / / es
+ . wikipedia . org / wiki / Algoritmo _ de _
+ []
 
-] (document.aux
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--17
+[][]\OT1/cmr/m/n/12 Arbol ba-lan-cea-do avl.  []$\OT1/cmtt/m/n/12 https : / / d
+ocplayer . es /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--27
+[]\OT1/cmr/m/n/12 Crossover tech-ni-que: Pmx.  []$\OT1/cmtt/m/n/12 https : / / 
+www . rubicite . com / Tutorials /
+ []
+
+
+Underfull \hbox (badness 4608) in paragraph at lines 29--31
+[]\OT1/cmr/m/n/12 Cutting stock pro-blem.  []$\OT1/cmtt/m/n/12 https : / / en .
+ wikipedia . org / wiki / Cutting _ stock _
+ []
+
+
+Underfull \hbox (badness 1275) in paragraph at lines 43--46
+[]\OT1/cmr/m/n/12 Modelado me-dian-te op-ti-mi-za-cion com-bi-na-to-ria.  []$\
+OT1/cmtt/m/n/12 http : / / personales . upv . es /
+ []
+
+
+Underfull \hbox (badness 1325) in paragraph at lines 60--63
+[]\OT1/cmr/m/n/12 Teora de la com-ple-ji-dad compu-tacio-nal.  []$\OT1/cmtt/m
+/n/12 https : / / es . wikipedia . org / wiki /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--63
+\OT1/cmtt/m/n/12 Teor[]A \ protect \ discretionary{\char \ hyphenchar \ font}{}
+{}a _ de _ la _
+ []
+
+
+Underfull \hbox (badness 2753) in paragraph at lines 75--79
+[]\OT1/cmr/m/n/12 Rafael Mart Cun-que-ro.  Al-go-rit-mos heursti-cos en op-
+ti-mi-za-cion com-bi-na-
+ []
+
+
+Underfull \hbox (badness 1910) in paragraph at lines 75--79
+\OT1/cmr/m/n/12 to-ria.  []$\OT1/cmtt/m/n/12 http : / / yalma . fime . uanl . m
+x / []roger / work / teaching / class _ tso / docs /
+ []
+
+[49
+
+])
+LaTeX Info: Redefining \. on input line 1569.
+LaTeX Info: Redefining \% on input line 1569.
+ [50] (document.aux
 LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
 )
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: 1F631EEE403368BCED8DBC3242AADABD;4406.
+(rerunfilecheck)             Checksum: 78045654D7D3025F62338303594C76D6;4298.
  ) 
 Here is how much of TeX's memory you used:
- 11586 strings out of 479047
- 170305 string characters out of 2849058
- 503148 words of memory out of 3000000
- 28933 multiletter control sequences out of 15000+600000
+ 11632 strings out of 479047
+ 170947 string characters out of 2849058
+ 503883 words of memory out of 3000000
+ 28955 multiletter control sequences out of 15000+600000
  413375 words of font info for 62 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 60i,9n,66p,1084b,524s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,9n,66p,1049b,524s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\rafae\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\
 tcrm1200.pk><C:/Users/rafae/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
 c/amsfonts/cm/cmbx12.pfb><C:/Users/rafae/AppData/Local/Programs/MiKTeX 2.9/font
@@ -1708,9 +1729,9 @@ fonts/cm/cmsy6.pfb><C:/Users/rafae/AppData/Local/Programs/MiKTeX 2.9/fonts/type
 9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/rafae/AppData/Local/Progr
 ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/rafae/AppDat
 a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on document.pdf (54 pages, 687313 bytes).
+Output written on document.pdf (56 pages, 718639 bytes).
 PDF statistics:
- 588 PDF objects out of 1000 (max. 8388607)
- 177 named destinations out of 1000 (max. 500000)
- 274 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 685 PDF objects out of 1000 (max. 8388607)
+ 201 named destinations out of 1000 (max. 500000)
+ 266 words of extra memory for PDF output out of 10000 (max. 10000000)
 

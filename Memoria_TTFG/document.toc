@@ -1,7 +1,6 @@
 \babel@toc {spanish}{}
 \contentsline {chapter}{Resumen}{\es@scroman {i}}{chapter*.1}%
 \contentsline {chapter}{Abstract}{\es@scroman {i}}{chapter*.1}%
-\contentsline {chapter}{Introducci\'on}{\es@scroman {i}}{chapter*.1}%
 \contentsline {chapter}{\numberline {1}Optimizaci\'{\o }n combinatoria}{1}{chapter.1}%
 \contentsline {section}{\numberline {1}Conceptos generales}{1}{section.1.1}%
 \contentsline {section}{\numberline {2}Complejidad. Problemas P vs NP}{4}{section.1.2}%
@@ -21,19 +20,19 @@
 \contentsline {subsection}{\numberline {2.3}\'Arboles AVL.}{24}{subsection.2.2.3}%
 \contentsline {subsubsection}{First Fit usando \'arboles AVL}{31}{section*.11}%
 \contentsline {subsubsection}{Best Fit y Worst Fit usando \'arboles AVL}{33}{section*.12}%
-\contentsline {subsection}{\numberline {2.4}Algoritmos evolutivos}{36}{subsection.2.2.4}%
-\contentsline {chapter}{\numberline {3}Implementaci\'on}{39}{chapter.3}%
-\contentsline {section}{\numberline {1}Introducci\'on}{39}{section.3.1}%
-\contentsline {section}{\numberline {2}Preparaci\'on del problema}{39}{section.3.2}%
-\contentsline {subsection}{\numberline {2.1}La clase Bin}{39}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {2.2}Las clases ProblemInstance y Solution}{40}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {2.3}La clase Utils}{40}{subsection.3.2.3}%
-\contentsline {section}{\numberline {3}Algoritmos voraces}{41}{section.3.3}%
-\contentsline {section}{\numberline {4}El algoritmo evolutivo}{42}{section.3.4}%
-\contentsline {subsection}{\numberline {4.1}Clases para generar la poblaci\'on inicial}{42}{subsection.3.4.1}%
-\contentsline {subsubsection}{Individual}{42}{section*.13}%
-\contentsline {subsubsection}{Populations}{42}{section*.14}%
-\contentsline {subsubsection}{Population}{44}{section*.15}%
-\contentsline {subsection}{\numberline {4.2}Clases para los cruces y mutaciones}{44}{subsection.3.4.2}%
-\contentsline {chapter}{\numberline {4}Conclusiones}{46}{chapter.4}%
-\contentsline {chapter}{Bibliograf\'{\i }a}{47}{chapter.4}%
+\contentsline {subsection}{\numberline {2.4}Algoritmos evolutivos}{37}{subsection.2.2.4}%
+\contentsline {chapter}{\numberline {3}Implementaci\'on}{40}{chapter.3}%
+\contentsline {section}{\numberline {1}Introducci\'on}{40}{section.3.1}%
+\contentsline {section}{\numberline {2}Preparaci\'on del problema}{40}{section.3.2}%
+\contentsline {subsection}{\numberline {2.1}La clase Bin}{40}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {2.2}Las clases ProblemInstance y Solution}{41}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {2.3}La clase Utils}{41}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3}Algoritmos voraces}{42}{section.3.3}%
+\contentsline {section}{\numberline {4}El algoritmo evolutivo}{43}{section.3.4}%
+\contentsline {subsection}{\numberline {4.1}Clases para generar la poblaci\'on inicial}{43}{subsection.3.4.1}%
+\contentsline {subsubsection}{Individual}{43}{section*.13}%
+\contentsline {subsubsection}{Populations}{43}{section*.14}%
+\contentsline {subsubsection}{Population}{45}{section*.15}%
+\contentsline {subsection}{\numberline {4.2}Clases para los cruces y mutaciones}{45}{subsection.3.4.2}%
+\contentsline {chapter}{\numberline {4}Conclusiones}{47}{chapter.4}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{48}{chapter.4}%

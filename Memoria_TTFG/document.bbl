@@ -1,9 +1,121 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{Karatsuba}
+Algoritmo de karatsuba.
+\newblock
+  \url{https://es.wikipedia.org/wiki/Algoritmo_de_Karatsuba#An%C3%A1lisis_de_eficiencia}.
+
+\bibitem{apunteseficiencia}
+Apuntes sobre el c\'alculo de la eficiencia de los algoritmos.
+\newblock
+  \url{http://webdiis.unizar.es/asignaturas/AB/material/varios/eficiencia.pdf}.
+
+\bibitem{arbolAVL}
+\'{A}rbol balanceado avl.
+\newblock
+  \url{https://docplayer.es/3673867-Clase-32-arbol-balanceado-avl.html}.
+
+\bibitem{arbolesAVL}
+\'{A}rboles avl.
+\newblock
+  \url{http://es.tldp.org/Tutoriales/doc-programacion-arboles-avl/avl-trees.pdf}.
+
+\bibitem{crossoverPMX}
+Crossover technique: Pmx.
+\newblock
+  \url{https://www.rubicite.com/Tutorials/GeneticAlgorithms/CrossoverOperators/PMXCrossoverOperator.aspx}.
+
+\bibitem{cutting}
+Cutting stock problem.
+\newblock \url{https://en.wikipedia.org/wiki/Cutting_stock_problem#History}.
+
+\bibitem{estructuraarboles}
+Estructura de datos - \'arboles.
+\newblock
+  \url{https://www.oscarblancarteblog.com/2014/08/22/estructura-de-datos-arboles/}.
+
+\bibitem{greaterthantarget}
+First strictly greater element in a sorted array in java.
+\newblock
+  \url{https://www.geeksforgeeks.org/first-strictly-greater-element-in-a-sorted-array-in-java/?ref=rp}.
+
+\bibitem{optcomb}
+Modelado mediante optimizaci\'on combinatoria.
+\newblock
+  \url{http://personales.upv.es/jpgarcia/LinkedDocuments/MCOIOptimizacionCombinatoria.pdf}.
+
+\bibitem{npcompleto}
+Np-completo.
+\newblock \url{https://es.wikipedia.org/wiki/NP-completo}.
+
+\bibitem{nphard}
+Np-hard.
+\newblock \url{https://es.wikipedia.org/wiki/NP-hard}.
+
+\bibitem{sortDescending}
+Quicksort.
+\newblock \url{https://www.geeksforgeeks.org/quick-sort/}.
+
+\bibitem{teoriaCC}
+Teor\'ia de la complejidad computacional.
+\newblock
+  \url{https://es.wikipedia.org/wiki/Teoría_de_la_complejidad_computacional#Problemas_de_decisión}.
+
+\bibitem{Adelson-Velsky}
+Evgenii Adelson-Velsky, Georgy;~Landis.
+\newblock An algorithm for the organization of information.
+\newblock {\em Proceedings of the USSR Academy of Sciences (in Russian)}, 1962.
+
+\bibitem{Brassard}
+Gilles Brassard.
+\newblock Fundamentals of algorithmics.
+\newblock {\em Pearson}, page 524, 1996.
+
+\bibitem{heuristicosOP}
+Rafael~Mart\'i Cunquero.
+\newblock Algoritmos heur\'isticos en optimizaci\'on combinatoria.
+\newblock
+  \url{http://yalma.fime.uanl.mx/~roger/work/teaching/class_tso/docs/1-Introduction/Intro-by-Rafa%20Marti.pdf}.
+
+\bibitem{aproxheumeta}
+Orlando de~Antonio~Su\'arez.
+\newblock Una aproximaci\'on a la heur\'istica y metaheur\'isticas.
+\newblock \url{https://core.ac.uk/download/pdf/236383515.pdf}.
+
+\bibitem{series/ncs/EibenS03}
+A.~E. Eiben and James~E. Smith.
+\newblock {\em Introduction to Evolutionary Computing}.
+\newblock Natural Computing Series. Springer, 2003.
+
+\bibitem{Vigo}
+Francisco~Vigo Garc\'ia.
+\newblock Algoritmos evolutivos aplicados al problema del viajero.
+\newblock {\em TFG, Universidad de M\'alaga}, 2019.
+
+\bibitem{1.7OPT}
+Jiri~Sgall Gy\"orgy~D\'osa.
+\newblock First fit bin packing: A tight analysis.
+\newblock \url{https://drops.dagstuhl.de/opus/volltexte/2013/3963/pdf/51.pdf}.
+
+\bibitem{Tema4}
+Jos\'e E. Gallardo; Francisco Guti\'errez;~Pablo L\'opez.
+\newblock Tema 4 - \'arboles.
+\newblock {\em Dpto. Lenguajes y Ciencias de la Computaci\'on, Universidad de
+  M\'alaga}, 1962.
+\newblock
+  \url{https://www.dropbox.com/s/b7yrapah8xphbu4/EDTema4%C3%81rboles.pdf?dl=0#}.
 
 \bibitem{Tutor}
 Jos\'e Enrique~Gallardo Ruiz.
 \newblock Hybridization of exact and metaheuristics techniques for the
   resolution of combinatorial optimization problems.
 \newblock {\em PhD thesis, Universidad de M\'alaga}, 2007.
+
+\bibitem{Graduatecourse}
+Alexander Souza.
+\newblock Graduate course - combinatorial optimization.
+\newblock {\em University of Freiburg}.
+\newblock
+  \url{http://ac.informatik.uni-freiburg.de/lak_teaching/ws11_12/combinatorial_optimization.php}.
 
 \end{thebibliography}

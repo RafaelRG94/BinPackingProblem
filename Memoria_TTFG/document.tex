@@ -170,40 +170,46 @@
 	
 	\addcontentsline{toc}{chapter}{Resumen} 
 	\addcontentsline{toc}{chapter}{Abstract} 
-	\addcontentsline{toc}{chapter}{Introducci\'on}
 	
 	\pagebreak
 	
 	{\let\clearpage\relax
 		
-		{\Large \textbf{El T\'{\i}tulo aqu\'{\i}}}\\
+		{\Large \textbf{Algoritmos para la resoluci\'on del problema combinatorio de empaquetamiento}}\\
 		
 		\chapter*{Resumen}
 	}
-	Texto.
+	En el siguiente trabajo se van a estudiar distintos tipos de algoritmos heur\'isticos y metaheur\'isticos aplicados a los problemas de optimizaci\'on combinatoria. En particular, el problema para el cu\'al vamos a tratar de buscar una soluci\'on lo m\'as pr\'oxima posible a su soluci\'on \'optima es el problema del empaquetamiento. Para ello, comenzaremos dando una breve introducci\'on sobre la optimizaci\'on combinatoria y las dificultades que presenta, y expondremos y formularemos el problema del empaquetamiento que vamos a tratar. Posteriormente, presentaremos a los algoritmos voraces, los cuales nos ofrecen una manera no muy complicada de obtener unas primeras soluciones para las distintas instancias del problema. A continuaci\'on, daremos una implementaci\'on m\'as eficiente de estos algoritmos para, finalmente y con ayuda de todos los algoritmos implementados hasta entonces, presentar los algoritmos evolutivos.
+	\\
+	
+	Todos los m\'etodos que se han explicado en este trabajo se han implementado usando el lenguaje Scala.
 	
 	\vfill
 	
 	\textbf{Palabras clave:}\\
 	
-	\textsc{poner aqu\'{\i} las palabras clave.}
+	\textsc{optimizaci\'on combinatoria, funci\'on objetivo, espacio de b\'usqueda, soluci\'on \'optima, algoritmos heur\'isticos, algoritmos metaheur\'isticos, algoritmos voraces, algoritmos evolutivos, complejidad algor\'itmica, coste asint\'otico, problemas p, problemas np, problema del empaquetamiento, bpp, \'arboles avl, nodos, altura, rotaciones, individuo, poblaci\'on, funci\'on de selecci\'on, funci\'on de cruce, funci\'on de mutaci\'on, scala}
 	
 	\pagebreak
 	
 	{\let\clearpage\relax
 		
-		{\Large \textbf{El T\'{\i}tulo (en ingl\'{e}s) aqu\'{\i}}}\\
+		{\Large \textbf{Algorithms for the resolution of Bin Packing Problem}}\\
 		
 		\chapter*{Abstract}
 	}
 	
-	Text. 
+	In the following project we are going to study different types of heuristic and metaheuristic algorithms applied to combinatorial optimisation problems. In particular, the problem for which we will try to find a solution as close as possible to its optimal solution is the bin packing problem. To do so, we will give a brief introduction to combinatorial optimisation and the difficulties it presents, and we will show and formulate the bin packing problem we are going to deal with. Subsequently, we will present the greedy algorithms, which offer us a not very complicated way to obtain some first solutions for the different instances of the problem. Then, we will give a more efficient implementation of these algorithms and, finally, with the help of all the algorithms implemented so far, we will present the evolutionary algorithms.
+	\\
+	
+	All the methods explained in this project have been implemented using the Scala language.
+	
 	
 	\vfill
 	
-	\textbf{key words:}\\
+	\textbf{Key words:}\\
 	
-	\textsc{key words.}
+	\textsc{combinatorial optimisation, objective function, search space, optimal solution, heuristic algorithms, metaheuristic algorithms, greedy algorithms, evolutionary algorithms, algorithmic complexity, asymptotic cost, p-problems, np-problems, packing problem, bpp, avl trees, nodes, height, rotations, individual, population, selection function, crossover function, mutation function, scala}
 	
 	
 	\chapter{Optimizaci\'{\o}n combinatoria}
@@ -232,7 +238,7 @@
 	De este modo, nuestro problema se reduce a encontrar un par $(x,y)$ que maximice a la funci\'on $f$ y verifique las restricciones anteriores.
 	\\
 	
-	Formalmente, un problema de optimizaci\'on se puede describir (\textbf{citar tesis Pepe}) como una tupla $(D, X, f, R)$ donde:
+	Formalmente, un problema de optimizaci\'on se puede describir \cite{Tutor} como una tupla $(D, X, f, R)$ donde:
 	
 	\begin{enumerate}
 		\item $D = \{D_{1},...,D_{n}\}$ es un conjunto de dominios.
@@ -270,10 +276,10 @@
 	Por otro lado, la mayor\'ia de t\'ecnicas de convergencia de soluciones son de tipo metaheur\'istico. Se basan en generar gran cantidad de soluciones, determinar cu\'ales son las mejores y, a partir de ellas, generar otro conjunto de soluciones a analizar, repitiendo el proceso hasta que estas soluciones que vamos generando converjan a una. Por lo tanto, dentro de este grupo podemos encontrar t\'ecnicas de tipo iterativo, como el cl\'asico m\'etodo de Newton o el m\'etodo de descenso del gradiente, y hasta los \textit{algoritmos gen\'eticos} (de tipo metaheur\'istico), que se enmarcan dentro de los \textit{algoritmos evolutivos}, siendo estos dos \'ultimos muy empleados en el \'area de la inteligencia artificial.
 	\\
 	
-	Hecho este breve contexto, estamos en disposici\'on de centrarnos en el caso que nos ata\~{n}e. La optmizaci\'on combinatoria es una rama de la optimizaci\'on relacionada con la investigaci\'on operativa, la teor\'ia algor\'itmica y la teor\'ia de la complejidad computacional (\textbf{citar wiki/art\'iculo jgarcia}). Observemos que, para un problema de optimizaci\'on combinatoria $P = (D, X, f, R)$, el conjunto $S\subseteq D$ de las posibles soluciones de $P$ es finito, lo cual nos lleva a encontrar un m\'etodo simple con el que hallar el \'optimo global de $P$, que consiste en examinar todas las posibles soluciones del problema. Sin embargo, en la pr\'actica, en la mayor\'ia de problemas de optimizaci\'on combinatoria no es posible la aplicaci\'on de este m\'etodo debido a que el espacio de b\'usqueda crece exponencialmente con el tama\~{n}o del problema (o tama\~{n}o de la instancia del problema), lo cual hace que el coste computacional y el tiempo necesario para examinar cada una de las posibles soluciones sea inviable.
+	Hecho este breve contexto, estamos en disposici\'on de centrarnos en el caso que nos ata\~{n}e. La optmizaci\'on combinatoria es una rama de la optimizaci\'on relacionada con la investigaci\'on operativa, la teor\'ia algor\'itmica y la teor\'ia de la complejidad computacional \cite{optcomb}. Observemos que, para un problema de optimizaci\'on combinatoria $P = (D, X, f, R)$, el conjunto $S\subseteq D$ de las posibles soluciones de $P$ es finito, lo cual nos lleva a encontrar un m\'etodo simple con el que hallar el \'optimo global de $P$, que consiste en examinar todas las posibles soluciones del problema. Sin embargo, en la pr\'actica, en la mayor\'ia de problemas de optimizaci\'on combinatoria no es posible la aplicaci\'on de este m\'etodo debido a que el espacio de b\'usqueda crece exponencialmente con el tama\~{n}o del problema (o tama\~{n}o de la instancia del problema), lo cual hace que el coste computacional y el tiempo necesario para examinar cada una de las posibles soluciones sea inviable.
 	\\
 	
-	El \textit{tama\~{n}o de una instancia} (\textbf{citar Brassard}) se corresponde formalmente al n\'umero de bits necesarios para representar la instancia en un ordenador, utilizando alg\'un esquema de codificaci\'on definido con precisi\'on y razonablemente compacto. No obstante, para que los an\'alisis sean m\'as claros, normalmente emplearemos la palabra "tama\~{n}o" para referirnos a cualquier n\'umero entero que mida de alg\'un modo el n\'umero de componentes de una instancia. Por ejemplo, cuando hablamos de ordenar, usualmente medimos el tama\~{n}o de la instancia por el n\'umero de elementos a ordenar, independientemente de que dichos elementos necesiten m\'as de un bit para ser representados en un ordenador.
+	El \textit{tama\~{n}o de una instancia} \cite{Brassard} se corresponde formalmente al n\'umero de bits necesarios para representar la instancia en un ordenador, utilizando alg\'un esquema de codificaci\'on definido con precisi\'on y razonablemente compacto. No obstante, para que los an\'alisis sean m\'as claros, normalmente emplearemos la palabra "tama\~{n}o" para referirnos a cualquier n\'umero entero que mida de alg\'un modo el n\'umero de componentes de una instancia. Por ejemplo, cuando hablamos de ordenar, usualmente medimos el tama\~{n}o de la instancia por el n\'umero de elementos a ordenar, independientemente de que dichos elementos necesiten m\'as de un bit para ser representados en un ordenador.
 	\\
 	
 	Esta necesidad de resolver instancias de problemas cada vez m\'as grandes con un coste computacional aceptable nos lleva a desarrollar algoritmos que, aunque no nos proporcionan soluciones exactas, si nos permiten obtener soluciones aproximadas razonablemente buenas. Son los ya mencionados algoritmos heur\'isticos.
@@ -292,7 +298,7 @@
 	Sean dos funciones $f,g: \mathbb{R} \longrightarrow \mathbb{R}$. Decimos que $f(n)$ es $O(g(n))$ (o que $f(n) = O(g(n))$) si y solo si existen $n_{0},c > 0$ tales que $|f(n)| \leq c|g(n)|$ para todo $n > n_{0}$.
 	\\
 	
-	La notaci\'on $O(f)$ tiene las siguientes propiedades (\textbf{citar webdiis.unizar}), cualesquiera que sean las funciones $f,g$ y $h$:
+	La notaci\'on $O(f)$ tiene las siguientes propiedades \cite{apunteseficiencia}, cualesquiera que sean las funciones $f,g$ y $h$:
 	
 	\begin{enumerate}
 		\item Para todo $c \in \mathbb{R^{+}}$, $$ f(n) = O(g(n)) \Longleftrightarrow c \cdot f(n) = O(g(n)) $$
@@ -322,6 +328,8 @@
 	
 	$$ O(1) \subset O(log\,n) \subset O(n) \subset O(n\,log\,n) \subset O(n^{2}) \subset O(n^{3}) \subset O(2^{n}) $$
 	
+	\pagebreak{4}
+	
 	\begin{figure}[h]
 		\centering
 		\includegraphics[scale = 0.4]{grafico-complejidad-computacionala3.png}
@@ -329,13 +337,13 @@
 		\label{fig:complejidad}
 	\end{figure}
 	
-	\textbf{?`Comentar aqu\'i algo acerca de que hay que tener cuidado a la hora de comparar algoritmos en base a su coste asint\'otico? Por ejemplo con los algoritmos de Karatsuba, Toom-Cook y Sch\"onhage-Strassen para el producto.}
+	No obstante, tenemos que tener cuidado a la hora de comparar el coste asint\'otico de los algoritmos. As\'i, por ejemplo, el algoritmo de Karatsuba \cite{Karatsuba} es un procedimiento para multiplicar n\'umeros grandes de manera eficiente. Es decir, para n\'umeros suficientemente grandes, este algoritmo realiza la multiplicaci\'on de dos n\'umeros m\'as r\'apido que el algoritmo cl\'asico. En contrapartida, si eligi\'eramos dos n\'umeros peque\~{n}os el algoritmo cl\'asico ser\'ia m\'as eficiente que el de Karatsuba. Lo mismo ocurrir\'ia si comparamos el algoritmo de multiplicaci\'on cl\'asico con el algoritmo de Toom-Cook (que es una generalizaci\'on del algoritmo de Karatsuba) o el de Sch\"onhage-Strassen.
 	\\
 	
 	Sin embargo, ?`qu\'e significa que un algoritmo sea eficiente? ?`Significa que toma un tiempo en $O(n\,log\,n)$? ?`$O(n^{2})$? Depender\'a del problema a resolver.
 	\\
 	
-	Decimos que un algoritmo es eficiente (\textbf{citar Brassard}) si existe un polinomio $p(n)$ tal que el algoritmo puede resolver cualquier instancia del problema de tama\~{n}o \textit{n} en un tiempo $O(p(n))$. Se dice entonces que el algoritmo es de \textit{tiempo polin\'omico} y que los problemas que se resuelven con dicho algoritmo son resolubles en tiempo polin\'omico. Sin embargo, cuando el tiempo de ejecuci\'on de un algoritmo no se puede acotar mediante una f\'ormula polin\'omica, se dice que dicho algoritmo y su problema asociado son de \textit{tiempo exponencial}. Cuando solo se conocen algoritmos de tiempos exponenciales para resolver un problema, se dice que el problema es \textit{intratable}.
+	Decimos que un algoritmo es eficiente \cite{Brassard} si existe un polinomio $p(n)$ tal que el algoritmo puede resolver cualquier instancia del problema de tama\~{n}o \textit{n} en un tiempo $O(p(n))$. Se dice entonces que el algoritmo es de \textit{tiempo polin\'omico} y que los problemas que se resuelven con dicho algoritmo son resolubles en tiempo polin\'omico. Sin embargo, cuando el tiempo de ejecuci\'on de un algoritmo no se puede acotar mediante una f\'ormula polin\'omica, se dice que dicho algoritmo y su problema asociado son de \textit{tiempo exponencial}. Cuando solo se conocen algoritmos de tiempos exponenciales para resolver un problema, se dice que el problema es \textit{intratable}.
 	\\
 	
 	Para lo que sigue, nos centraremos en el caso de los problemas de decisi\'on, que son aquellos problemas que tienen como respuesta s\'i o no, o equivalentemente, verdadero o falso.
@@ -344,7 +352,7 @@
 	Todas estas consideraciones anteriores nos sirven de base para la introducci\'on de los siguientes conceptos:
 	
 	\begin{definicion}
-		Una clase de complejidad es un conjunto de problemas que poseen la misma complejidad computacional (\textbf{citar wiki)}.
+		Una clase de complejidad es un conjunto de problemas que poseen la misma complejidad computacional \cite{teoriaCC}.
 	\end{definicion}
 	
 	\begin{definicion}
@@ -360,7 +368,7 @@
 	Una relaci\'on evidente entre ambas clases es que $P \subset NP$, ya que si podemos resolver un problema en tiempo polin\'omico, evidentemente tambi\'en podemos verificarlo en tiempo polin\'omico.
 	\\
 	
-	Otro importante subconjunto de la clase \textit{NP} son los problemas \textit{NP-completos}.(\textbf{citar wiki a continuaci\'on})
+	Otro importante subconjunto de la clase \textit{NP} son los problemas \textit{NP-completos} \cite{npcompleto}.
 	
 	\begin{definicion}
 		Un problema de decisi\'on C es NP-completo si:
@@ -376,13 +384,13 @@
 	A pesar de a\~{n}os de investigaci\'on, la cuesti\'on de si $P = NP$ contin\'ua a\'un abierta y es considerado uno de los problemas del milenio. La importancia de este resultado radica en el hecho de que si $P \neq NP$, entonces los problemas \textit{NP-completos} son intratables, ya que si alg\'un problema en \textit{NP} requiere m\'as tiempo que uno polinomial, entonces uno \textit{NP-completo} tambi\'en.
 	\\
 	
-	Una clase m\'as general de problemas no restringida a los problemas de decisi\'on es la clase de complejidad \textit{NP-dif\'icil} (\textit{NP-hard}). (\textbf{citar wiki para la def.})
+	Una clase m\'as general de problemas no restringida a los problemas de decisi\'on es la clase de complejidad \textit{NP-dif\'icil} (\textit{NP-hard}) \cite{nphard}.
 	
 	\begin{definicion}
 		La clase de complejidad NP-dif\'icil es el conjunto que contiene a los problemas C tales que todo problema L en NP puede ser transformado polinomialmente en C.
 	\end{definicion}
 	
-	Esta clase contiene a aquellos problemas que son, como m\'inimo, tan dif\'iciles como un problema de \textit{NP}. De esta forma, la clase de problemas \textit{NP-completo} puede definirse como la intersecci\'on entre las clases \textit{NP} y \textit{NP-dif\'icil}. (\textbf{imagen de wiki})
+	Esta clase contiene a aquellos problemas que son, como m\'inimo, tan dif\'iciles como un problema de \textit{NP}. De esta forma, la clase de problemas \textit{NP-completo} puede definirse como la intersecci\'on entre las clases \textit{NP} y \textit{NP-dif\'icil}.
 	
 	\begin{figure}[h]
 		\centering
@@ -401,19 +409,17 @@
 	Los m\'etodos heur\'{i}sticos son algoritmos que se limitan a proporcionar una "buena" soluci\'on del problema, no necesariamente \'optima, con un coste computacional razonable. Adem\'as, aunque un buen heur\'{\i}stico encuentre muy buenas soluciones para la mayor\'{\i}a de instancias de un problema, no hay garant\'{\i}a de que siempre encuentre una buena soluci\'on para todas las instancias del problema.
 	\\
 	
-	Existen gran cantidad de m\'etodos heur\'{\i}sticos, lo cual hace que sea complicado dar una clasificaci\'on (\textbf{citar Rafael Mart\'{\i}}) de los mismos ya que, por ejemplo, muchos de ellos han sido dise\~{n}ados para resolver un problema concreto. No obstante, podemos dar una clasificaci\'on general donde ubicar a los algoritmos heur\'{\i}sticos m\'as conocidos:
+	Existen gran cantidad de m\'etodos heur\'{\i}sticos, lo cual hace que sea complicado dar una clasificaci\'on \cite{heuristicosOP} de los mismos ya que, por ejemplo, muchos de ellos han sido dise\~{n}ados para resolver un problema concreto. No obstante, podemos dar una clasificaci\'on general donde ubicar a los algoritmos heur\'{\i}sticos m\'as conocidos:
 	
 	\begin{itemize}
-		\item \textbf{M\'etodos de descomposici\'on.} El problema de partida se descompone en subproblemas m\'as sencillos de resolver, sin perder de vista que ambos pertenecen al mismo problema. (\textbf{Ejemplo?})
+		\item \textbf{M\'etodos de descomposici\'on.} El problema de partida se descompone en subproblemas m\'as sencillos de resolver, sin perder de vista que ambos pertenecen al mismo problema. 
 		\item \textbf{M\'etodos inductivos.} Estos m\'etodos parten de casos m\'as sencillos del problema general, de manera que analizan propiedades o t\'ecnicas que pueden generalizarse al problema completo. 
 		\item \textbf{M\'etodos de reducci\'on.} Consiste en seleccionar propiedades que se verifican de forma general en las soluciones consideradas como buenas e introducirlas como restricciones del problema. La finalidad de estos m\'etodos es restringir el espacio de soluciones para simplificar el problema. El inconveniente que presentan estos m\'etodos, es la posibilidad de dejar fuera del espacio de soluciones nuevo aquellas soluciones \'optimas del problema original. 
-		\item \textbf{M\'etodos constructivos.} Son m\'etodos que construyen paso a paso una soluci\'on del problema. Normalmente son m\'etodos deterministas y suelen estar basados en la mejor elecci\'on en cada iteraci\'on. (\textbf{Ejemplo?} - algoritmos voraces)
+		\item \textbf{M\'etodos constructivos.} Son m\'etodos que construyen paso a paso una soluci\'on del problema. Normalmente son m\'etodos deterministas y suelen estar basados en la mejor elecci\'on en cada iteraci\'on. 
 		\item \textbf{M\'etodos de b\'usqueda local.} A diferencia de los m\'etodos anteriores, los algoritmos de b\'usqueda o mejora local comienzan con una soluci\'on del problema y la mejoran progresivamente. El algoritmo realiza en cada iteraci\'on un movimiento de una soluci\'on a otra mejor. El m\'etodo finaliza cuando, para una soluci\'on, no existe ninguna otra accesible que la mejore. 
 	\end{itemize}
 	
-	Cuando se resuelve un problema por m\'etodos heur\'isticos, como la optimalidad no est\'a garantizada, se debe medir la calidad de los resultados. Para ello existen diversos procedimientros, entre los cuales podr\'iamos destacar los siguientes:
-	
-	(\textbf{citar Orlando de Antonio Su\'arez})
+	Cuando se resuelve un problema por m\'etodos heur\'isticos, como la optimalidad no est\'a garantizada, se debe medir la calidad de los resultados. Para ello existen diversos procedimientros, entre los cuales podr\'iamos destacar los siguientes \cite{aproxheumeta}:
 	
 	\begin{itemize}
 		\item \textbf{Comparaci\'on con la soluci\'on \'optima.} Aunque normalmente se recurre al algoritmo aproximado por no existir un m\'etodo exacto para obtener el \'optimo, o por ser \'este computacionalmente muy costoso, en ocasiones puede que dispongamos de un m\'etodo que proporcione el \'optimo para un conjunto limitado de ejemplos. Este conjunto de ejemplos puede servir para medir la calidad del m\'etodo heur\'istico. Normalmente se mide, para cada uno de los ejemplos, la desviaci\'on porcentual de la soluci\'on heur\'istica frente a la \'optima, calculando posteriormente el promedio de dichas desviaciones.
@@ -455,7 +461,7 @@
 		Cuando el n\'umero de cubos se limita a uno y cada objeto se caracteriza por su peso, el problema de maximizar el peso de los objetos que pueden caber en el contenedor se conoce como el  ya mencionado problema de la mochila.
 	\end{observacion}
 	
-	El BPP tambi\'en puede considerarse como un caso especial del \textit{cutting stock problem}, cuyo origen est\'a asociado a la industria maderera: (citar wiki)
+	El BPP tambi\'en puede considerarse como un caso especial del \textit{cutting stock problem}, cuyo origen est\'a asociado a la industria maderera \cite{cutting}: 
 	\\
 	
 	Consideremos una lista de \textit{m} \'ordenes para las cuales se requiere $q_{j}$, $j = 1,...,m$ piezas para cada una. Posteriormente, se construye una lista de todas las combinaciones posibles de los recortes (frecuentemente llamados \textit{patrones}), asociando a cada uno de ellos una variable entera positiva $x_{i}$ que representa cuantas veces ser\'a utilizado cada patr\'on. Entonces, el problema de programaci\'on lineal entera se modeliza matem\'aticamente como
@@ -508,7 +514,7 @@
 	Por algoritmos voraces se entienden aquellos algoritmos que siguen un esquema de resoluci\'on llamado m\'etodo voraz. Dicho esquema consiste esencialmente en construir una soluci\'on de forma incremental, tomando decisiones localmente \'optimas en cada paso, lo cual no implica que la soluci\'on final sea globalmente \'optima. Esquema que siguen algoritmos como, por ejemplo, el m\'etodo del gradiente, los algoritmos gen\'eticos o los algoritmos de cristalizaci\'on simulada. Los algoritmos que siguen este m\'etodo son, en general, los que menos dificultades plantean a la hora de implementar y comprobar su funcionamiento, y suelen aplicarse en problemas de optimizaci\'on.
 	\\
 	
-	Frecuentemente, los algoritmos de tipo greedy y los problemas que pueden resolver, se caracterizan por la mayor\'ia de las siguientes caracter\'isticas (\textbf{citar Brassard}):
+	Frecuentemente, los algoritmos de tipo greedy y los problemas que pueden resolver, se caracterizan por la mayor\'ia de las siguientes caracter\'isticas \cite{Brassard}:
 	
 	\begin{itemize}
 		\item Tenemos que resolver un problema de optimizaci\'on y, para construir su soluci\'on, tenemos un conjunto de candidatos: en el caso que nos ata\~{n}e, esos candidatos resultan ser los objetos que queremos introducir en los cubos.
@@ -526,13 +532,13 @@
 	\\
 	
 	\noindent\fbox{
-		\begin{minipage}{0.5\textwidth}
+		\begin{minipage}{0.6\textwidth}
 			\begin{algorithmic}
 				
 				\State{funci\'on greedy (C: set): set}
 				\State{//C es el conjunto de los candidatos}
 				\State{//Construimos la soluci\'on en el conjunto S}
-				\State{S = $\emptyset$}\
+				\State{S = $\emptyset$}
 				\While{(C $\neq \emptyset$ \textbf{y no} solucion(S))}
 				\State{$x \longleftarrow seleccionar(C)$}
 				\State{$C \longleftarrow C-\{x\}$}
@@ -708,7 +714,7 @@
 				\State{//El array solution almacenar\'a los cubos y current ser\'a el \'ultimo cubo creado}
 				\State{//Inicializamos el algoritmo con el array de soluciones sin ning\'un cubo}
 				\State{//targetBin es la posici\'on en solution del cubo con la menor capacidad restante que es mayor o igual que el peso del item seleccionado}
-				\State{//smallerThanTarget es un m\'etodo de b\'usqueda binaria con el que, dado un array de cubos ordenados seg\'un sus capacidades restantes de forma creciente y un elemento, encuentra la posici\'on del menor elemento del array que es mayor o igual que el elemento dado}
+				\State{//greaterThanTarget es un m\'etodo de b\'usqueda binaria con el que, dado un array de cubos ordenados seg\'un sus capacidades restantes de forma creciente y un elemento, encuentra la posici\'on del menor elemento del array que es mayor o igual que el elemento dado}
 				\State{solution = $\emptyset$}\
 				\For{(item $\leftarrow$ items)}
 				\State{targetBin = 1 + smallerThanTarget(item, solution)}
@@ -729,7 +735,7 @@
 	}
 	\\\\
 	
-	Como ya veremos en el cap\'itulo dedicado a explicar la implementaci\'on de los m\'etodos aqu\'i descritos, lo primero que debemos tener en cuenta para analizar la complejidad de este algoritmo es que, en cada iteraci\'on, para localizar el cubo donde el objeto seleccionado quede m\'as ajustado realizamos una b\'usqueda binaria con el m\'etodo \textit{smallerThanTarget}, que es \textit{O(log n)}. Por otro lado, tras insertar el elemento, la capacidad del cubo disminuir\'a, con lo que tendremos que desplazarlo a la izquierda (ya que en nuestra implementaci\'on ordenaremos los cubos de menor a mayor capacidad restante) para seguir manteniendo los cubos en orden. En el peor de los casos, este desplazamiento ser\'a \textit{O(n)} si, por ejemplo, tenemos que desplazar un cubo que est\'a en el extremo derecho al extremo izquierdo.
+	Como ya veremos en el cap\'itulo dedicado a explicar la implementaci\'on de los m\'etodos aqu\'i descritos, lo primero que debemos tener en cuenta para analizar la complejidad de este algoritmo es que, en cada iteraci\'on, para localizar el cubo donde el objeto seleccionado quede m\'as ajustado realizamos una b\'usqueda binaria con el m\'etodo \textit{greaterThanTarget} \cite{greaterthantarget}, que es \textit{O(log n)}. Por otro lado, tras insertar el elemento, la capacidad del cubo disminuir\'a, con lo que tendremos que desplazarlo a la izquierda (ya que en nuestra implementaci\'on ordenaremos los cubos de menor a mayor capacidad restante) para seguir manteniendo los cubos en orden. En el peor de los casos, este desplazamiento ser\'a \textit{O(n)} si, por ejemplo, tenemos que desplazar un cubo que est\'a en el extremo derecho al extremo izquierdo.
 	\\
 	
 	Por lo tanto, cada iteraci\'on en la que insertamos un nuevo elemento ser\'a \textit{O(log n)} + \textit{O(n)} = \textit{O(n)}. De esta forma, como tenemos que insertar \textit{n} elementos, el coste total del algoritmo ser\'a $n \cdot O(n) = O(n^{2})$.
@@ -1308,16 +1314,23 @@
 	Notemos que en estos m\'etodos ya hemos usado indirectamente a aquel que hace que el m\'etodo Best Fit y Worst Fit sean diferentes, que es la funci\'on que borra los nodos que contienen los cubos en donde vamos a introducir un nuevo elemento (m\'etodo delete que hemos usado en la funci\'on add anterior). Esto es as\'i porque estos m\'etodos incorporan los algoritmos de b\'usqueda de los que hacen uso Best Fit y Worst Fit. 
 	\\
 	
-	\textbf{NO SE SI AQUI DEBERIA EXPLICAR LOS DOS METODOS DELETE JUNTO CON SU PSEUDOCODIGO O DEJARLOS PARA EL CAPITULO SIGUIENTE}
+	A continuaci\'on esquematizaremos las dos implementaciones de los m\'etodos delete anteriores:
+	\begin{itemize}
+		\item M\'etodo \textbf{delete} para Best Fit. Con este m\'etodo vamos recorriendo los nodos del \'arbol desde la ra\'iz hasta el nodo con el cubo en el que introduciremos un nuevo elemento, el cu\'al borraremos del \'arbol si lo encontramos. La manera de hacerlo es la siguiente: 
+		\\
+		
+		Supongamos que la capacidad restante del cubo del nodo ra\'iz es mayor o igual que el peso del elemento que queremos introducir. Entonces, todos los cubos de los hijos izquierdos tendr\'an una capacidad restante menor que la del nodo ra\'iz. Esto quiere decir que el cubo con la menor capacidad restante que es mayor o igual que el peso del elemento que queremos introducir se encuentra en los hijos izquierdos del nodo ra\'iz. Si la capacidad restante anterior hubiera sido menor, significar\'a que el nodo con el cubo que estamos buscando se encuentra en los hijos derecho. 
+		\\
+		
+		El algoritmo que hemos implementado usa recursividad para aplicar esta idea, parando cuando hemos encontrado el nodo con el cubo que va a almacenar ese elemento, borr\'andolo del \'arbol y devolviendo el cubo del nodo borrado o cuando recorremos todo el \'arbol y no se ha encontrado ning\'un nodo en cuyo cubo podamos introducir el elemento.
+		\item M\'etodo \textbf{delete} para Worst Fit. Este m\'etodo recuerda bastante al que se ha implementado en el algoritmo First Fit para \'arboles para introducir un nuevo nodo que almacene un nuevo cubo. Esto se debe a que, seg\'un el orden que hemos definido para los \'arboles que usan estos dos m\'etodos, el nodo cuyo cubo tienen la mayor capacidad restante es el que se encuentra al final de la espina derecha. Por lo tanto, el m\'etodo delete para Worst Fit, lo que hace es irse al final de la espipna derecha y comprobar si el elemento que queremos introducir cabe o no en el cubo del nodo. Si cabe, borra el nodo y devuelve el cubo que se encontraba en el nodo.
+	\end{itemize}
 	
 	\subsection{Algoritmos evolutivos}
-	Los algoritmos evolutivos son una serie de algoritmos metaheur\'isticos inspirados en el proceso evolutivo. Por lo tanto, la idea detr\'as de ellos es sencilla de comprender: partiendo de una poblaci\'on conocida, obtenemos mediante reproducci\'on y selecci\'on natural un individuo "mejor". A continuaci\'on, este nuevo individuo se incorpora a la poblaci\'on de partida y seguimos obteniendo nuevos individuos mediante los mecanismos anteriores y as\'i, sucesivamente. Evidentemente estos nuevos individuos no tienen por qu\'e ser necesariamente mejores, aunque evidentemente trataremos que as\'i sea. Posteriormente, tendremos que especificar cu\'ales son estos mecanismos que simulan los procesos de reproducci\'on y selecci\'on.
+	Los algoritmos evolutivos son una serie de algoritmos metaheur\'isticos inspirados en el proceso evolutivo \cite{series/ncs/EibenS03}. Por lo tanto, la idea detr\'as de ellos es sencilla de comprender: partiendo de una poblaci\'on conocida, obtenemos mediante reproducci\'on y selecci\'on natural un individuo "mejor". A continuaci\'on, este nuevo individuo se incorpora a la poblaci\'on de partida y seguimos obteniendo nuevos individuos mediante los mecanismos anteriores y as\'i, sucesivamente. Evidentemente estos nuevos individuos no tienen por qu\'e ser necesariamente mejores, aunque evidentemente trataremos que as\'i sea. Posteriormente, tendremos que especificar cu\'ales son estos mecanismos que simulan los procesos de reproducci\'on y selecci\'on.
 	\\
 	
-	\textbf{MENCIONAR TFG VIGO}
-	\\
-	
-	De esta forma, el algoritmo evolutivo funcionar\'ia como describimos a continuaci\'on:
+	De esta forma, el algoritmo evolutivo funcionar\'ia como describimos a continuaci\'on \cite{Vigo}:
 	
 	\begin{enumerate}
 		\setcounter{enumi}{-1}
@@ -1338,7 +1351,7 @@
 	El algoritmo evolutivo pretende compensar este hecho. En nuestro caso, el tipo de algoritmo que implementaremos no constituir\'a una mejora en cuanto a la eficiencia de los algoritmos anteriores puesto que, de hecho, fijaremos un tiempo durante el cual el algoritmo se est\'e ejecutando. Tiempo que no tiene por qu\'e ser necesariamente menor del que necesitan os algoritmos anteriores para ejecutarse. En cambio, s\'i que supondr\'a una mejora en cuanto a la calidad de las soluciones.
 	\\
 	
-	Para ello, los individuos que formar\'an la poblaci\'on y aquellos nuevos individuos que iremos generando en cada iteraci\'on del algoritmo, no ser\'an m\'as que permutaciones de los elementos de la lista de objetos dada en una instancia determinada del problema de BP. Por lo tanto, cada individuo de la poblaci\'on tendr\'a dos atributos, que ser\'an la permutaci\'on correspondiente y el n\'umero de cubos que se obtiene al resolver la instancia del problema mediante el m\'etodo con el que dijimos que evaluar\'iamos la calidad de los individuos, Este m\'etodo ser\'a tambi\'en el que nos permita tener ordenados a los individuos de la poblaci\'on de mejor a peor candidato, ya que esta condici\'on es equivalente a ordenar a los individuos seg\'un el n\'umero de cubos que produce su soluci\'on, de menor a mayor cantidad.
+	Para ello, los individuos que formar\'an la poblaci\'on y aquellos nuevos individuos que iremos generando en cada iteraci\'on del algoritmo, no ser\'an m\'as que permutaciones de los elementos de la lista de objetos dada en una instancia determinada del problema de BP. Por lo tanto, cada individuo de la poblaci\'on tendr\'a dos atributos, que ser\'an la permutaci\'on correspondiente y el n\'umero de cubos que se obtiene al resolver la instancia del problema mediante el m\'etodo con el que dijimos que evaluar\'iamos la calidad de los individuos. Este m\'etodo ser\'a tambi\'en el que nos permita tener ordenados a los individuos de la poblaci\'on de mejor a peor candidato, ya que esta condici\'on es equivalente a ordenar a los individuos seg\'un el n\'umero de cubos que produce su soluci\'on, de menor a mayor cantidad.
 	\\
 	
 	De forma esquem\'atica, el algoritmo evolutivo seguir\'ia el siguiente diagrama:
@@ -1359,7 +1372,8 @@
 				\State{\textbf{begin}}
 				\State{Creamos la poblaci\'on inicial.}
 				\State{Evaluamos la poblaci\'on inicial.}
-				\State{//La condici\'on de parada del bucle while es que alcancemos la SO o que se agote el tiempo.}
+				\State{//La condici\'on de parada del bucle while es que alcancemos la SO o que se agote el}
+				\State{//tiempo.}
 				\While{(no se verifique la condici\'on de parada)}
 				\State{Seleccionamos aleatoriamente los padres en la poblaci\'on.}
 				\State{Cruzamos con cierta probabilidad a los padres para obtener a los hijos.}
@@ -1410,9 +1424,9 @@
 	En el fichero Utils.scala tenemos tres m\'etodos auxiliares de los que posteriormente hacemos uso cuando implementamos los algoritmos:
 	
 	\begin{itemize}
-		\item \textbf{smallerThanTarget}: Se trata de un m\'etodo de b\'usqueda binaria \cite{smallerThanTarget} con el que, dado un entero y un arraybuffer de cubos ordenados seg\'un sus capacidades restantes de forma creciente, encuentra la posici\'on del cubo con la menor capacidad restante que es mayor o igual que el entero dado. 
+		\item \textbf{greaterThanTarget}: Se trata de un m\'etodo de b\'usqueda binaria \cite{greaterthantarget} con el que, dado un entero y un arraybuffer de cubos ordenados seg\'un sus capacidades restantes de forma creciente, encuentra la posici\'on del cubo con la menor capacidad restante que es mayor o igual que el entero dado. 
 		\item \textbf{reorderBufferArrays}: Este m\'etodo toma como par\'ametros un arraybuffer de cubos que se encuentran ordenados seg\'un sus capacidades restantes y la posici\'on de un elemento del array que se encuentra desordenado y, lo que realiza, es la reordenaci\'on de dicho elemento. Su implementaci\'on es sencilla dado que, lo que hacemos, es usar el m\'etodo anterior para encontrar la nueva posici\'on de dicho cubo en el array para luego guardar el cubo en una variable auxiliar y, haciendo uso de que los arraybuffer son estructuras de datos mutables, usar los m\'etodos predefinidos de las librer\'ias de Scala para borrar el elemento del array y reinsertarlo en la posici\'on que hab\'iamos calculado previamente.
-		\item \textbf{sortDescending}: Este es un m\'etodo de ordenaci\'on que usamos para ordenar de manera descendente los elementos de la lista de objetos que nos proporciona las distintas instancias del problema. B\'asicamente hacemos uso del algoritmo QuickSort para realizar tal ordenaci\'on \cite{sortDescending}.
+		\item \textbf{sortDescending}: Este es un m\'etodo de ordenaci\'on que usamos para ordenar de manera descendente los elementos de la lista de objetos que nos proporciona las distintas instancias del problema. B\'asicamente hacemos uso del algoritmo QuickSort \cite{sortDescending} para realizar tal ordenaci\'on.
 	\end{itemize}
 	
 	\section{Algoritmos voraces}
@@ -1445,8 +1459,6 @@
 	
 	Como ya mencionamos en el cap\'itulo anterior, los m\'etodos necesarios para implementar los algoritmos Best Fit y Worst Fit mediante \'arboles AVL son pr\'acticamente iguales, cambiando \'unicamente el m\'etodo \textbf{delete} de ambos. Por tanto, para tener un c\'odigo m\'as limpio, se ha creado la clase abstracta AVLTree para implementar todos los m\'etodos de los que hacen uso ambos alogirtmos. Posteriormente, las clases BFAVLTree y WFAVLTree heredan de la clase abstracta anterior para implementar el m\'etodo delete.
 	\\
-	
-	\textbf{EXPLICO AQUI LAS DIFERENCIAS DE LOS METODOS DELETE?}
 	
 	\section{El algoritmo evolutivo}
 	Recordemos que el algoritmo evolutivo va realizando iteraciones hasta que alcanza una condici\'on de parada. En nuestro caso, dicha condici\'on de parada es que se est\'e ejecutando durante el tiempo que le indiquemos. Para ello, la primera clase que implementamos es la clase \textbf{Timer}. Dicha clase contiene los m\'etodos necesarios para obtener el tiempo que marca el reloj interno del ordenador y as\'i, poder establecer un instante inicial y ser capaces de medir intervalos de tiempo \cite{Vigo}.
@@ -1514,7 +1526,7 @@
 	\subsection{Clases para los cruces y mutaciones}
 	Por una parte tenemos la clase \textbf{Crossover}, la cual implementa dos algoritmos de cruce distintos:
 	\begin{enumerate}
-		\item Algoritmo de cruce seg\'un el esquema PMX (Partially Mapped Crossover): \textbf{pmx}.
+		\item Algoritmo de cruce seg\'un el esquema PMX \cite{crossoverPMX} (Partially Mapped Crossover): \textbf{pmx}.
 		\item Algoritmo de cruce por vectores de inversi\'on: \textbf{inversionCrossover}. Se define como vector de inversiones de una permutaci\'on $(\pi(i))_{i=1}^{n}$ un vector $(a_{i})_{i=1}^{n}$ donde $a_{i}$ indica el n\'umero de elementos situados a la izquierda de $i$ que son mayores que $i$ \cite{Vigo}.
 	\end{enumerate}
 	Para m\'as informaci\'on acerca de estos esquemas as\'i como del c\'odigo en el que nos hemos basado para desarrollar los algoritmos que usamos, consultar \cite{Vigo}.
@@ -1551,7 +1563,7 @@
 	\bibliographystyle{plain}
 	\bibliography{ref}% Crear archivo bib con referencias en bibtex
 	
-
+	
 	
 	
 \end{document}
