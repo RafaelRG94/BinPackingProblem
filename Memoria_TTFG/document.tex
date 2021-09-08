@@ -89,11 +89,11 @@
 		
 		{\bf Tema:} {Resoluci\'on de problemas de optimizaci\'on combinatoria}\\
 		
-		{\bf Tipo:} {(trabajo de revisi\'on bibliogr\'afica, de iniciaci\'on a la investigaci\'on,...)}\\
+		{\bf Tipo:} {Matem\'aticas aplicadas, computaci\'on}\\
 		
 		{\bf Modalidad:} {Individual}\\
 		
-		{\bf N\'umero de p\'aginas (sin incluir introducci\'on, bibliograf\'{\i}a ni anexos):}\\
+		{\bf N\'umero de p\'aginas:} {47}\\
 		
 		
 		
@@ -212,7 +212,7 @@
 	\textsc{combinatorial optimisation, objective function, search space, optimal solution, heuristic algorithms, metaheuristic algorithms, greedy algorithms, evolutionary algorithms, algorithmic complexity, asymptotic cost, p-problems, np-problems, packing problem, bpp, avl trees, nodes, height, rotations, individual, population, selection function, crossover function, mutation function, scala}
 	
 	
-	\chapter{Optimizaci\'{\o}n combinatoria}
+	\chapter{Optimizaci\'on combinatoria}
 	\pagenumbering{arabic}
 	\setcounter{page}{1}
 	
@@ -378,7 +378,7 @@
 		\end{enumerate}
 	\end{definicion}
 	
-	Una reducci\'on polin\'omica de \textit{L} en \textit{C} es un algoritmo de tiempo polin\'omico que transforma instancias de \textit{L} en instancias de \textit{C}, de manera que la respuesta a \textit{C} es positiva si y solo si lo es la de \textit{L}. De forma general, la clase \textit{NP-completo} corresponde a la de los problemas que pueden verificarse de forma sencilla pero que, en el caso de que su espacio de soluciones sea muy grande, solo pueden resolverse por fuerza bruta. Algunos de los problemas que pertenecen a esta clase son el \textbf{problema de satisfacibilidad booleana} (SAT), el \textbf{problema de la mochila} (com\'unmente abreviado por KP), el \textbf{problema del ciclo hamiltoniano} o el \textbf{problema del viajante}. Esta clase tiene la propiedad (\textbf{citar wiki)} de que si alg\'un problema \textit{NP-completo} puede ser resuelto en tiempo polin\'omico, entonces todo problema en \textit{NP} tiene una soluci\'on en tiempo polin\'omico, es decir, $P = NP$.
+	Una reducci\'on polin\'omica de \textit{L} en \textit{C} es un algoritmo de tiempo polin\'omico que transforma instancias de \textit{L} en instancias de \textit{C}, de manera que la respuesta a \textit{C} es positiva si y solo si lo es la de \textit{L}. De forma general, la clase \textit{NP-completo} corresponde a la de los problemas que pueden verificarse de forma sencilla pero que, en el caso de que su espacio de soluciones sea muy grande, solo pueden resolverse por fuerza bruta. Algunos de los problemas que pertenecen a esta clase son el \textbf{problema de satisfacibilidad booleana} (SAT), el \textbf{problema de la mochila} (com\'unmente abreviado por KP), el \textbf{problema del ciclo hamiltoniano} o el \textbf{problema del viajante}. Esta clase tiene la propiedad de que si alg\'un problema \textit{NP-completo} puede ser resuelto en tiempo polin\'omico, entonces todo problema en \textit{NP} tiene una soluci\'on en tiempo polin\'omico, es decir, $P = NP$.
 	\\
 	
 	A pesar de a\~{n}os de investigaci\'on, la cuesti\'on de si $P = NP$ contin\'ua a\'un abierta y es considerado uno de los problemas del milenio. La importancia de este resultado radica en el hecho de que si $P \neq NP$, entonces los problemas \textit{NP-completos} son intratables, ya que si alg\'un problema en \textit{NP} requiere m\'as tiempo que uno polinomial, entonces uno \textit{NP-completo} tambi\'en.
@@ -391,6 +391,7 @@
 	\end{definicion}
 	
 	Esta clase contiene a aquellos problemas que son, como m\'inimo, tan dif\'iciles como un problema de \textit{NP}. De esta forma, la clase de problemas \textit{NP-completo} puede definirse como la intersecci\'on entre las clases \textit{NP} y \textit{NP-dif\'icil}.
+	\\
 	
 	\begin{figure}[h]
 		\centering
@@ -852,7 +853,6 @@
 		\end{minipage}
 	}
 	\\\\
-	
 	La complejidad de este algoritmo es id\'entica al Next Fit. Esto se debe a que el bucle for recorre toda la lista de objetos, luego al igual que en los algoritmos previos, su complejidad es \textit{O(n)}. Por otra parte, el bucle while itera, a lo sumo, k veces, con lo que la complejidad del algoritmo es $k\cdot O(n) = O(n)$ ya que k es una constante.
 	
 	\subsubsection{Algoritmos de tipo decreasing/increasing}
@@ -1029,10 +1029,11 @@
 	
 	\begin{figure}[h]
 		\centering
-		\includegraphics[scale = 0.8]{desequilibrios.png}
+		\includegraphics[scale = 0.6]{desequilibrios.png}
 		\caption{Tipos de desequilibrios}
 		\label{fig:desequilibrio}
 	\end{figure}
+	
 	
 	Por consiguiente, en el caso de que el \'arbol est\'e desequilibrado, existen cuatro operaciones que corrigen el balanceo \cite{arbolesAVL}. A saber: 
 	
@@ -1279,7 +1280,7 @@
 				\end{algorithmic}
 			\end{minipage}
 		}
-		\\\\
+		
 		
 		\item \textbf{add(initialCapacity: Int, weight: Int): Unit}: Dada la capacidad de los cubos y el peso de un objeto a introducir en los mismos, este m\'etodo es el que se encarga de introducirlo en un cubo de alg\'un nodo del \'arbol. Su funcionamiento ya la describimos cuando se explic\'o c\'omo se introduc\'ia un nuevo elemento en el \'arbol. Esto es, primero comprobamos si el elemento cabe en el cubo que almacena alg\'un nodo. Si no cabe en ninguno, creo un nuevo cubo al que le a\~{n}ado el elemento e inserto este cubo en el \'arbol haciendo una llamada al m\'etodo anterior pas\'andole como par\'ametro este cubo. Si cabe en alguno, copio ese cubo, introduzco el elemento y borro el nodo para, a continuaci\'on, llamar de nuevo al m\'etodo anterior pas\'andole como par\'ametro este cubo.
 		\\
@@ -1391,7 +1392,7 @@
 	\chapter{Implementaci\'on}
 	
 	\section{Introducci\'on}
-	En este cap\'itulo vamos a explicar brevemente c\'omo est\'a estructurada la soluci\'on que se propone en este trabajo. En el cap\'itulo anterior hemos explicado los algoritmos que hemos implementado para dar distintas soluciones a un problema de tipo BP por lo que, a continuaci\'on, lo que haremos ser\'a explicar las clases y m\'etodos que hemos implementado para poder llevar a cabo los algoritmos anteriores. En el siguiente enlace podemos consultar el c\'odigo completo:
+	En este cap\'itulo vamos a explicar brevemente c\'omo est\'a estructurada la soluci\'on que se propone en este trabajo. En el cap\'itulo anterior hemos explicado los algoritmos que hemos implementado para dar distintas soluciones a un problema de tipo BP por lo que, a continuaci\'on, lo que haremos ser\'a explicar las clases y m\'etodos que hemos implementado para poder llevar a cabo los algoritmos anteriores. En el siguiente enlace podemos consultar el c\'odigo completo que hemos desarrollado en este trabajo de fin de grado:
 	\\
 	
 	\url{https://github.com/RafaelRG94/BinPackingProblem}
@@ -1400,39 +1401,39 @@
 	En esta primera parte vamos a explicar qu\'e clases hemos implementado para introducir los datos y prepararlos para su posterior uso en los algoritmos que hemos presentado previamente.
 	
 	\subsection{La clase Bin}
-	L\'gicamente este es el primer fichero que hemos tenido que implementar. Con \'el hemos creado un objeto con el que representar la informaci\'on que guarda un cubo del problema as\'i como los m\'etodos principales para interactuar con el mismo.
+	L\'ogicamente este es el primer fichero que hemos tenido que implementar. Con \'el hemos creado un objeto con el que representar la informaci\'on que guarda un cubo del problema as\'i como los m\'etodos principales para interactuar con el mismo.
 	\\
 	
-	En primer lugar tenemos dos \'unicos atributos, a saber: \textit{items}, que es un array de tipo buffer y es la variable donde almacenaremos los elementos que se vayan introduciendo en el cubo y \textit{leftCapacity}, que almacena un entero cuya clase recibe como constructor y no es m\'as que la capacidad restante del cubo. El motivo por el que se elige el arraybuffer para almacenar los objetos que se van introduciendo es que es una estructura de datos mutable (que es lo que nos permite ir introduciendo nuevos elemento en el cubo) que comparte mucho de los m\'etodos que los arrays tienen predefinidos. 
+	En primer lugar tenemos dos \'unicos atributos, a saber: \textit{items}, que es un array de tipo buffer y es la variable donde almacenaremos los elementos que se vayan introduciendo en el cubo y \textit{leftCapacity}, que almacena un entero,  que la clase recibe como argumento del constructor, y no es m\'as que la capacidad restante del cubo. El motivo por el que se elige el ArrayBuffer para almacenar los objetos que se van introduciendo es que es una estructura de datos mutable (que es lo que nos permite ir introduciendo nuevos elemento en el cubo) a la cual se le puede a\~{n}adir elementos de forma incremental eficientemente (con complejidad amortizada $O(1)$). 
 	\\
 	
 	Por otra parte, podemos encontrar los siguientes m\'etodos principales:
 	\begin{itemize}
-		\item \textbf{add}: Este m\'etodo toma como par\'ametro un entero y lo introduce en el cubo.
+		\item \textbf{add}: Este m\'etodo toma como par\'ametro un entero, correspondiente al peso de un objeto, y lo introduce en el cubo.
 		\item \textbf{canAdd}: Dado un entero, esta funci\'on comprueba si el elemento se puede introducir en el cubo.
-		\item \textbf{getLeftCapacity}: Con este m\'etodo podemos consultar la capacidad restante de la instancia del cubo que estemos interesados.
+		\item \textbf{getLeftCapacity}: Con este m\'etodo podemos consultar la capacidad restante de la instancia del cubo en que estemos interesados.
 	\end{itemize}
 	
 	\subsection{Las clases ProblemInstance y Solution}
 	Estas dos clases las usamos para crear objetos que representen tanto la instancia de un problema de BP como su soluci\'on. Ambos implementan un m\'etodo \textbf{toString} para posteriormente mostrar distintos datos por pantalla. Adem\'as, podemos encontrar los dos siguientes m\'etodos:
 	\begin{itemize}
 		\item \textbf{sortDescendingInstance}: M\'etodo de la clase ProblemInstance con el que ordenamos de manera descendente la lista de objetos que tenemos en la instancia de un problema BP. Este m\'etodo es necesario para su posterior uso en los algoritmos de tipo decreasing. Su implementaci\'on es muy sencilla dado que lo \'unico que hacemos es copiar la lista de objetos de la instancia del problema, ordenarla y devolver un objeto de tipo ProblemInstance que tenga a esta \'ultima lista como objetos a introducir en los cubos.
-		\item \textbf{length}: M\'etodo de la clase Solution con el que devolvemos la longitud de la soluci\'on de una instancia del problema.
+		\item \textbf{length}: M\'etodo de la clase Solution con el que devolvemos la longitud de la soluci\'on (n\'umero de cubos) de una instancia del problema.
 	\end{itemize}
 	
 	\subsection{La clase Utils}
 	En el fichero Utils.scala tenemos tres m\'etodos auxiliares de los que posteriormente hacemos uso cuando implementamos los algoritmos:
 	
 	\begin{itemize}
-		\item \textbf{greaterThanTarget}: Se trata de un m\'etodo de b\'usqueda binaria \cite{greaterthantarget} con el que, dado un entero y un arraybuffer de cubos ordenados seg\'un sus capacidades restantes de forma creciente, encuentra la posici\'on del cubo con la menor capacidad restante que es mayor o igual que el entero dado. 
-		\item \textbf{reorderBufferArrays}: Este m\'etodo toma como par\'ametros un arraybuffer de cubos que se encuentran ordenados seg\'un sus capacidades restantes y la posici\'on de un elemento del array que se encuentra desordenado y, lo que realiza, es la reordenaci\'on de dicho elemento. Su implementaci\'on es sencilla dado que, lo que hacemos, es usar el m\'etodo anterior para encontrar la nueva posici\'on de dicho cubo en el array para luego guardar el cubo en una variable auxiliar y, haciendo uso de que los arraybuffer son estructuras de datos mutables, usar los m\'etodos predefinidos de las librer\'ias de Scala para borrar el elemento del array y reinsertarlo en la posici\'on que hab\'iamos calculado previamente.
+		\item \textbf{greaterThanTarget}: Se trata de un m\'etodo de b\'usqueda binaria \cite{greaterthantarget} con el que, dado un entero y un ArrayBuffer de cubos ordenados seg\'un sus capacidades restantes de forma creciente, encuentra la posici\'on del cubo con la menor capacidad restante que es mayor o igual que el entero dado. 
+		\item \textbf{reorderBufferArrays}: Este m\'etodo toma como par\'ametros un ArrayBuffer de cubos que se encuentran ordenados seg\'un sus capacidades restantes y la posici\'on de un elemento del array que se encuentra desordenado y, lo que realiza, es la reordenaci\'on de dicho elemento. Su implementaci\'on es sencilla dado que, lo que hacemos, es usar el m\'etodo anterior para encontrar la nueva posici\'on de dicho cubo en el array para luego guardar el cubo en una variable auxiliar y, haciendo uso de que los ArrayBuffer son estructuras de datos mutables, usar los m\'etodos predefinidos de las librer\'ias de Scala para borrar el elemento del array y reinsertarlo en la posici\'on que hab\'iamos calculado previamente.
 		\item \textbf{sortDescending}: Este es un m\'etodo de ordenaci\'on que usamos para ordenar de manera descendente los elementos de la lista de objetos que nos proporciona las distintas instancias del problema. B\'asicamente hacemos uso del algoritmo QuickSort \cite{sortDescending} para realizar tal ordenaci\'on.
 	\end{itemize}
 	
 	\section{Algoritmos voraces}
 	Esta parte del c\'odigo se corresponde con aquellas clases que implementan los algoritmos de tipo greedy. Recordemos que la mayor\'ia de algoritmos propuestos tienen dos implementaciones diferentes en funci\'on de qu\'e tipo de estructura de datos usemos para almacenar la soluci\'on que vamos calculando. As\'i, tenemos:
 	\begin{itemize}
-		\item Ficheros de los algoritmos que almacenan sus soluciones en un \textbf{arraybuffer}: . 
+		\item Ficheros de los algoritmos que almacenan sus soluciones en un \textbf{ArrayBuffer}: . 
 		\begin{enumerate}
 			\item AlmostWorstFit.
 			\item BestFit.
@@ -1444,7 +1445,7 @@
 			\item WorstFit.
 			\item WorstFitDecreasing.
 		\end{enumerate}
-		Estos ficheros contienen los m\'etodos de la clase de los objetos que, dada una instancia del problema de BP, resuelven el problema seg\'un los algoritmos que hemos descrito en la primera parte del segundo cap\'itulo, almacenando cada nuevo cubo que se va creando en las iteraciones en un arraybuffer.
+		Estos ficheros contienen los m\'etodos de la clase de los objetos que, dada una instancia del problema de BP, resuelven el problema seg\'un los algoritmos que hemos descrito en la primera parte del segundo cap\'itulo, almacenando cada nuevo cubo que se va creando en las iteraciones en un ArrayBuffer.
 		\item Ficheros de los algoritmos que almacenan sus soluciones en un \textbf{\'arbol AVL}:
 		\begin{enumerate}
 			\item BFAVLTree.
@@ -1457,7 +1458,7 @@
 		Estos ficheros contienen los m\'etodos necesarios para implementar los algoritmos Best Fit, First Fit, Worst Fit y sus respectivos algoritmos de tipo decreasing almacenando los cubos de la soluci\'on en \'arboles AVL.
 	\end{itemize} 
 	
-	Como ya mencionamos en el cap\'itulo anterior, los m\'etodos necesarios para implementar los algoritmos Best Fit y Worst Fit mediante \'arboles AVL son pr\'acticamente iguales, cambiando \'unicamente el m\'etodo \textbf{delete} de ambos. Por tanto, para tener un c\'odigo m\'as limpio, se ha creado la clase abstracta AVLTree para implementar todos los m\'etodos de los que hacen uso ambos alogirtmos. Posteriormente, las clases BFAVLTree y WFAVLTree heredan de la clase abstracta anterior para implementar el m\'etodo delete.
+	Como ya mencionamos en el cap\'itulo anterior, los m\'etodos necesarios para implementar los algoritmos Best Fit y Worst Fit mediante \'arboles AVL son pr\'acticamente iguales, cambiando \'unicamente el m\'etodo \textbf{delete} de ambos. Por tanto, para tener un c\'odigo m\'as limpio, se ha creado la clase abstracta AVLTree para implementar todos los m\'etodos de los que hacen uso ambos algoritmos. Posteriormente, las clases BFAVLTree y WFAVLTree heredan de la clase abstracta anterior para implementar, cada una de ellas, la versi\'on del m\'etodo delete que corresponda.
 	\\
 	
 	\section{El algoritmo evolutivo}
@@ -1465,7 +1466,7 @@
 	
 	\subsection{Clases para generar la poblaci\'on inicial}
 	\subsubsection{Individual}
-	Los objetos de esta clase pretenden representar a los individuos que forman a la poblaci\'on. Por otro lado, como el objetivo del algoritmo evolutivo es encontrar la permutaci\'on de la lista de objetos dada en una instancia del problema de BP con la que obtenemos la mejor soluci\'on del problema seg\'un un algoritmo concreto, la informaci\'on que almacenan los objetos de la clase es la permutaci\'on correspondiente de la lista de objetos a introducir en los cubos, el n\'umero de cubos que obtenemos cuando resolvemos el problema seg\'un un algoritmo dado y los m\'etodos necesarios para interactuar con estos datos.
+	Los objetos de esta clase pretenden representar a los individuos que forman a la poblaci\'on. Por otro lado, como el objetivo del algoritmo evolutivo es encontrar la permutaci\'on de la lista de objetos dada en una instancia del problema de BP con la que obtenemos la mejor soluci\'on del problema seg\'un un algoritmo concreto, la informaci\'on que almacenan los objetos de la clase es la permutaci\'on correspondiente de la lista de objetos a introducir en los cubos, el n\'umero de cubos que obtenemos cuando resolvemos el problema seg\'un un algoritmo dado (funci\'on objetivo) y los m\'etodos necesarios para interactuar con estos datos.
 	
 	\subsubsection{Populations}
 	El fichero \textbf{Populations.scala} contiene un objeto de tipo Populations con los m\'etodos auxiliares necesarios para luego crear distintos tipos de poblaciones. Recordemos que la poblaci\'on del algoritmo evolutivo no solo contiene las distintas permutaciones de la lista de objetos dada en la instancia del problema, sino tambi\'en el n\'umero de cubos que obtenemos cuando resolvemos el problema para las distintas permutaciones seg\'un el m\'etodo que le indicamos para, posteriormente, ordenar esas permutaciones de mejor a peor seg\'un el n\'umero de cubos obtenidos. Por lo tanto, podemos tener distintos algoritmos evolutivos seg\'un el m\'etodo con el que decidamos resolver las distintas instancias que nos porporcionan los individuos de la poblaci\'on.
@@ -1473,7 +1474,7 @@
 	
 	En este sentido, en Populations podemos identificar dos partes claramente diferenciadas:
 	\begin{itemize}
-		\item \textbf{initPopulation}: Con este m\'etodo, dada una instancia del problema de BP y una funci\'on \textit{Solver} (es decir, una funci\'on con la que resolvemos la instancia del problema), generamos una poblaci\'on (que no es m\'as que un array de individuos) para el algoritmo evolutivo. Para ello, lo que hacemos es que vamos generando permutaciones de la lista de objetos de la instancia del problema de BP mediante el algoritmo de Fisher-Yates (funci\'on shuffle), luego resolvemos la permutaci\'on obtenida con el Solver seleccionado y finalmente ordenamos a los individuos de mejor a peor. La caracter\'stica fundamental por la que elegimos el algoritmo de Fisher-Yates es que genera cada permutaci\'on seg\'un una distribuci\'on uniforme.
+		\item \textbf{initPopulation}: Con este m\'etodo, dada una instancia del problema de BP y una funci\'on \textit{Solver} (es decir, una funci\'on con la que resolvemos la instancia del problema), generamos una poblaci\'on (que no es m\'as que un array de individuos) para el algoritmo evolutivo. Para ello, lo que hacemos es que vamos generando permutaciones de la lista de objetos de la instancia del problema de BP mediante el algoritmo de Fisher-Yates (funci\'on shuffle), luego resolvemos la permutaci\'on obtenida con el Solver seleccionado y finalmente ordenamos a los individuos de mejor a peor. La caracter\'stica fundamental por la que elegimos el algoritmo de Fisher-Yates es que genera cada permutaci\'on seg\'un una distribuci\'on uniforme, muestreando as\'i por completo el espacio de b\'usqueda, lo cual permite al algoritmo evolutivo realizar una exploraci\'on global del espacio de soluciones.
 		\item M\'etodos con los que generamos distintas poblaciones seg\'un los \textit{Solvers} de los que disponemos (indicamos \'unicamente que algoritmo usan para resolver las instancias):
 		\begin{enumerate}
 			\item \textbf{fFPopulation}: First Fit.
@@ -1515,10 +1516,10 @@
 	\end{proof}
 	
 	\subsubsection{Population}
-	El fichero Population.scala consta de una clase abstracta Population que implementa los m\'etodos necesarios a la hora de interactuar con los distintos tipos de poblaciones. Los m\'as importantes:
+	El fichero Population.scala consta de una clase abstracta Population que implementa los m\'etodos necesarios a la hora de interactuar con los distintos tipos de poblaciones. Los m\'as importantes son:
 	\begin{enumerate}
-		\item \textbf{binaryTournament}: M\'etodo que implementa el algoritmo del torneo binario con el cual seleccionamos un individuo de la poblaci\'on aleatoriamente.
-		\item \textbf{binaryInsertion}: M\'etodo de inserci\'on binaria con el que, dado un nuevo individuo, lo sustituimos por uno de los que se encuentran en la poblaci\'on para insertarlo.
+		\item \textbf{binaryTournament}: M\'etodo que implementa el algoritmo del torneo binario con el cual seleccionamos un individuo de la poblaci\'on aleatoriamente. En general, el m\'etodo de selecci\'on por torneo escoge aleatoriamente \textit{k} individuos de la poblaci\'on y selecciona el mejor de ellos. En nuestro caso, el m\'etodo selecciona dos individuos de la poblaci\'on y devuelve el que minimiza la funci\'on objetivo, es decir, el que tiene un menor n\'umero de cubos.
+		\item \textbf{binaryInsertion}: M\'etodo de inserci\'on binaria con el que, dado un nuevo individuo, sustituimos a uno de los que se encuentran en la poblaci\'on para reemplazarlo.
 	\end{enumerate}
 	
 	Adem\'as, dentro del fichero tenemos definidas otras clases que extienden a la clase abstracta anterior y que hacen uso de los m\'etodos del objeto Populations para as\'i definir las distintas poblaciones seg\'un el \textit{Solver} elegido para resolver la instancia del problema de BP.
@@ -1529,7 +1530,7 @@
 		\item Algoritmo de cruce seg\'un el esquema PMX \cite{crossoverPMX} (Partially Mapped Crossover): \textbf{pmx}.
 		\item Algoritmo de cruce por vectores de inversi\'on: \textbf{inversionCrossover}. Se define como vector de inversiones de una permutaci\'on $(\pi(i))_{i=1}^{n}$ un vector $(a_{i})_{i=1}^{n}$ donde $a_{i}$ indica el n\'umero de elementos situados a la izquierda de $i$ que son mayores que $i$ \cite{Vigo}.
 	\end{enumerate}
-	Para m\'as informaci\'on acerca de estos esquemas as\'i como del c\'odigo en el que nos hemos basado para desarrollar los algoritmos que usamos, consultar \cite{Vigo}.
+	Estos algoritmos van a permitir combinar dos permutaciones para, a partir de ellas, generar nuevas permutaciones con parte de la informaci\'on de cada una. Para m\'as informaci\'on acerca de estos esquemas as\'i como del c\'odigo en el que nos hemos basado para desarrollar los algoritmos que usamos, consultar \cite{Vigo}.
 	\\
 	
 	Por otra parte, en la clase \textbf{Mutation} tenemos los siguientes algoritmos para representar una mutaci\'on en los individuos de la poblaci\'on (notemos que cuando hablemos de los \textit{genes} nos referiremos a los elementos de las permutaciones de la lista de objetos de la instancia del problema de BP) \cite{Vigo}:
@@ -1540,19 +1541,19 @@
 		\item \textbf{inversionMutation}: Se invierte el orden de los genes de la franja central.
 	\end{enumerate}
 	
-	Finalmente tenemos la clase \textbf{EvolutionaryAlgorithm} la cual, siguiendo el esquema descrito en el cap\'itulo anterior, hace uso de las clases que acabamos de describir y sus m\'etodos para implementar el m\'etodo \textbf{evolve}, el cual resuelve el algoritmo evolutivo.
+	Finalmente tenemos la clase \textbf{EvolutionaryAlgorithm} la cual, siguiendo el esquema descrito en el cap\'itulo anterior, hace uso de las clases que acabamos de describir y sus m\'etodos para implementar el m\'etodo \textbf{evolve}, el cual implementa la inicializaci\'on del algoritmo evolutivo y su ciclo de optimizaci\'on iterativo.
 	
 	\chapter{Conclusiones}
-	La finalidad de este trabajo es la de, a trav\'es de un problema de optimizaci\'on combinatoria concreto, pasar del marco te\'orico de las matem\'aticas al pr\'actico. Para ello, hemos hecho uso de la potencia de c\'omputo que nos ofrecen los ordenadores, los cuales nos permiten dar mejores soluciones para este tipo de problemas a medida que la tecnolog\'ia avanza. Este hecho ha quedado reflejado, sobre todo, en el algoritmo evolutivo, ya que cuanto m\'as potente sea la m\'aquina de la que disponemos, m\'as iteraciones podremos realizar en el mismo intervalo de tiempo.
+	La finalidad de este trabajo es la de, a trav\'es del estudio de un problema de optimizaci\'on combinatoria concreto, pasar del marco te\'orico de las matem\'aticas al pr\'actico. Para ello, hemos hecho uso de la potencia de c\'omputo que nos ofrecen los ordenadores, los cuales nos permiten dar mejores soluciones para este tipo de problemas a medida que la tecnolog\'ia avanza. Este hecho ha quedado reflejado, sobre todo, en el algoritmo evolutivo que finalmente hemos desarrollado, ya que cuanto m\'as potente sea la m\'aquina de la que disponemos, m\'as iteraciones podremos realizar en el mismo intervalo de tiempo.
 	\\
 	
 	En realidad, todo lo que se ha expuesto a lo largo del trabajo ha sido para concurrir en el algoritmo evolutivo y ver la cantidad de posibilidades que ofrece. Hemos comenzado explicando una de las versiones m\'as simples del problema de empaquetamiento; posteriormente, hemos presentado una serie de algoritmos que siguen el esquema de los m\'etodos voraces para resolverlo, es decir, el de aquellos m\'etodos que no se replantean las decisiones ya tomadas. A su vez, hemos comprobado que cuanto mejor elecci\'on quisieramos hacer a la hora de introducir un elemento en uno de los cubos, los algoritmos resultantes son cada vez menos eficientes.
 	\\
 	
-	A continuaci\'on, hemos conseguido una mejora significativa en las complejidades de los algotirmos anteriores haciendo uso de la estructura de \'arboles AVL para almacenar la soluci\'on de las instancias del problema. Esto implica, a su vez, que la implementaci\'on del algoritmo sea m\'as compleja.
+	A continuaci\'on, hemos conseguido una mejora significativa en las complejidades de los algoritmos anteriores haciendo uso de la estructura de \'arboles AVL para almacenar la soluci\'on de las instancias del problema. Esto implica, a su vez, que la implementaci\'on del algoritmo sea m\'as compleja.
 	\\
 	
-	Una vez hecho todo este trabajo, hemos podido pasar propiamente a la implementaci\'on del algoritmo evolutivo, pues su funcionamiento se basa en cualquiera de los m\'etodos presentados hasta ahora. De esta forma, vemos que podemos tener un algoritmo evolutivo diferente por cada uno de estos m\'etodos. Adem\'as, si tenemos en cuenta los diferentes algoritmos de selecci\'on, de cruce y de mutaci\'on que hay, vemos que podemos encontrar multitud de combinaciones de todos estos m\'etodos que dan distintos algoritmos evolutivos, lo cual pone de manifiesto la cantidad de opciones existentes a la hora de obtener una "buena" soluci\'on de un problema dado en un tiempo "aceptable". 
+	Una vez hecho todo este trabajo, hemos podido pasar propiamente a la implementaci\'on del algoritmo evolutivo, pues distintas variedades de \'este basan su funcionamiento en los distintos m\'etodos presentados previamente. De esta forma, vemos que podemos tener un algoritmo evolutivo diferente por cada uno de estos m\'etodos. Adem\'as, si tenemos en cuenta los diferentes algoritmos de selecci\'on, de cruce y de mutaci\'on que hay, vemos que podemos encontrar multitud de combinaciones de todos estos m\'etodos que dan distintos algoritmos evolutivos, lo cual pone de manifiesto la cantidad de opciones existentes a la hora de obtener una "buena" soluci\'on de un problema dado en un tiempo "aceptable". 
 	\\ 
 	
 	Como trabajo futuro, queda pendiente el comparar y analizar c\'omo cada uno de estos m\'etodos resuelven distintas instancias cada vez mayores del problema de empaquetamiento para as\'i verificar que, lo que obtenemos, se ajusta a los resultados y conclusiones que aqu\'i se han expuesto.
