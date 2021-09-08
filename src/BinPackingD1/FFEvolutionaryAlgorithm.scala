@@ -1,11 +1,11 @@
 package BinPackingD1
 
+import BinPackingD1.Crossover.pmx
+import BinPackingD1.Mutation.swapMutation
+
 import scala.util.Random
 
-abstract class EvolutionaryAlgorithm(val popLength: Int, instance: ProblemInstance , val probCross: Double, val seed: Int, val maxTime: Double) {
-
-  def crossover(parent1: Array[Int], parent2: Array[Int], rnd: Random, child: Array[Int]): Unit
-  def mut(child: Array[Int], rnd: Random): Unit
+class FFEvolutionaryAlgorithm(val popLength: Int, instance: ProblemInstance, val probCross: Double, val seed: Int, val maxTime: Double) {
 
   val rnd = new Random(seed)
   val probMut: Double = 1/popLength
@@ -19,10 +19,10 @@ abstract class EvolutionaryAlgorithm(val popLength: Int, instance: ProblemInstan
     timer.reset
     while(timer.elapsedTime < maxTime) {
       if (rnd.nextDouble() < probCross) {
-        crossover(algorithmPopulation.binaryTournament.perm, algorithmPopulation.binaryTournament.perm, rnd,  algorithmPopulation.individuals(popLength).perm) // Child is stored in popSize-1 = popLength
+        pmx(algorithmPopulation.binaryTournament.perm, algorithmPopulation.binaryTournament.perm, rnd,  algorithmPopulation.individuals(popLength).perm) // Child is stored in popSize-1 = popLength
       }
       else algorithmPopulation.individuals(popLength) = algorithmPopulation.individuals(rnd.nextInt(popLength)) // The child is chosen randomly.
-      if (rnd.nextDouble() < probMut) mut(algorithmPopulation.individuals(popLength).perm, rnd)
+      if (rnd.nextDouble() < probMut) swapMutation(algorithmPopulation.individuals(popLength).perm, rnd)
 
       val currentInstance = new ProblemInstance(instance.capacity, algorithmPopulation.individuals(popLength).perm) // Child is stored in popSize-1 = popLength
       val firstFit = new FirstFit(currentInstance)

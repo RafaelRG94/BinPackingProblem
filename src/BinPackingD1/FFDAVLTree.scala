@@ -4,10 +4,10 @@ import scala.collection.mutable.ArrayBuffer
 
 class FFDAVLTree(instance: ProblemInstance) extends Solver {
   def name: String = "First Fit Decreasing AVL Tree Algorithm"
-  val bestFitDecTree = new FFAVLTree(instance.sortDescendingInstance())
+  val firstFitDecTree = new FFAVLTree(instance.sortDescendingInstance())
 
   def addAll(): Unit = {
-    bestFitDecTree.addAll()
+    firstFitDecTree.addAll()
   }
 
   def solve(): Solution = {
@@ -16,11 +16,11 @@ class FFDAVLTree(instance: ProblemInstance) extends Solver {
   }
 
   def inOrder: ArrayBuffer[Bin] = {
-    bestFitDecTree.inOrder
+    firstFitDecTree.inOrder
   }
 
   override def toString: String = {
-    bestFitDecTree.toString()
+    firstFitDecTree.toString()
   }
 
 }

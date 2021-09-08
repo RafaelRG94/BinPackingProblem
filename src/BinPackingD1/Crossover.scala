@@ -15,6 +15,7 @@ object Crossover {
     def pmxOffspring(sender: Array[Int], receiver: Array[Int]): Unit = { // Sender is the parent who donates the swath, whereas receiver is the one adapted.
       val child = copyOf(receiver, s)
       //val child = receiver.clone()
+      //val child = receiver map identity
       for (i <- left to right) if (child(i) != sender(i)) {
         //val j = child.find(sender(i)) //en que posición de child se encuentra el objeto sender(i)
         val j = child.indexWhere(_ == sender(i))
