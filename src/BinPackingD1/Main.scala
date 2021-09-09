@@ -1,5 +1,10 @@
 package BinPackingD1
 
+import BinPackingD1.Solvers.AVLTreeAlgorithm.{BFAVLTree, BFDAVLTree, FFAVLTree, WFAVLTree, WFDAVLTree}
+import BinPackingD1.Bin.ProblemInstance
+import BinPackingD1.Solvers.EvolutionaryAlgorithm.{AWEvolutionaryAlgorithm, BFAVLEvolutionaryAlgorithm, BFEvolutionaryAlgorithm, FFAVLEvolutionaryAlgorithm, FFEvolutionaryAlgorithm, WFAVLEvolutionaryAlgorithm, WFEvolutionaryAlgorithm}
+import BinPackingD1.Solvers.GreedyAlgorithm.{AlmostWorstFit, BestFit, BestFitDecreasing, FirstFit, FirstFitDecreasing, NextFit, NextKFit, WorstFit, WorstFitDecreasing}
+
 object Main {
   def main(args: Array[String]): Unit = {
     val instance = new ProblemInstance(10, Array(2, 9, 3, 1, 1, 9, 8, 3, 7, 6, 1, 5, 4, 3, 3, 4, 5, 7, 6, 2, 4, 1))
